@@ -1,0 +1,7 @@
+django<1.6
+pil
+django-debug-toolbar
+git+git://github.com/Brant/django-noodles.git
+git+git://github.com/Brant/django-mub.git
+South
+markdown
