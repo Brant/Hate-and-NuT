@@ -190,7 +190,6 @@ LOGGING = {
 }
 
 MUB_CSS_ORDER = (('normalize.css', 'main.css', 'style.css', ), ('style.l.css',))
-MUB_MINIFY = True
 
 try:
     from hancom.local_settings import *
