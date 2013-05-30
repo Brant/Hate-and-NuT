@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}The Adventures of Hate and NuT{% endblock %}
+
+{% block content %}
+	<div class="clearfix heading-wrap">
+		<h1>Latest</h1>
+		<nav class="comic-nav">
+			<ul class="comic-nav-list">
+				<li class="comic-nav-list-item comic-nav-list-item-left">
+					{% if previous_comic %}
+						<a class="comic-nav-list-item-link" href="{{ previous_comic.get_absolute_url }}" title="Previous Comic"><span class="visuallyhidden">Previous</span><i class="icon-caret-left"></i></a>
+					{% else %}
+						<span class="visuallyhidden">Previous</span><i class="icon-caret-left"></i>
+					{% endif %}		
+				</li>
+				<li class="comic-nav-list-item comic-nav-list-item-right"><span class="visuallyhidden">Next</span><i class="icon-caret-right"></i></li>
+			</ul>
+		</nav>
+	</div>
+	<img src="{{ latest_comic.comic_image.url }}" class="comic" alt="Comic entitled '{{ latest_comic.title }}'" />
+	<p class="float-left">{{ latest_comic.date|date }}</p>
+{% endblock %}

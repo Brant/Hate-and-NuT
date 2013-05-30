@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}{{ comic.title }} {{ block.super }}{% endblock %}
+
+{% block content %}
+	<div class="clearfix heading-wrap">
+		<h1>Hate and Nut</h1>
+		<nav class="comic-nav">
+			<ul class="comic-nav-list">
+				<li class="comic-nav-list-item comic-nav-list-item-left">
+					{% if previous_comic %}
+						<a class="comic-nav-list-item-link" href="{{ previous_comic.get_absolute_url }}" title="Previous Comic"><span class="visuallyhidden">Previous</span><i class="icon-caret-left"></i></a>
+					{% else %}
+						<span class="visuallyhidden">Previous</span><i class="icon-caret-left"></i>
+					{% endif %}
+				</li>
+				
+				<li class="comic-nav-list-item comic-nav-list-item-right">
+					{% if next_comic %}
+						<a class="comic-nav-list-item-link" href="{{ next_comic.get_absolute_url }}" title="Next Comic"><span class="visuallyhidden">Next</span><i class="icon-caret-right"></i></a></li>
+					{% else %}
+						<span class="visuallyhidden">Next</span><i class="icon-caret-right"></i>
+					{% endif %}
+				</li>
+			</ul>
+		</nav>
+	</div>
+	<img src="{{ comic.comic_image.url }}" class="comic" alt="Comic entitled '{{ comic.title }}'" />
+	<p class="float-left">{{ comic.date|date }}</p>
+{% endblock %}
