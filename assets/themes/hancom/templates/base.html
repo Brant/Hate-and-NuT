@@ -20,35 +20,34 @@
 			<div class="width">
 				<div class="pg-head">
 					
-<aside class="banner-ad header-ad">
-	<script type="text/javascript"><!--
-		if (myViewport > 748){
-			google_ad_client = "ca-pub-8960806131802161";
-			/* HaN: Header Banner */
-			google_ad_slot = "9464960332";
-			google_ad_width = 728;
-			google_ad_height = 90;
-			//-->
-			writeAd();
-		}
-	</script>
-</aside>
-					
-<aside class="mobile-fixed-ad-wrap">
-	<div class="mobile-fixed-ad">
-		<script type="text/javascript"><!--
-			if (myViewport < 748){
-				google_ad_client = "ca-pub-8960806131802161";
-				/* HaN: Smallest: Mobile Banner */
-				google_ad_slot = "1941693537";
-				google_ad_width = 320;
-				google_ad_height = 50;
-				//-->
-				writeAd();
-			}
-		</script>
-	</div>
-</aside>
+
+<script type="text/javascript"><!--
+	if (myViewport > 748){
+		google_ad_client = "ca-pub-8960806131802161";
+		/* HaN: Header Banner */
+		google_ad_slot = "9464960332";
+		google_ad_width = 728;
+		google_ad_height = 90;
+		//-->
+		document.write('<aside class="banner-ad header-ad">');
+		writeAd();
+		document.write('<\/aside>');
+	}
+</script>
+
+<script type="text/javascript"><!--
+	if (myViewport < 748){
+		google_ad_client = "ca-pub-8960806131802161";
+		/* HaN: Smallest: Mobile Banner */
+		google_ad_slot = "1941693537";
+		google_ad_width = 320;
+		google_ad_height = 50;
+		//-->
+		document.write('<aside class="mobile-fixed-ad-wrap"><div class="mobile-fixed-ad">');
+		writeAd();
+		document.write('<\/div><\/aside>');
+	}
+</script>
 					
 					<a href="{% url "home" %}"><img class="logo" src="{% static "img/adv_hateandnut.png" %}" alt="Hate and Nut Logo" /></a>
 				</div>
@@ -63,48 +62,50 @@
 							{% block content %}{% endblock %}
 						</div>
 						<div class="s">
-							
-<aside class="side-banner-medium">
-	<script type="text/javascript"><!--
-		if (myViewport >= 1024 && myViewport < 1280){
-			google_ad_client = "ca-pub-8960806131802161";
-			/* HaN: Skyscraper */
-			google_ad_slot = "3418426731";
-			google_ad_width = 160;
-			google_ad_height = 600;
-			//-->
-			writeAd();
-		}
-	</script>
-</aside>
-							
-<aside class="side-rectangle-ad">
-	<script type="text/javascript"><!--
-		if (myViewport >= 1280){
-			google_ad_client = "ca-pub-8960806131802161";
-			/* HaN: Largest: Square */
-			google_ad_slot = "6511493936";
-			google_ad_width = 300;
-			google_ad_height = 250;
-			//-->
-			writeAd();
-		}
-	</script>
-</aside>
 
-<aside class="side-rectangle-ad">
-	<script type="text/javascript"><!--
-		if (myViewport >= 1280){
-			google_ad_client = "ca-pub-8960806131802161";
-			/* HaN: Largest: Big Side Banner */
-			google_ad_slot = "7988227137";
-			google_ad_width = 300;
-			google_ad_height = 600;
-			//-->
-			writeAd();
-		}
-	</script>
-</aside>
+<script type="text/javascript"><!--
+	if (myViewport >= 1024 && myViewport < 1280){
+		console.log(myViewport);
+		google_ad_client = "ca-pub-8960806131802161";
+		/* HaN: Skyscraper */
+		google_ad_slot = "3418426731";
+		google_ad_width = 160;
+		google_ad_height = 600;
+		//-->
+		document.write('<aside class="side-banner-medium">');
+		writeAd();
+		document.write('<\/aside>');
+	}
+</script>							
+
+<script type="text/javascript"><!--
+	if (myViewport >= 1280){
+		google_ad_client = "ca-pub-8960806131802161";
+		/* HaN: Largest: Square */
+		google_ad_slot = "6511493936";
+		google_ad_width = 300;
+		google_ad_height = 250;
+		//-->
+		document.write('<aside class="side-rectangle-ad">');
+		writeAd();
+		document.write('<\/aside>');
+	}
+</script>
+
+<script type="text/javascript"><!--
+	if (myViewport >= 1280){
+		google_ad_client = "ca-pub-8960806131802161";
+		/* HaN: Largest: Big Side Banner */
+		google_ad_slot = "7988227137";
+		google_ad_width = 300;
+		google_ad_height = 600;
+		//-->
+		document.write('<aside class="side-rectangle-ad">');
+		writeAd();
+		document.write('<\/aside>');			
+	}
+</script>
+
 						</div>
 					{% endblock %}
 				</div>
