@@ -13,6 +13,7 @@ class Comic(TitleDateSlug, HalfQuarterAssetsMixin):
     comic_image = models.ImageField(upload_to="images/comics")
     published = models.BooleanField(default=True)
     chronology = models.IntegerField(blank=True, unique=True)
+    preview_image = models.ImageField(upload_to="images/preview", help_text="500x500")
     
     class Meta:
         """

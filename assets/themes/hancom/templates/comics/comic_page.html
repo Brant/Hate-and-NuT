@@ -1,6 +1,13 @@
 {% extends "base.html" %}
 
+{% block extra_head %}
+	<meta property="og:title" content="Hate and NuT #{{ comic.chronology }}" />
+	<meta property="og:image" content="{{ SITE_URL }}{{ comic.preview_image_half.url }}" /> 
+{% endblock %}
+
 {% block title %}{{ comic.title }} {{ block.super }}{% endblock %}
+
+
 
 {% block content %}
 	<div class="clearfix heading-wrap">
