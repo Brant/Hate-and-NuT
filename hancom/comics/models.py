@@ -14,6 +14,7 @@ class Comic(TitleDateSlug, HalfQuarterAssetsMixin):
     published = models.BooleanField(default=True)
     chronology = models.IntegerField(blank=True, unique=True)
     preview_image = models.ImageField(upload_to="images/preview", help_text="500x500")
+    description = models.TextField(help_text="Will show up in feed, meta description, and OG-driven previews")
     
     class Meta:
         """

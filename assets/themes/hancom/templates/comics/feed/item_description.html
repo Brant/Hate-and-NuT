@@ -1,0 +1,3 @@
+<p><a href="{{ SITE_URL }}{{ comic.get_absolute_url }}"><img src="{{ SITE_URL }}{{ comic.preview_image_quarter.url }}" /></a></p>
+{% load markup %}
+{{ comic.description|markdown }}
