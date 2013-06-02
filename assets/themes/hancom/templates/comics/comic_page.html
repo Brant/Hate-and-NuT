@@ -34,5 +34,6 @@
 		</nav>
 	</div>
 	<img src="{{ comic.comic_image.url }}" class="comic" alt="Comic entitled '{{ comic.title }}'" />
-	<p class="float-left">{{ comic.date|date }}</p>
+	<p>{{ comic.date|date }}</p>
+	{% include "social/comic_share_buttons.html" %}
 {% endblock %}

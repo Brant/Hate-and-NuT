@@ -9,6 +9,7 @@
 {% endblock %}
 
 {% block content %}
+	
 	<div class="clearfix heading-wrap">
 		<h1>Latest</h1>
 		<nav class="comic-nav">
@@ -25,5 +26,10 @@
 		</nav>
 	</div>
 	<img src="{{ latest_comic.comic_image.url }}" class="comic" alt="Comic entitled '{{ latest_comic.title }}'" />
-	<p class="float-left">{{ latest_comic.date|date }}</p>
+	<p>{{ latest_comic.date|date }}</p>
+	
+	{% with latest_comic as comic %}
+		{% include "social/comic_share_buttons.html" %}
+	{% endwith %}
+	
 {% endblock %}
