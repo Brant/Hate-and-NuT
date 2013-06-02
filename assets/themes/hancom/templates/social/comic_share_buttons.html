@@ -1,14 +1,27 @@
 <ul class="share clearfix">
 	<li class="share-twitter">
-		<a href="https://twitter.com/share" class="twitter-share-button" data-url="{{ SITE_URL }}{{ comic.get_absolute_url }}" data-size="large" data-related="brantsteen" data-count="none">Tweet</a>
+		<a href="https://twitter.com/share" 
+		class="twitter-share-button" 
+		data-text="Hate and NuT #{{ comic.chronology }} - {{ comic.description }}" 
+		data-url="{{ SITE_URL }}{{ comic.get_absolute_url }}" 
+		data-size="large" 
+		data-related="brantsteen" 
+		data-count="none">Tweet</a>
 	</li>
 	
 	<li class="share-plus">
 		<!-- Place this tag where you want the +1 button to render. -->
-		<div class="g-plusone" data-annotation="none" data-href="{{ SITE_URL }}{{ comic.get_absolute_url }}"></div>		
+		<div class="g-plusone" 
+		data-annotation="none" 
+		data-href="{{ SITE_URL }}{{ comic.get_absolute_url }}"></div>		
 	</li>
 
 	<li class="share-facebook">
-		<div class="fb-like" data-href="{{ SITE_URL }}{{ comic.get_absolute_url}}" data-send="false" data-width="300" data-show-faces="true"></div>
+		<div class="fb-like" 
+		data-href="{{ SITE_URL }}{{ comic.get_absolute_url}}" 
+		data-ref="fblk_{{ comic.chronology }}"
+		data-send="false"
+		data-width="300" 
+		data-show-faces="true"></div>
 	</li>
 </ul>
