@@ -150,7 +150,7 @@ INSTALLED_APPS = (
     'django.contrib.redirects',
     "django.contrib.markup",
     'django.contrib.admin',
-    
+    'django.contrib.sitemaps',
     'noodles',
     'mub',
     'south',

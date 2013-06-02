@@ -12,7 +12,7 @@ from django.contrib.sites.models import Site
 from noodles.feeds import RSSFeedWithContentEncoded
 
 from hancom.comics.models import Comic
-
+from hancom.website.queries import published_comics
 
 class SiteFeed(RSSFeedWithContentEncoded):
     """
@@ -23,7 +23,7 @@ class SiteFeed(RSSFeedWithContentEncoded):
     
     
     def items(self):
-        return Comic.objects.filter(published=True, date__lte=datetime.now())[:30]
+        return published_comics()[:30]
     
     def item_title(self, item):
         return "Hate and NuT #%s" % item.chronology

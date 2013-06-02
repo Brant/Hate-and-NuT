@@ -9,13 +9,13 @@ from django.template import RequestContext
 from django.views.generic.base import View
 
 from hancom.comics.models import Comic
-
+from hancom.website.queries import published_comics
 
 def homepage(request):
     """
     Website homepage
     """
-    latest_comics = Comic.objects.filter(published=True, date__lte=datetime.now())[:2]
+    latest_comics = published_comics()[:2]
     latest_comic = latest_comics[0]
     
     previous_comic = None
