@@ -1,3 +1,4 @@
+
 /*
  * Following/subscribing
  */
@@ -27,6 +28,26 @@
 }
 .social-twitter{
 	background:url(img/twitter.png) left top no-repeat;
+}
+
+/*
+ * Footer links for sharing/subscribing
+ */
+.pg-foot-wrap .social{
+	float:right;
+	margin:0;
+	padding:0;
+}
+.pg-foot-wrap .social-icon{
+	width:32px;
+	height:32px;
+	background-size:32px;
+}
+
+@media all and (min-width:1024px){
+	.pg-foot-wrap .social{
+		display:none;
+	}
 }
 
 /*

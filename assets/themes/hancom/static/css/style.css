@@ -131,7 +131,7 @@ p{
 }
 .footer-text{
 	color:#d7d7d7;
-	
+	float:left;
 }
 .footer-text a,
 .footer-text a:link,

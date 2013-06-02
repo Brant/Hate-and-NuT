@@ -61,9 +61,7 @@
 	.pg-foot-wrap{
 		padding:55px 10px 10px;
 	}
-	.footer-text{
-		text-align:center;
-	}
+	
 }
 
 @media all and (min-width:1024px){
@@ -118,6 +116,7 @@
 		box-shadow:0 0 10px rgba(0,0,0,.5);
 		position:relative;
 		z-index:999;
+		text-align:center;
 	}
 }
 
