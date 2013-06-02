@@ -3,7 +3,7 @@
 {% block extra_head %}
 	<meta property="og:title" content="Hate and NuT #{{ comic.chronology }}" />
 	<meta property="og:image" content="{{ SITE_URL }}{{ comic.preview_image_half.url }}" /> 
-	<meta property="og:image" content="Hate and NuT webcomic issue #{{ comic.chronology }} - {{ comic.description }}" /> 
+	<meta property="og:description" content="Hate and NuT webcomic issue #{{ comic.chronology }} - {{ comic.description }}" /> 
 {% endblock %}
 
 {% block title %}{{ comic.title }} {{ block.super }}{% endblock %}

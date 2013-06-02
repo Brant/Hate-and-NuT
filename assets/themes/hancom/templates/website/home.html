@@ -2,6 +2,12 @@
 
 {% block title %}The Adventures of Hate and NuT{% endblock %}
 
+{% block extra_head %}
+	<meta property="og:title" content="The Adventures of Hate and NuT" />
+	<meta property="og:image" content="{{ SITE_URL }}{% static "img/OG_image_home.jpg" %}" /> 
+	<meta property="og:description" content="A web comic set in the world of Ultima Online" /> 
+{% endblock %}
+
 {% block content %}
 	<div class="clearfix heading-wrap">
 		<h1>Latest</h1>
