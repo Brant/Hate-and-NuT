@@ -39,9 +39,9 @@
 	padding:0;
 }
 .pg-foot-wrap .social-icon{
-	width:32px;
-	height:32px;
-	background-size:32px;
+	width:42px;
+	height:42px;
+	background-size:42px;
 }
 
 @media all and (min-width:1024px){
