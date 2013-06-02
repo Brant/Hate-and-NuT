@@ -1,3 +1,37 @@
+/*
+ * Following/subscribing
+ */
+.social{
+	margin:-45px 0 0;
+	list-style:none;
+	padding:0;	
+	text-align:center;
+		
+}
+.social li{
+	margin:0 15px 0 0;
+	padding:0;
+	display:inline-block;
+}
+.social li:last-of-type{
+	margin:0;
+}
+.social-icon{
+	display:block;
+	width:64px;
+	height:64px;
+	
+}
+.social-rss{
+	background:url(img/rss.png) left top no-repeat;
+}
+.social-twitter{
+	background:url(img/twitter.png) left top no-repeat;
+}
+
+/*
+ * Sharing
+ */
 .share{
 	list-style:none;
 	margin:0 0 20px;
