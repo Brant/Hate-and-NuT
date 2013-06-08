@@ -6,13 +6,13 @@
 	<meta property="og:description" content="Hate and NuT #{{ comic.chronology }} - {{ comic.description }}" /> 
 {% endblock %}
 
-{% block title %}{{ comic.title }} {{ block.super }}{% endblock %}
+{% block title %}{{ comic.title }} {{ block.super }} | Webcomic #{{ comic.chronology }}{% endblock %}
 
 
 
 {% block content %}
 	<div class="clearfix heading-wrap">
-		<h1>Hate and Nut</h1>
+		<h1>Hate and Nut #{{ comic.chronology }}</h1>
 		<nav class="comic-nav">
 			<ul class="comic-nav-list">
 				<li class="comic-nav-list-item comic-nav-list-item-left">
