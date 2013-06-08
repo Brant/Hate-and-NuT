@@ -9,6 +9,7 @@
 		border-radius:20px;
 		border:8px solid #531112;
 	}
+	
 	h1{
 		font-size:1.8em;
 		margin:.8em 0;
@@ -94,6 +95,10 @@
 		margin:-65px 0 0;
 		max-width:76%;
 		float:left;
+	}
+	.non-comic .content{
+		max-width:none;
+		float:none;
 	}
 	.s{
 		float:right;
