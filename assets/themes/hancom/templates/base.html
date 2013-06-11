@@ -5,9 +5,10 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<title>{% block title %}| {{ SITE_NAME }}{% endblock %}</title>
 		
-		<meta name="description" content="{% block meta_description %}A web comic set in the world of Ultima Online{% endblock %}">
+		<meta name="description" content="{% block meta_description %}A webcomic about a couple of rutheless killers, set in the world of Ultima Online.{% endblock %}">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="apple-mobile-web-app-title" content="Hate and NuT">
+		<link rel="apple-touch-icon-precomposed" href="apple-touch-icon.png" />
 		
 		{% add_static "css" %}
 		
@@ -83,9 +84,9 @@
 			<div class="width">
 				<div class="pg clearfix">
 					{% block content_plus_ads %}
-						<div class="content clearfix">
+						<article class="content clearfix">
 							{% block content %}{% endblock %}
-						</div>
+						</article>
 						<div class="s">
 							<aside class="clearfix">
 								<ul class="social">
