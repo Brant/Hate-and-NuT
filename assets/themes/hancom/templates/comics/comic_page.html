@@ -1,5 +1,9 @@
 {% extends "base.html" %}
+
+{% load url from future %}
+
 {% block meta_description %}Hate and NuT webcomic issue #{{ comic.chronology }} - {{ comic.description }}{% endblock %}
+
 {% block extra_head %}
 	<meta property="og:title" content="Hate and NuT #{{ comic.chronology }}" />
 	<meta property="og:image" content="{{ SITE_URL }}{{ comic.preview_image_half.url }}" /> 
@@ -12,22 +16,39 @@
 
 {% block content %}
 	<div class="clearfix heading-wrap">
-		<h1>Hate and Nut #{{ comic.chronology }}</h1>
+		{% if comic.is_available_to_public %}
+			<h1>Hate and Nut #{{ comic.chronology }}</h1>
+		{% else %}
+			<h1 class="error">NOT PUBLIC YET (#{{ comic.chronology }})</h1>
+		{% endif %}
+		
 		<nav class="comic-nav">
 			<ul class="comic-nav-list">
 				<li class="comic-nav-list-item comic-nav-list-item-left">
-					{% if previous_comic %}
-						<a class="comic-nav-list-item-link" href="{{ previous_comic.get_absolute_url }}" title="Previous Comic"><span class="visuallyhidden">Previous</span><i class="icon-caret-left"></i></a>
+					{% if comic.is_available_to_public %}
+						{% if previous_comic %}
+							<a class="comic-nav-list-item-link" href="{{ previous_comic.get_absolute_url }}" title="Previous Comic"><span class="visuallyhidden">Previous</span><i class="icon-caret-left"></i></a>
+						{% else %}
+							<span class="visuallyhidden">Previous</span><i class="icon-caret-left"></i>
+						{% endif %}
 					{% else %}
-						<span class="visuallyhidden">Previous</span><i class="icon-caret-left"></i>
+						{% with comic.chronology|add:"-1" as PREVIOUS %}
+							<a class="comic-nav-list-item-link" href="{% url 'comic' comic_id=PREVIOUS %}" title="Previous Comic"><span class="visuallyhidden">Previous</span><i class="icon-caret-left"></i></a>
+						{% endwith %}
 					{% endif %}
 				</li>
 				
 				<li class="comic-nav-list-item comic-nav-list-item-right">
-					{% if next_comic %}
-						<a class="comic-nav-list-item-link" href="{{ next_comic.get_absolute_url }}" title="Next Comic"><span class="visuallyhidden">Next</span><i class="icon-caret-right"></i></a></li>
+					{% if comic.is_available_to_public %}
+						{% if next_comic %}
+							<a class="comic-nav-list-item-link" href="{{ next_comic.get_absolute_url }}" title="Next Comic"><span class="visuallyhidden">Next</span><i class="icon-caret-right"></i></a></li>
+						{% else %}
+							<span class="visuallyhidden">Next</span><i class="icon-caret-right"></i>
+						{% endif %}
 					{% else %}
-						<span class="visuallyhidden">Next</span><i class="icon-caret-right"></i>
+						{% with comic.chronology|add:"1" as NEXT %}
+							<a class="comic-nav-list-item-link" href="{% url 'comic' comic_id=NEXT %}" title="Next Comic"><span class="visuallyhidden">Next</span><i class="icon-caret-right"></i></a></li>
+						{% endwith %}
 					{% endif %}
 				</li>
 			</ul>

@@ -28,6 +28,9 @@ a:active{
 p{
 	margin:0 0 1em;
 }
+.error{
+	color:#d00;
+}
 .float-right{
 	float:right;
 }
