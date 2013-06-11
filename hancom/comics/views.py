@@ -10,28 +10,27 @@ from django.views.generic.base import View
 from django.core.exceptions import ObjectDoesNotExist
 
 from hancom.comics.models import Comic
+from hancom.comics.util import get_previous_next_comics
 
 
 def comic_page(request, comic_id):
     """
     A publishd comic
+    
+    comic_id is actually chronological sequence
     """
     comic_id = int(comic_id)
     
     try:
-        comic = Comic.objects.get(chronology=comic_id, published=True, date__lte=datetime.now())
+        comic = Comic.objects.get(chronology=comic_id, published=True)
     except ObjectDoesNotExist:
         raise Http404
     
-    try:
-        previous_comic = Comic.objects.filter(chronology__lt=comic_id, published=True, date__lte=datetime.now())[:1][0]
-    except IndexError:
-        previous_comic = None
+    if not comic.is_available_to_public():
+        if not request.user.is_authenticated():
+            raise Http404
     
-    try:
-        next_comic = Comic.objects.filter(chronology__gt=comic_id, published=True, date__lte=datetime.now()).order_by("chronology")[:1][0]
-    except IndexError:
-        next_comic = None
+    previous_comic, next_comic = get_previous_next_comics(comic_id)
         
     response_data = {"comic": comic, "previous_comic": previous_comic, "next_comic": next_comic}
     

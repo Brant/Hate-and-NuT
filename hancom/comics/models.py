@@ -1,7 +1,10 @@
 """
 Comic models
 """
+from datetime import datetime
+
 from django.db import models
+from django.utils import timezone
 
 from noodles.models import TitleDateSlug, HalfQuarterAssetsMixin
 
@@ -15,6 +18,17 @@ class Comic(TitleDateSlug, HalfQuarterAssetsMixin):
     chronology = models.IntegerField(blank=True, unique=True)
     preview_image = models.ImageField(upload_to="images/preview", help_text="500x500")
     description = models.TextField(help_text="Will show up in feed, meta description, and OG-driven previews")
+    
+    def is_available_to_public(self):
+        """
+        Calculate whether or not the comic is
+        publicly available - mostly tied to date
+        """
+        if not self.published:
+            return False
+        
+        return self.date <= timezone.now()
+            
     
     class Meta:
         """
