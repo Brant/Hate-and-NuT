@@ -13,6 +13,7 @@
 	h1{
 		font-size:1.8em;
 		margin:.8em 0;
+		font-weight:bold;
 	}
 	.pg-head-wrap{
 		background:#070707;
@@ -62,6 +63,13 @@
 	.pg-foot-wrap{
 		padding:55px 10px 10px;
 	}
+	.heading-404{
+		background:#fefefe;
+		padding:10px 20px;
+		border-radius:20px;
+		border:8px solid #531112;
+		margin:0;
+	}
 	
 }
 
@@ -72,6 +80,15 @@
 	.pg-head-wrap{
 		
 		padding:5px 0 60px 0;
+	}
+	.pg-404 .pg-head-wrap{
+		padding:5px 0;
+	}
+	.heading-404{
+		float:left;
+	}
+	.image-404{
+		float:left;
 	}
 	h1{
 		margin:1em 0;
