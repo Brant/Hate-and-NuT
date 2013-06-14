@@ -3,6 +3,11 @@
 {% block title %}The Adventures of Hate and NuT | Latest Webcomic{% endblock %}
 
 {% block extra_head %}{% load static from staticfiles %}
+	
+	{% if previous_comic %}
+		<link rel="prefetch" href="{{ previous_comic.get_absolute_url }}" />
+	{% endif %}
+	
 	<meta property="og:title" content="The Adventures of Hate and NuT" />
 	<meta property="og:image" content="{{ SITE_URL }}{% static "img/OG_image_home.jpg" %}" /> 
 	<meta property="og:description" content="A webcomic about a couple of rutheless killers, set in the world of Ultima Online." /> 

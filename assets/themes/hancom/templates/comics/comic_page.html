@@ -5,14 +5,21 @@
 {% block meta_description %}Hate and NuT webcomic issue #{{ comic.chronology }} - {{ comic.description }}{% endblock %}
 
 {% block extra_head %}
+	
+	{% if previous_comic %}
+		<link rel="prefetch" href="{{ previous_comic.get_absolute_url }}" />
+	{% else %}
+		{% if next_comic %}
+			<link rel="prefetch" href="{{ next_comic.get_absolute_url }}" />
+		{% endif %}	
+	{% endif %}
+
 	<meta property="og:title" content="Hate and NuT #{{ comic.chronology }}" />
 	<meta property="og:image" content="{{ SITE_URL }}{{ comic.preview_image_half.url }}" /> 
 	<meta property="og:description" content="Hate and NuT #{{ comic.chronology }} - {{ comic.description }}" /> 
 {% endblock %}
 
 {% block title %}{{ comic.title }} {{ block.super }} | Webcomic #{{ comic.chronology }}{% endblock %}
-
-
 
 {% block content %}
 	<div class="clearfix heading-wrap">
