@@ -74,11 +74,7 @@
 }
 
 @media all and (min-width:1024px){
-	html{
-		
-	}
 	.pg-head-wrap{
-		
 		padding:5px 0 60px 0;
 	}
 	.pg-404 .pg-head-wrap{
@@ -143,13 +139,6 @@
 }
 
 @media all and (min-width:1280px){
-	.side-banner-medium{
-		
-	}
-	.side-rectangle-ad{
-		display:block;
-		margin:2em 0 0;
-	}
 	.width{
 		max-width:1400px;
 	}

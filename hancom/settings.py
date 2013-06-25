@@ -157,6 +157,7 @@ INSTALLED_APPS = (
     
     'hancom.comics',
     'hancom.website',
+    'hancom.sponsorship',
     
 )
 

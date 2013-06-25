@@ -1,0 +1,32 @@
+[
+{
+     "pk": 1, 
+     "model": "sponsorship.adtype", 
+     "fields": {
+          "width": 160, 
+          "height": 600, 
+          "slug": "wide-skyscraper", 
+          "name": "Wide Skyscraper"
+     }
+},
+{
+     "pk": 2, 
+     "model": "sponsorship.adtype", 
+     "fields": {
+          "width": 728, 
+          "height": 90, 
+          "slug": "leaderboard", 
+          "name": "Leaderboard"
+     }
+},
+{
+     "pk": 3, 
+     "model": "sponsorship.adtype", 
+     "fields": {
+          "width": 320, 
+          "height": 50, 
+          "slug": "mobile-leaderboard", 
+          "name": "Mobile Leaderboard"
+     }
+}
+]
