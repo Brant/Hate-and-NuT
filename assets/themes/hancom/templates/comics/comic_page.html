@@ -24,7 +24,7 @@
 {% block content %}
 	<div class="clearfix heading-wrap">
 		{% if comic.is_available_to_public %}
-			<h1>Hate and Nut #{{ comic.chronology }}</h1>
+			<h1 itemprop="name">Hate and Nut #{{ comic.chronology }}</h1>
 		{% else %}
 			<h1 class="error">NOT PUBLIC YET (#{{ comic.chronology }})</h1>
 		{% endif %}
@@ -61,7 +61,8 @@
 			</ul>
 		</nav>
 	</div>
-	<img src="{{ comic.comic_image.url }}" class="comic" alt="Comic entitled '{{ comic.title }}'" />
+	<img src="{{ comic.comic_image.url }}" class="comic" alt="Comic entitled '{{ comic.title }}'"  itemprop="image" />
 	<p>{{ comic.date|date }}</p>
+	<p class="hidden" itemprop="datePublished">{{ comic.date|date:"Y-m-d" }}</p>
 	{% include "social/comic_share_buttons.html" %}
 {% endblock %}

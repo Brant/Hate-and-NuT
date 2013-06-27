@@ -51,7 +51,7 @@
 					
 
 <script type="text/javascript"><!--
-	if (myViewport > 748){
+	if (myViewport >= 748){
 		document.write('<aside class="banner-ad header-ad sponsorship-ad-wrapper" data-sponsorship="{% url "sponsorship_ad_by_type" type_slug="leaderboard" %}"><\/aside>');
 	}
 	else if (myViewport < 748){
@@ -68,7 +68,7 @@
 			<div class="width">
 				<div class="pg clearfix">
 					{% block content_plus_ads %}
-						<article class="content clearfix">
+						<article class="content clearfix" itemscope itemtype="http://schema.org/CreativeWork">
 							{% block content %}{% endblock %}
 						</article>
 						<div class="s">
