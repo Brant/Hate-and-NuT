@@ -24,6 +24,8 @@ class CampaignAdmin(admin.ModelAdmin):
     Configure campaign
     """
     inlines = [AdInlineAdmin, ]
+    list_display = ["title", "active", "start_date", "end_date", ]
+    list_editable = ["active", ] 
 
 
 admin.site.register(Campaign, CampaignAdmin)

@@ -22,6 +22,7 @@ sitemaps = {"website": WebsiteSitemap, "comics": ComicsSitemap, }
 
 urlpatterns = patterns('',
     url(r'^$', 'hancom.website.views.homepage', name='home'),
+    url(r'^donate/$', 'hancom.website.views.donate', name='donate'),
 #     url(r'about/$', TemplateView.as_view(template_name="website/about.html"), name="about"),
     (r'^comic/', include("hancom.comics.urls")),
     (r'^sponsorship/', include("hancom.sponsorship.urls")),

@@ -11,6 +11,12 @@ from django.views.generic.base import View
 from hancom.comics.models import Comic
 from hancom.website.queries import published_comics
 
+
+def donate(request):
+    response_data = {}
+    return render_to_response("website/donate.html", response_data, context_instance=RequestContext(request))
+
+
 def homepage(request):
     """
     Website homepage

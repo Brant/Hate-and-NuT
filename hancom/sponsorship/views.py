@@ -23,7 +23,8 @@ def ad_by_type(request, type_slug):
         Q(campaign__start_date__gte=datetime.now()) | Q(campaign__start_date__isnull=True), 
         Q(campaign__end_date__lte=datetime.now()) | Q(campaign__end_date__isnull=True),
         Q(start_date__gte=datetime.now()) | Q(start_date__isnull=True),
-        Q(end_date__lte=datetime.now()) | Q(end_date__isnull=True), 
+        Q(end_date__lte=datetime.now()) | Q(end_date__isnull=True),
+        campaign__active=True, active=True,
         type__slug=type_slug
     )
     

@@ -1,0 +1,35 @@
+/*
+ * General Button Styles
+ */
+.button{
+	background:#3690cf;
+	color:#fefefe;
+	padding:.6em .8em;
+	border-radius:100px;
+	display:inline-block;
+	text-align:center;
+	line-height:.9em;
+	border:solid 3px;
+}
+.button-elaborate{
+	font-size:.6em;
+}
+/*
+ * Button Colors
+ */
+.button-blue{
+	background:#3690cf;
+}
+.button-red{
+	
+}
+.button-orange{
+	
+}
+
+/*
+ * Specific buttons
+ */
+.donate-button{
+	font-size:1.1em;
+}

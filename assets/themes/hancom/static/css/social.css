@@ -3,14 +3,13 @@
  * Following/subscribing
  */
 .social{
-	margin:-45px 0 0;
+	margin:2em 0 1.5em;
 	list-style:none;
 	padding:0;	
 	text-align:center;
-		
 }
 .social li{
-	margin:0 15px 0 0;
+	margin:0 10px 0 0;
 	padding:0;
 	display:inline-block;
 }
@@ -45,9 +44,7 @@
 }
 
 @media all and (min-width:1024px){
-	.pg-foot-wrap .social{
-		display:none;
-	}
+	
 }
 
 /*
@@ -55,7 +52,7 @@
  */
 .share{
 	list-style:none;
-	margin:0 0 20px;
+	margin:0;
 	padding:0;
 	
 }
