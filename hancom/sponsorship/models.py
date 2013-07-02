@@ -5,6 +5,17 @@ from django.db import models
 from noodles.models import TitleDateSlug, NameSlugActive, LittleSlugger, NameSlug
 
 
+class SponsorshipInquiry(models.Model):
+    """
+    
+    """
+    name = models.CharField(max_length=300)
+    email = models.EmailField(max_length=300)
+    type = models.CharField(max_length=1, choices=(("A", "Advertising"), ("S", "Sponsorship")))
+    description = models.TextField()
+    
+    
+
 class AdType(NameSlug):
     """
     Represents an ad type

@@ -1,0 +1,20 @@
+{% extends "layouts/full_width.html" %}
+
+{% load url from future %}
+
+{% block title %}Webcomic Archive {{ block.super }}{% endblock %}
+
+{% block meta_description %}{% endblock %}
+{% block body_class %}non-comic{% endblock %}
+
+{% block content %}
+	
+	<h1>Hate and NuT Archives</h1>
+	{% for comic in comics %}
+		<article class="comic-archive-article">
+			<h2 class="comic-archive-heading"><a href="{{ comic.get_absolute_url }}">{{ comic.title }}</a></h2>
+			<img class="comic-archive-image" src="{{ comic.preview_image_quarter.url }}" />
+		</article>
+	{% endfor %}
+	
+{% endblock %}

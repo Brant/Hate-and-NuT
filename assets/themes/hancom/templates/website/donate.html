@@ -1,26 +1,23 @@
-{% extends "base.html" %}{% load static from staticfiles %}
+{% extends "layouts/two_column.html" %}
+
+{% load static from staticfiles %}
 
 {% block title %}Donate {{ block.super }}{% endblock %}
 
-{% block body_class %}non-comic{% endblock %}
-
-{% block content_plus_ads %}
-<div class="content clearfix">
-	<div class="two-col-right">
-		<hgroup>
-			<h1>Enjoying the comic?</h1>
-			<h2>Contributions are much appreciated.</h2>
-		</hgroup>
-		<p>I love making this webcomic and I want to keep it up.</p>
-		<p>Your donations help make it happen!</p>
-		<form>
-			<p><label>$</label> <input value="2.00" type="text" /><input type="submit" value="Donate" /></p>
-		</form>
-	</div>
-	
-	<div class="two-col-left">
-		<img src="{% static "img/hate-yell.jpg" %}" />
-	</div>
-</div>	
+{% block right_column %}
+	<hgroup>
+		<h1>Enjoying the comic?</h1>
+		<h2>Contributions are much appreciated.</h2>
+	</hgroup>
+	<p>I love making this webcomic and I want to keep it up.</p>
+	<p>Your donations help make it happen!</p>
+	<form>
+		<p><label>$</label> <input value="2.00" type="text" /><input type="submit" value="Donate" /></p>
+	</form>
 {% endblock %}
+
+{% block left_column %}
+	<img src="{% static "img/hate-yell.jpg" %}" />
+{% endblock %}
+
 {% block footer_content %}{% endblock %}

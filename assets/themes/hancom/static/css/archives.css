@@ -1,0 +1,13 @@
+.comic-archive-article{
+	float:left;
+	margin:0 20px 50px 0;
+	
+	width:40%;
+}
+.comic-archive-heading{
+	width:80%;
+	
+}
+.comic-archive-image{
+	height:100px;
+}

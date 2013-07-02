@@ -13,6 +13,14 @@ from hancom.comics.models import Comic
 from hancom.comics.util import get_previous_next_comics
 
 
+def archive_index(request):
+    """
+    """
+    comics = Comic.objects.filter(published=True, date__lte=datetime.now())
+    response_data = {"comics": comics}
+    return render_to_response("comics/archive_index.html", response_data, context_instance=RequestContext(request))
+
+
 def comic_page(request, comic_id):
     """
     A publishd comic

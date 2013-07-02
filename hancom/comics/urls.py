@@ -6,5 +6,5 @@ from django.conf.urls import patterns, include, url
 
 urlpatterns = patterns('hancom.comics.views',
     url(r'^(?P<comic_id>\d+)/$', 'comic_page', name='comic'),
-    url(r'^archive/$', 'archive', name='archive'),
+    url(r'^archive/$', 'archive_index', name='archive_index'),
 )

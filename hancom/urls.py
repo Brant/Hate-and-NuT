@@ -23,7 +23,7 @@ sitemaps = {"website": WebsiteSitemap, "comics": ComicsSitemap, }
 urlpatterns = patterns('',
     url(r'^$', 'hancom.website.views.homepage', name='home'),
     url(r'^donate/$', 'hancom.website.views.donate', name='donate'),
-#     url(r'about/$', TemplateView.as_view(template_name="website/about.html"), name="about"),
+    url(r'^advertise/$', TemplateView.as_view(template_name="website/advertise.html"), name='become_an_advertiser'),
     (r'^comic/', include("hancom.comics.urls")),
     (r'^sponsorship/', include("hancom.sponsorship.urls")),
     # Uncomment the next line to enable the admin:

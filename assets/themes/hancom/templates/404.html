@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "layouts/full_width.html" %}
 
 {% load static from staticfiles %}
 
@@ -6,7 +6,7 @@
 
 {% block body_class %}pg-404{% endblock %}
 
-{% block content_plus_ads %}
+{% block content %}
 	<h1 class="heading-404">404 - Page Not Found</h1>
 	<img class="image-404" src="{% static "img/fingers.png" %}" />
 {% endblock %}
