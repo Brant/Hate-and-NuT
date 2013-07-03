@@ -1,0 +1,6 @@
+{% load url from future %}
+<form method="post" action="{% url "sponsorship_save_inquiry" %}">
+	{% csrf_token %}
+	{{ form.as_p }}
+	<p class="clearfix"><input type="submit" value="Send" class="float-right button button-red" /></p>
+</form>

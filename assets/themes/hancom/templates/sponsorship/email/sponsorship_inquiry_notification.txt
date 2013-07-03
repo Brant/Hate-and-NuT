@@ -1,0 +1,5 @@
+Name: {{ inquiry.name }}
+Email: {{ inquiry.email }}
+Type: {{ inquiry.get_type_display }}
+
+{{ inquiry.description }}

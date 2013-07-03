@@ -8,7 +8,6 @@
 {% block body_class %}non-comic{% endblock %}
 
 {% block content %}
-	
 	<h1>Hate and NuT Archives</h1>
 	{% for comic in comics %}
 		<article class="comic-archive-article">
@@ -16,5 +15,4 @@
 			<img class="comic-archive-image" src="{{ comic.preview_image_quarter.url }}" />
 		</article>
 	{% endfor %}
-	
 {% endblock %}

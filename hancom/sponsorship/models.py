@@ -7,14 +7,24 @@ from noodles.models import TitleDateSlug, NameSlugActive, LittleSlugger, NameSlu
 
 class SponsorshipInquiry(models.Model):
     """
-    
+    Represents an iquiry to sponsor Hate and NuT
+        - advertising
+        - sponsoring the feed
     """
     name = models.CharField(max_length=300)
     email = models.EmailField(max_length=300)
     type = models.CharField(max_length=1, choices=(("A", "Advertising"), ("S", "Sponsorship")))
     description = models.TextField()
+    date = models.DateTimeField(auto_now_add=True)
     
-    
+    class Meta:
+        """
+        Django Metadata
+        """
+        ordering = ["-date", ]
+        get_latest_by = "date"
+        verbose_name_plural = "Sponsorship Inquiries"
+
 
 class AdType(NameSlug):
     """

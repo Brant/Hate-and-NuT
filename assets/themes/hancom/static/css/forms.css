@@ -1,0 +1,42 @@
+form input,
+form textarea{
+	font-size:1.3em;
+}
+label{
+	display:block;
+	font-size:.9em;
+	margin-left:15px;
+}
+input[type=text],
+input[type=email],
+textarea{
+	display:block;
+	width:94%;
+	padding:5px 3%;
+	border:solid 1px #b7b7b7;
+	border-radius:15px;
+}
+textarea{
+	height:150px;
+}
+.errorlist{
+	list-style:none;
+	margin:0;
+	padding:0;
+	color:#c00;
+}
+.errorlist+p label{
+	color:#c00;
+}
+.errorlist+p input,
+.errorlist+p textarea{
+	border-color:#c00;
+}
+.helptext{
+	
+	display:block;
+	font-size:.7em;
+	margin:5px 0 5px 15px;
+	color:#777;
+	
+}

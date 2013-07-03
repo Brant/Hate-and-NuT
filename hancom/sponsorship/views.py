@@ -1,16 +1,60 @@
+"""
+Sponsorship Views
+"""
 from random import choice
 from datetime import datetime
 
 from django.db.models import Q
-
 from django.http import HttpResponseRedirect, Http404, HttpResponse
 from django.shortcuts import render_to_response
 from django.template import RequestContext
-from django.contrib.auth.decorators import login_required
-from django.views.generic.base import View
+from django.template.loader import render_to_string
+from django.core.mail import mail_admins
 
 from hancom.sponsorship.models import Ad
+from hancom.sponsorship.forms import InquiryForm
 
+
+def save_inquiry(request):
+    """
+    Handle POST data (via ajax) for SponsorshipInquiry forms
+    """
+    if not request.is_ajax():
+        raise Http404
+    
+    if not request.method == "POST":
+        raise Http404
+    
+    form = InquiryForm(request.POST)
+    
+    if form.is_valid():
+        inquiry = form.save()
+        mail_admins(subject="%s Inquiry" % inquiry.get_type_display(), message=render_to_string("sponsorship/email/sponsorship_inquiry_notification.txt", {"inquiry": inquiry}))
+        return render_to_response("sponsorship/forms/inquiry_thanks.html", {}, context_instance=RequestContext(request))
+    
+    return render_to_response("sponsorship/forms/inquiry.html", {"form": form}, context_instance=RequestContext(request))
+
+
+def get_advertise_form(request):
+    """
+    Get the form for inquiring about advertising
+    """
+    if not request.is_ajax():
+        raise Http404
+    
+    form = InquiryForm(initial={"type": "A"})
+    return render_to_response("sponsorship/forms/inquiry.html", {"form": form}, context_instance=RequestContext(request))
+
+
+def get_sponsor_form(request):
+    """
+    Get the form for inquiring about becoming a sponsor
+    """
+    if not request.is_ajax():
+        raise Http404
+    
+    form = InquiryForm(initial={"type": "S"})
+    return render_to_response("sponsorship/forms/inquiry.html", {"form": form}, context_instance=RequestContext(request))
 
 def ad_by_type(request, type_slug):
     """

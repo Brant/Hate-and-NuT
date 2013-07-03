@@ -1,0 +1,8 @@
+{% extends "layouts/two_column.html" %}
+
+{% block title %}Sponsor {{ block.super }}{% endblock %}
+
+{% block right_column %}
+	<h1>Interested in Becoming a Sponsor?</h1>
+	<div data-form="{% url "sponsorship_sponsor_form" %}"></div>
+{% endblock %}
