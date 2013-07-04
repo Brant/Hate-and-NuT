@@ -5,7 +5,8 @@ body{
 	font-size:1.2em;
 	padding:0 0 50px;
 	color:#1f1f1f;
-	
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+	font-weight: 300;
 }
 h1, h2, h3, h4{
 	font-family:'dirtyhousemedium';
@@ -14,7 +15,7 @@ h1, h2, h3, h4{
 .professional .content h2,
 .professional .content h3,
 .professional .content h4{
-	font-family:Verdana;
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 	font-weight:bold;
 }
 .professional .content h1{
