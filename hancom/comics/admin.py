@@ -13,6 +13,7 @@ class ComicAdmin(admin.ModelAdmin):
     list_display = ["chronology", "title", "date", "published", ]
     list_display_links = ["title", ]
     list_filter = ["published", ]
+    list_editable = ["published", ]
 
 
 admin.site.register(Comic, ComicAdmin)

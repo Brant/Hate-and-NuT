@@ -10,6 +10,17 @@ body{
 h1, h2, h3, h4{
 	font-family:'dirtyhousemedium';
 }
+.professional .content h1,
+.professional .content h2,
+.professional .content h3,
+.professional .content h4{
+	font-family:Verdana;
+	font-weight:bold;
+}
+.professional .content h1{
+	margin:.4em 0;
+	font-size:1.2em;
+}
 h1{
 	margin:.5em 0;
 	font-size:1.4em;

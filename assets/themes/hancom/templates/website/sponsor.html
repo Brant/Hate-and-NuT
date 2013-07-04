@@ -1,8 +1,18 @@
 {% extends "layouts/two_column.html" %}
 
 {% block title %}Sponsor {{ block.super }}{% endblock %}
-
+{% block body_class %}{{ block.super }} professional{% endblock %}
 {% block right_column %}
-	<h1>Interested in Becoming a Sponsor?</h1>
+	
+	<h1>Let's Chat</h1>
 	<div data-form="{% url "sponsorship_sponsor_form" %}"></div>
+{% endblock %}
+
+{% block left_column %}
+	<h1>Interested in Becoming a Sponsor?</h1>
+	<p>You'll have a chance to reach the Hate and NuT audience in two ways.</p>
+	<h2>1) The Hate and NuT Feed</h2>
+	<p>Sponsors get a blurb and a link that is inserted right into the Hate and NuT feed.</p>
+	<h2>2) Social Channels</h2>
+	<p>Sponsors will also have their product/service mentioned on the various social channels, for those who follow along there.</p>
 {% endblock %}

@@ -1,8 +1,17 @@
 {% extends "layouts/two_column.html" %}
 
+{% load static from staticfiles %}
+
 {% block title %}Advertise {{ block.super }}{% endblock %}
+
+{% block body_class %}{{ block.super }} professional{% endblock %}
 
 {% block right_column %}
 	<h1>Interested in Advertising on Hate and NuT?</h1>
+	<p>Great rates, great placement!</p>
 	<div data-form="{% url "sponsorship_advertise_form" %}"></div>
+{% endblock %}
+{% block left_column %}
+	<p><img src="{% static "img/adspots-m.jpg" %}" alt="Placement for ads on Hate and NuT Website" /></p>
+	
 {% endblock %}

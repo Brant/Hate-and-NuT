@@ -13,6 +13,10 @@
 		margin:.8em 0;
 		font-weight:bold;
 	}
+	.professional .content h1{
+		margin:.5em 0;
+		font-size:1.5em;
+	}
 	.pg-head-wrap{
 		background:#070707;
 		padding:0 0 10px 0;
@@ -91,13 +95,13 @@
 	}
 	.two-col-right{
 		float:right;
-		width:48%;
-		padding:1%;
+		width:46%;
+		padding:2%;
 	}
 	.two-col-left{
 		float:left;
-		width:48%;
-		padding:1%;
+		width:46%;
+		padding:2%;
 	}
 	.pg-head-wrap{
 		padding:5px 0 60px 0;
