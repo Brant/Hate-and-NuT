@@ -63,8 +63,8 @@ def ad_by_type(request, type_slug):
     """
     
     """
-    if not request.is_ajax():
-        raise Http404
+#     if not request.is_ajax():
+#         raise Http404
     
     possible_ads = Ad.objects.prefetch_related("type", "campaign").filter(
         Q(campaign__start_date__gte=datetime.now()) | Q(campaign__start_date__isnull=True), 
