@@ -11,3 +11,10 @@
 .comic-archive-image{
 	height:100px;
 }
+.comic-archive-heading a,
+.comic-archive-heading a:hover,
+.comic-archive-heading a:link
+.comic-archive-heading a:active
+.comic-archive-heading a:visited{
+	color:#9a1c20;
+}
