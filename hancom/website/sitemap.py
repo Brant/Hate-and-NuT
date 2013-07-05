@@ -29,7 +29,7 @@ class WebsiteSitemap(Sitemap):
         return [
             Page("Homepage", reverse("home"), published_comics()[0].date, "1.0", "daily"),
             Page("Archive", reverse("archive_index"), published_comics()[0].date, ".7", "weekly"),
-            Page("Donate", reverse("donate"), date(2013, 7, 1), ".5", "monthly"),
+#             Page("Donate", reverse("donate"), date(2013, 7, 1), ".5", "monthly"),
             Page("Advertise", reverse("become_an_advertiser"), date(2013, 7, 1), ".5", "monthly"),
             Page("Sponsor", reverse("become_a_sponsor"), date(2013, 7, 1), ".5", "monthly"),
         ]
