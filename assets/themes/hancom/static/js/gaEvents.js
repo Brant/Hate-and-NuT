@@ -38,7 +38,6 @@ $(function(){
 	});
 	
 	$(".pg-foot-wrap a").click(function(ev){
-		ev.preventDefault();
 		pushAnalyticsEvent("Navigate", "Footer", $(ev.target).text());
 	});
 	
