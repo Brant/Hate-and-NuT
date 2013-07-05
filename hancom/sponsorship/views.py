@@ -10,6 +10,7 @@ from django.shortcuts import render_to_response
 from django.template import RequestContext
 from django.template.loader import render_to_string
 from django.core.mail import mail_admins
+from django.views.decorators.cache import never_cache
 
 from hancom.sponsorship.models import Ad
 from hancom.sponsorship.forms import InquiryForm
@@ -56,6 +57,8 @@ def get_sponsor_form(request):
     form = InquiryForm(initial={"type": "S"})
     return render_to_response("sponsorship/forms/inquiry.html", {"form": form}, context_instance=RequestContext(request))
 
+
+@never_cache
 def ad_by_type(request, type_slug):
     """
     
