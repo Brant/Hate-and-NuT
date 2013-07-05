@@ -1,9 +1,9 @@
 {% extends "layouts/two_column.html" %}
-
+{% load url from future %}
 {% block title %}Sponsor {{ block.super }}{% endblock %}
 {% block body_class %}{{ block.super }} professional{% endblock %}
+
 {% block right_column %}
-	
 	<h1>Let's Chat</h1>
 	<div data-form="{% url "sponsorship_sponsor_form" %}"></div>
 {% endblock %}
