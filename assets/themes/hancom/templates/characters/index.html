@@ -1,0 +1,22 @@
+{% extends "characters/base.html" %}
+{% load markup %}
+{% block title %}Characters {{ block.super }}{% endblock %}
+
+{% block body_class %}pg-404{% endblock %}
+
+{% block content %}
+	<h1 class="heading-404">The Cast</h1>
+	<ul class="character-list">
+		{% for character in characters %}
+			<li class="character-list-item clearfix">
+				<h2 class="character-name">{{ character.name }}</h2>
+				<img class="character-image" src="{{ character.image.url }}" alt="Picture of {{ character.name }}" />
+				<div class="character-description">
+					{% autoescape off %}
+						{{ character.description|markdown }}
+					{% endautoescape %}
+				</div>
+			</li>
+		{% endfor %}
+	</ul>
+{% endblock %}

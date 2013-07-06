@@ -66,11 +66,12 @@
 		padding:55px 25px 10px;
 	}
 	.heading-404{
-		background:#fefefe;
-		padding:10px 20px;
-		border-radius:20px;
-		border:8px solid #531112;
-		margin:0;
+		text-shadow:
+			-2px -2px 0 #f2f2f2,  
+		   	2px -2px 0 #f2f2f2,
+		    -2px 2px 0 #f2f2f2,
+		     2px 2px 0 #f2f2f2;
+		
 	}
 	.pg-head-nav .button-elaborate{
 		display:inline;
@@ -87,6 +88,34 @@
 	.donate-button{
 		font-size:1.3em;
 	}
+	
+	.character-list-item{
+		margin:0 0 2em;
+	}
+	.character-name{
+		font-size:2.5em;
+		position:absolute;
+		top:0;
+		left:39%;
+		text-shadow:
+		-2px -2px 0 #f2f2f2,  
+	   	2px -2px 0 #f2f2f2,
+	    -2px 2px 0 #f2f2f2,
+	     2px 2px 0 #f2f2f2;
+	}
+	.character-image{
+		width:30%;
+		float:left;
+		margin:0 5% 1em 0;
+		border:solid 8px #531112;
+		padding:1%;
+		background:#fff;
+		border-radius:8px;
+	}
+	.character-description{
+		margin:3.5em 0 0;
+	}
+
 }
 
 @media all and (min-width:1024px){
@@ -109,9 +138,7 @@
 	.pg-404 .pg-head-wrap{
 		padding:5px 0;
 	}
-	.heading-404{
-		float:left;
-	}
+	
 	.image-404{
 		float:left;
 	}
