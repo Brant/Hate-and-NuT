@@ -24,9 +24,12 @@ $(function(){
 	
 	var thisPath = (window.location.pathname + window.location.search);
 	
-	$(".sponsorship-ad-wrapper").delegate(".sponsorship-ad", "click", function(ev){
-		var clicked = $(this);
-		pushAnalyticsEvent("Ad Click", clicked.data("data-sponsorship-ad-code"), thisPath);
+	$(".sponsorship-ad-wrapper").each(function(){
+		var adWrapper = $(this);
+		adWrapper.delegate(".sponsorship-ad", "click", function(event){
+			var clicked = $(this);
+			pushAnalyticsEvent("Ad Click", clicked.data("data-sponsorship-ad-code"), thisPath);
+		});
 	});
 	
 	$(".comic-nav-list-item-left").click(function(){
