@@ -6,6 +6,11 @@
 	color:#9a1c20;
 	font-weight:bold;	
 }
+sup a,
+sup a:hover,
+sup a:visited,
+sup a:link,
+sup a:active,
 .footnotes a,
 .footnotes a:hover,
 .footnotes a:link,
