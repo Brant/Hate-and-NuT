@@ -1,0 +1,15 @@
+#foot-1:target,
+#foot-2:target,
+#foot-3:target,
+#foot-4:target,
+#foot-5:target{
+	color:#9a1c20;
+	font-weight:bold;	
+}
+.footnotes a,
+.footnotes a:hover,
+.footnotes a:link,
+.footnotes a:active,
+.footnotes a:visited{
+	color:#9a1c20;
+}
