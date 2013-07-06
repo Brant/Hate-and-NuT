@@ -12,7 +12,7 @@
 	{% for comic in comics %}
 		<article class="comic-archive-article">
 			<h2 class="comic-archive-heading"><a href="{{ comic.get_absolute_url }}">{{ comic.title }}</a></h2>
-			<img class="comic-archive-image" src="{{ comic.preview_image_quarter.url }}" />
+			<a href="{{ comic.get_absolute_url }}"><img class="comic-archive-image" src="{{ comic.preview_image_quarter.url }}" /></a>
 		</article>
 	{% endfor %}
 {% endblock %}

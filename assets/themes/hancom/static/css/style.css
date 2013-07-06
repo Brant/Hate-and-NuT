@@ -246,3 +246,17 @@ p{
 	float:none;
 	width:auto;
 }
+@media all and (max-width:747px){
+	.smallscreen-clearfix:before,
+	.smallscreen-clearfix:after {
+	    content: " "; /* 1 */
+	    display: table; /* 2 */
+	}
+	
+	.smallscreen-clearfix:after {
+	    clear: both;
+	}
+	.smallscreen-clearfix {
+	    *zoom: 1;
+	}
+}

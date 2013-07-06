@@ -102,22 +102,23 @@
 			
 			<div class="clearfix">
 				{% block footer_content %}
-				<nav class="foot-section">
-						<h2><span class="underlined-heading">Support the Comic</span></h2>
-						<ul>
-							<li><a href="{% url "become_an_advertiser" %}">Advertise</a></li>
-							
-							<li><a href="{% url "become_a_sponsor" %}">Sponsor</a></li>
-						</ul>
-					</nav>
-					<nav class="foot-section">
-						<h2><span class="underlined-heading">Hate and NuT</span></h2>
-						<ul>
-							<li><a href="{% url "archive_index" %}">Archive</a></li>
-							
-						</ul>
-					</nav>
-					
+					<div class="smallscreen-clearfix">
+						<nav class="foot-section">
+							<h2><span class="underlined-heading">Support the Comic</span></h2>
+							<ul>
+								<li><a href="{% url "become_an_advertiser" %}">Advertise</a></li>
+								
+								<li><a href="{% url "become_a_sponsor" %}">Sponsor</a></li>
+							</ul>
+						</nav>
+						<nav class="foot-section">
+							<h2><span class="underlined-heading">Hate and NuT</span></h2>
+							<ul>
+								<li><a href="{% url "archive_index" %}">Archive</a></li>
+								<li><a href="#">Characters</a></li>
+							</ul>
+						</nav>
+					</div>
 					<nav class="foot-section">
 						<h2><span class="underlined-heading">Follow Along</span></h2>
 						<ul>
