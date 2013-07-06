@@ -91,6 +91,7 @@
 	
 	.character-list-item{
 		margin:0 0 2em;
+		font-weight:bold;
 	}
 	.character-name{
 		font-size:2.5em;
