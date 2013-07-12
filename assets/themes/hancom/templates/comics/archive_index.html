@@ -9,10 +9,30 @@
 
 {% block content %}
 	<h1>Hate and NuT Archives</h1>
-	{% for comic in comics %}
-		<article class="comic-archive-article">
-			<h2 class="comic-archive-heading"><a href="{{ comic.get_absolute_url }}">{{ comic.title }}</a></h2>
-			<a href="{{ comic.get_absolute_url }}"><img class="comic-archive-image" src="{{ comic.preview_image_quarter.url }}" /></a>
-		</article>
+	
+	{% for archive in archives %}
+		<h2>{{ archive|date:"F Y" }}</h2>
+		{% if forloop.first %}
+			<section class="clearfix">		
+				{% for comic in comics %}
+					{% if comic.date.month == archive.month and comic.date.year == comic.date.year %}
+						<article class="comic-archive-article">
+							<h2 class="comic-archive-heading"><a href="{{ comic.get_absolute_url }}">{{ comic.title }}</a></h2>
+							<a href="{{ comic.get_absolute_url }}"><img class="comic-archive-image" src="{{ comic.preview_image_half.url }}" /></a>
+						</article>
+					{% endif %}
+				{% endfor %}
+			</section>
+		{% else %}
+			<ul>
+				{% for comic in comics %}
+					{% if comic.date.month == archive.month and comic.date.year == comic.date.year %}
+						<li><a href="{{ comic.get_absolute_url }}">{{ comic.title }}</a></li>
+					{% endif %}
+				{% endfor %}
+			</ul>
+		{% endif %}
+		
 	{% endfor %}
+	
 {% endblock %}

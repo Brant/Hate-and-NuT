@@ -88,6 +88,15 @@
 	.donate-button{
 		font-size:1.3em;
 	}
+	.donate-button,
+	.donate-button:hover,
+	.donate-button:link,
+	.donate-button:visited,
+	.donate-button:active{
+		color:#fefefe;
+	}
+	
+
 	
 	.character-list-item{
 		margin:0 0 2em;
@@ -138,7 +147,17 @@
 	.footnotes a:link,
 	.footnotes a:active,
 	.footnotes a:visited{
-		color:#222;
+		color:#272727;
+	}
+	.comic-archive-article{
+		max-width:20%;
+		margin:0 3% 2% 0;
+	}
+	.comic-archive-article:nth-of-type(2n){
+		margin:0 3% 2% 0;
+	}
+	.comic-archive-article:nth-of-type(4n){
+		margin:0 3% 2% 0;
 	}
 }
 

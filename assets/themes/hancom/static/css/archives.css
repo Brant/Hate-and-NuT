@@ -1,19 +1,30 @@
 .comic-archive-article{
 	float:left;
-	margin:0 20px 50px 0;
-	width:40%;
+	position:relative;
+	overflow:hidden;
+	margin:0 2% 4% 0;
+	max-width:48%;
+}
+.comic-archive-article:nth-of-type(2n){
+	margin:0 0 4% 2%;
 }
 .comic-archive-heading{
-	width:80%;
+	position:absolute;
+	width:90%;
+	bottom:0;
+	left:0;
+	padding:5%;
+	background:#fff;
+	margin:0;
+	opacity:.8;
+}
+.no-touch .comic-archive-heading{
+	bottom:-300px;
+	-webkit-transition:bottom .4s ease-in-out;
+}
+.no-touch .comic-archive-article:hover .comic-archive-heading{
+	bottom:0;
+}
+.comic-archive-article{
 	
-}
-.comic-archive-image{
-	height:100px;
-}
-.comic-archive-heading a,
-.comic-archive-heading a:hover,
-.comic-archive-heading a:link
-.comic-archive-heading a:active
-.comic-archive-heading a:visited{
-	color:#9a1c20;
 }
