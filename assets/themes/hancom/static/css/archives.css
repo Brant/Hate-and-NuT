@@ -20,7 +20,13 @@
 }
 .no-touch .comic-archive-heading{
 	bottom:-300px;
+	
 	-webkit-transition:bottom .4s ease-in-out;
+	-moz-transition:bottom .4s ease-in-out;
+	-o-transition:bottom .4s ease-in-out;
+	-ms-transition:bottom .4s ease-in-out;
+	transition:bottom .4s ease-in-out;
+			
 }
 .no-touch .comic-archive-article:hover .comic-archive-heading{
 	bottom:0;
