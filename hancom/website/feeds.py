@@ -2,12 +2,17 @@
 FEEDS!
 """
 from datetime import datetime 
+from urllib2 import URLError
+from socket import timeout
+
+from pyga.requests import Event, Session, Tracker, Visitor
 
 from django.contrib.syndication.views import Feed
 from django.core.urlresolvers import reverse
 from django.contrib.markup.templatetags.markup import markdown
 from django.template.loader import render_to_string
 from django.contrib.sites.models import Site
+from django.conf import settings
 
 from noodles.feeds import RSSFeedWithContentEncoded
 
@@ -21,6 +26,20 @@ class SiteFeed(RSSFeedWithContentEncoded):
     link = "/"
     description = "A webcomic set in the world of Ultima Online"
     
+    def get_feed(self, obj, request):
+        tracker = Tracker(settings.GOOGLE_ANALYTICS_ID, Site.objects.get_current().domain)
+        
+        visitor = Visitor()
+        visitor.ip_address = request.META.get('REMOTE_ADDR', '')
+        visitor.user_agent = request.META.get('HTTP_USER_AGENT', '')
+        event = Event(category='RSS', action='Check Feed', label=request.META.get('HTTP_USER_AGENT', 'Unknown'), value=None, noninteraction=False)
+
+        try:
+            tracker.track_event(event, Session(), visitor)
+        except (URLError, timeout):
+            print "No Dice"
+
+        return super(SiteFeed, self).get_feed(obj, request)
     
     def items(self):
         return published_comics()[:30]
