@@ -28,7 +28,6 @@ class Comic(TitleDateSlug, HalfQuarterAssetsMixin):
             return False
         
         return self.date <= timezone.now()
-            
     
     class Meta:
         """
