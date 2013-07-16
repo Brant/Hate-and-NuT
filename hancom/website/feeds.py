@@ -5,8 +5,6 @@ from datetime import datetime
 from urllib2 import URLError
 from socket import timeout
 
-from pyga.requests import Event, Session, Tracker, Visitor
-
 from django.contrib.syndication.views import Feed
 from django.core.urlresolvers import reverse
 from django.contrib.markup.templatetags.markup import markdown
@@ -27,6 +25,9 @@ class SiteFeed(RSSFeedWithContentEncoded):
     description = "A webcomic set in the world of Ultima Online"
     
     def get_feed(self, obj, request):
+        
+        from pyga.requests import Event, Session, Tracker, Visitor
+        
         tracker = Tracker(settings.GOOGLE_ANALYTICS_ID, Site.objects.get_current().domain)
         
         visitor = Visitor()
