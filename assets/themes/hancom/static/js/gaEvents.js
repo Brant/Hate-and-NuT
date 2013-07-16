@@ -28,7 +28,7 @@ $(function(){
 		var adWrapper = $(this);
 		adWrapper.delegate(".sponsorship-ad", "click", function(event){
 			var clicked = $(this);
-			pushAnalyticsEvent("Ad Click", clicked.data("data-sponsorship-ad-code"), thisPath);
+			pushAnalyticsEvent("Ad Click", clicked.data("sponsorship-ad-code"), thisPath);
 		});
 	});
 	
