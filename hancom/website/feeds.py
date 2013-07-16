@@ -39,7 +39,6 @@ class SiteFeed(RSSFeedWithContentEncoded):
         except (URLError, timeout):
             print "No Dice"
         
-        print "FEED: All is well"
         return super(SiteFeed, self).get_feed(obj, request)
     
     def items(self):
