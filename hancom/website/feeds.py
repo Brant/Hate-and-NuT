@@ -26,19 +26,28 @@ class SiteFeed(RSSFeedWithContentEncoded):
     
     def get_feed(self, obj, request):
         
+        print "INSIDE GET_FEED"
+        print "SITE: %s" % Site.objects.get_current().domain
+        print "SO META:"
+        print "X_FOWARDED_FOR: %s" % request.META.get('X_FOWARDED_FOR', '')
+        print "ANALYTICS ID: %s" % settings.GOOGLE_ANALYTICS_ID
+        print "USER AGENT: %s" %  request.META.get('HTTP_USER_AGENT', '')
+        
         from pyga.requests import Event, Session, Tracker, Visitor
         
         tracker = Tracker(settings.GOOGLE_ANALYTICS_ID, Site.objects.get_current().domain)
         
         visitor = Visitor()
-        visitor.ip_address = request.META.get('REMOTE_ADDR', '')
+        visitor.ip_address = request.META.get('X_FOWARDED_FOR', '')
         visitor.user_agent = request.META.get('HTTP_USER_AGENT', '')
         event = Event(category='RSS', action='Check Feed', label=request.META.get('HTTP_USER_AGENT', 'Unknown'), value=None, noninteraction=False)
 
         try:
+            print "SENDING TRACK EVENT"
             tracker.track_event(event, Session(), visitor)
+            print "DONE SENDING TRACKEVENT"
         except (URLError, timeout):
-            print "No Dice"
+            print "TRACK EVENT FAILED"
         
         return super(SiteFeed, self).get_feed(obj, request)
     
