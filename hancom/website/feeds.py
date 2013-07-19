@@ -29,9 +29,8 @@ class SiteFeed(RSSFeedWithContentEncoded):
         print "INSIDE GET_FEED"
         print "SITE: %s" % Site.objects.get_current().domain
         print "SO META:"
-        print "X_FOWARDED_FOR: %s" 
-        for key, val in request.META.iteritems():
-            print "%s: %s" % (key, val)
+        print "HTTP_X_FORWARDED_FOR: %s" % request.META.get("HTTP_X_FORWARDED_FOR", "") 
+        
         print "ANALYTICS ID: %s" % settings.GOOGLE_ANALYTICS_ID
         print "USER AGENT: %s" %  request.META.get('HTTP_USER_AGENT', '')
         
@@ -40,7 +39,7 @@ class SiteFeed(RSSFeedWithContentEncoded):
         tracker = Tracker(settings.GOOGLE_ANALYTICS_ID, Site.objects.get_current().domain)
         
         visitor = Visitor()
-        visitor.ip_address = request.META.get('X_FOWARDED_FOR', '')
+        visitor.ip_address = request.META.get('HTTP_X_FORWARDED_FOR', '')
         visitor.user_agent = request.META.get('HTTP_USER_AGENT', '')
         event = Event(category='RSS', action='Check Feed', label=request.META.get('HTTP_USER_AGENT', 'Unknown'), value=None, noninteraction=False)
 
