@@ -192,6 +192,7 @@ LOGGING = {
 }
 
 MUB_CSS_ORDER = (('normalize.css', 'main.css', 'style.css', ), ('style.l.css',))
+GOOGLE_ANALYTICS_ID = ''
 
 try:
     from hancom.local_settings import *
@@ -199,7 +200,7 @@ except ImportError:
     pass
 
 EMAIL_SUBJECT_PREFIX = "[Hate and NuT] "
-GOOGLE_ANALYTICS_ID = ''
+
 
 if DEBUG:
 #     MIDDLEWARE_CLASSES += ('debug_toolbar.middleware.DebugToolbarMiddleware', )
