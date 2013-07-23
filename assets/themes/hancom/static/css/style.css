@@ -59,9 +59,6 @@ ul{
 	margin:0 0 1.2em 1.3em;
 	padding:0;
 }
-.underlined-heading{
-	border-bottom:solid 1px;
-}
 .error{
 	color:#d00;
 }
@@ -203,10 +200,7 @@ ul{
  * Footer Navigation
  */
 .foot-section{
-	margin:0 0 1.5em;
-	float:left;
-	width:48%;
-	padding:0 2% 0 0;
+	margin:0 0 1em;
 }
 .foot-section h2{
 	color:#eee;
@@ -220,6 +214,7 @@ ul{
      2px 2px 0 #fff;
 	color:#9a1c20;
 	font-size:1.6em;
+	border-bottom:solid 1px #d7d7d7;
 	
 }
 .foot-section h2 span{
@@ -228,10 +223,15 @@ ul{
 .foot-section li{
 	margin:0 0 .3em;
 	padding:0;
+	display:inline-block;
 }
 .foot-section ul{
 	margin:0 0 15px;
 	padding:0;
+	-webkit-column-count:3;
+	-moz-column-count:3;
+	-ms-column-count:3;
+	column-count:3;
 }
 .foot-section a,
 .foot-section a:hover,

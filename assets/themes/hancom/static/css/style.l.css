@@ -1,4 +1,7 @@
 @media all and (min-width:748px){
+	.underlined-heading{
+		border-bottom:solid 1px;
+	}
 	body{
 		padding:0;
 	}
@@ -84,6 +87,19 @@
 		width:33%;
 		text-align:center;
 		padding:0;
+	}
+	.foot-section li{
+		display:list-item;
+		float:none;
+	}
+	.foot-section ul{
+		-webkit-column-count:1;
+		-moz-column-count:1;
+		-ms-column-count:1;
+		column-count:1;
+	}
+	.foot-section h2{
+		border:none;
 	}
 	.donate-button{
 		font-size:1.3em;
