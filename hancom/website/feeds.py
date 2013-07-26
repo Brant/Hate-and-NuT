@@ -24,6 +24,15 @@ class SiteFeed(RSSFeedWithContentEncoded):
     link = "/"
     description = "A webcomic set in the world of Ultima Online"
     
+    
+    author_name = "Brant Steen"
+    author_email = "hateandnut@gmail.com"
+    author_link = "http://hateandnut.com"
+    
+    item_author_name = "Brant Steen"
+    item_author_email = "hateandnut@gmail.com"
+    item_author_link = "http://hateandnut.com"
+    
     def get_feed(self, obj, request):
         
         from pyga.requests import Event, Session, Tracker, Visitor
@@ -41,6 +50,9 @@ class SiteFeed(RSSFeedWithContentEncoded):
             print "TRACK EVENT FAILED"
         
         return super(SiteFeed, self).get_feed(obj, request)
+    
+    def item_guid_is_permalink(self, obj):
+        return True
     
     def items(self):
         return published_comics()[:30]
