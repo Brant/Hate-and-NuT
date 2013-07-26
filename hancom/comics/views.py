@@ -17,7 +17,7 @@ def archive_index(request):
     """
     """
     comics = Comic.objects.filter(published=True, date__lte=datetime.now())
-    archives = comics.dates("date", "month").reverse()
+    archives = comics.reverse().dates("date", "month")
     response_data = {"comics": comics, "archives": archives}
     return render_to_response("comics/archive_index.html", response_data, context_instance=RequestContext(request))
 
