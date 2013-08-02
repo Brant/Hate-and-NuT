@@ -33,6 +33,7 @@ urlpatterns = patterns('',
     (r'^sitemap\.xml$', 'django.contrib.sitemaps.views.sitemap', {'sitemaps': sitemaps}),
     url (r'^feed/$', SiteFeed()),
     
+    (r'^mub/', include('mub.urls')),
 )
 
 if settings.DEBUG:
