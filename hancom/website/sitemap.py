@@ -33,6 +33,7 @@ class WebsiteSitemap(Sitemap):
             Page("Characters", reverse("characters_index"), date(2013, 7, 5), ".5", "monthly"),
             Page("Advertise", reverse("become_an_advertiser"), date(2013, 7, 1), ".5", "monthly"),
             Page("Sponsor", reverse("become_a_sponsor"), date(2013, 7, 1), ".5", "monthly"),
+            Page("Contact", reverse("contact_me"), date(2013, 8, 1), ".5", "monthly"),
         ]
     
     def location(self, item):

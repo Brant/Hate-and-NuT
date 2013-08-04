@@ -2,7 +2,8 @@
 Sponsorship Models
 """
 from django.db import models
-from noodles.models import TitleDateSlug, NameSlugActive, LittleSlugger, NameSlug
+
+from noodles.models import NameSlugActive, LittleSlugger, NameSlug
 
 
 class SponsorshipInquiry(models.Model):

@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% load url from future %}
+
+{% load static from staticfiles %}
+
+{% block title %}Contact {{ block.super }}{% endblock %}
+
+{% block body_class %}{{ block.super }} professional{% endblock %}
+
+{% block content %}
+	<h1>Something On Your Mind?</h1>
+	<div data-form="{% url "contact_form" %}"></div>
+{% endblock %}
