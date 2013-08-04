@@ -11,9 +11,9 @@
 	<h1>Hate and NuT Archives</h1>
 	
 	{% for archive in archives %}
-		<h2>{{ archive|date:"F Y" }}</h2>
 		{% if forloop.first %}
-			<section class="clearfix">		
+			<section class="clearfix">
+				<h2>{{ archive|date:"F Y" }}</h2>		
 				{% for comic in comics %}
 					{% if comic.date.month == archive.month and comic.date.year == comic.date.year %}
 						<article class="comic-archive-article">
@@ -24,13 +24,16 @@
 				{% endfor %}
 			</section>
 		{% else %}
-			<ul>
-				{% for comic in comics %}
-					{% if comic.date.month == archive.month and comic.date.year == comic.date.year %}
-						<li><a href="{{ comic.get_absolute_url }}">{{ comic.title }}</a></li>
-					{% endif %}
-				{% endfor %}
-			</ul>
+			<section class="comic-archive-list">
+				<h2>{{ archive|date:"F Y" }}</h2>
+				<ul class="">
+					{% for comic in comics %}
+						{% if comic.date.month == archive.month and comic.date.year == comic.date.year %}
+							<li><a href="{{ comic.get_absolute_url }}">{{ comic.title }}</a></li>
+						{% endif %}
+					{% endfor %}
+				</ul>
+			</section>
 		{% endif %}
 		
 	{% endfor %}

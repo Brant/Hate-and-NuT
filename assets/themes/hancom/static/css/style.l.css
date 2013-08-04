@@ -175,6 +175,11 @@
 	.comic-archive-article:nth-of-type(4n){
 		margin:0 3% 2% 0;
 	}
+	.comic-archive-list{
+		float:left;
+		width:30%;
+		margin-right:3%;
+	}
 }
 
 @media all and (min-width:1024px){
