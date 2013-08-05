@@ -22,6 +22,12 @@ $(function(){
 		ajaxLoader.show();
 		form.remove();
 		
+		if ($(document).scrollTop() > $(".content").offset().top){
+			$("html, body").animate({
+				scrollTop: $(".content").offset().top
+			}, 800);
+		}
+		
 		$.post(url, data, function(resp){
 			container.html(resp);
 		});
