@@ -37,6 +37,9 @@ $(function(){
 		container = $(this);
 		$.get(container.data("form"), function(resp){
 			container.html(resp);
+			if ($("html").hasClass("no-touch")){
+				container.find("form input[type=text]:first").focus();	
+			}
 		}); 
 	});
 });
