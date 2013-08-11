@@ -21,6 +21,8 @@
 
 {% block title %}{{ comic.title }} {{ block.super }} | Webcomic #{{ comic.chronology }}{% endblock %}
 
+{% block body_class %}{% if comic.single_row %}wide-comic-page {% endif %}{% endblock %}
+
 {% block content %}
 	<div class="clearfix heading-wrap">
 		{% if comic.is_available_to_public %}
