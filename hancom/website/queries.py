@@ -9,4 +9,4 @@ def published_comics():
     """
     Return all published comics
     """
-    return Comic.objects.filter(published=True, date__lte=datetime.now())
+    return Comic.objects.select_related('story_arc').filter(published=True, date__lte=datetime.now())

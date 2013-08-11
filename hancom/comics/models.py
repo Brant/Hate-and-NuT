@@ -6,7 +6,13 @@ from datetime import datetime
 from django.db import models
 from django.utils import timezone
 
-from noodles.models import TitleDateSlug, HalfQuarterAssetsMixin
+from noodles.models import TitleDateSlug, HalfQuarterAssetsMixin, NameSlug
+
+
+class StoryArc(NameSlug):
+    """
+    """
+    complete = models.BooleanField(default=False)
 
 
 class Comic(TitleDateSlug, HalfQuarterAssetsMixin):
@@ -19,6 +25,9 @@ class Comic(TitleDateSlug, HalfQuarterAssetsMixin):
     preview_image = models.ImageField(upload_to="images/preview", help_text="500x500")
     description = models.TextField(help_text="Will show up in feed, meta description, and OG-driven previews")
     single_row = models.BooleanField(default=False, help_text="Is this a single-row, 'wide' comic?")
+    
+    special_story_arc_title = models.CharField(max_length=300, null=True, blank=True, help_text="Will override 'Hate and NuT #X' if part of a story arc")
+    story_arc = models.ForeignKey(StoryArc, null=True, blank=True)
     
     def is_available_to_public(self):
         """

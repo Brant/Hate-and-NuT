@@ -57,6 +57,8 @@ class SiteFeed(RSSFeedWithContentEncoded):
         return published_comics()[:30]
     
     def item_title(self, item):
+        if item.story_arc and item.special_story_arc_title:
+            return item.special_story_arc_title
         return "Hate and NuT #%s" % item.chronology
     
     def item_pubdate(self, item):
