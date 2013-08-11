@@ -177,6 +177,16 @@ ul{
 .comic-nav-list-item-link:link{
 	color:#1f1f1f;
 }
+/*
+ * 'wide' comic layout
+ */
+.comic-wide .comic{
+	max-width:200%;
+}
+.comic-wide{
+	overflow:scroll;
+}
+
 .s{
 	display:none;
 }

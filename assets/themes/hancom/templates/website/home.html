@@ -29,7 +29,13 @@
 			</ul>
 		</nav>
 	</div>
-	<img src="{{ latest_comic.comic_image.url }}" class="comic" alt="Comic entitled '{{ latest_comic.title }}'" />
+	{% if comic.single_row %}
+		<div class="comic-wide">
+			<img src="{{ latest_comic.comic_image.url }}" class="comic" alt="Comic entitled '{{ latest_comic.title }}'" />
+		</div>
+	{% else %}
+		<img src="{{ latest_comic.comic_image.url }}" class="comic" alt="Comic entitled '{{ latest_comic.title }}'" />
+	{% endif %}
 	<p>{{ latest_comic.date|date }}</p>
 	
 	{% with latest_comic as comic %}

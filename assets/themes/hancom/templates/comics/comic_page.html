@@ -61,8 +61,18 @@
 			</ul>
 		</nav>
 	</div>
-	<img src="{{ comic.comic_image.url }}" class="comic" alt="Comic entitled '{{ comic.title }}'"  itemprop="image" />
+	
+	{% if comic.single_row %}
+		<div class="comic-wide">
+			<img src="{{ comic.comic_image.url }}" class="comic" alt="Comic entitled '{{ comic.title }}'"  itemprop="image" />
+		</div>
+	{% else %}
+		<img src="{{ comic.comic_image.url }}" class="comic" alt="Comic entitled '{{ comic.title }}'"  itemprop="image" />
+	{% endif %}
+	
 	<p>{{ comic.date|date }}</p>
 	<p class="hidden" itemprop="datePublished">{{ comic.date|date:"Y-m-d" }}</p>
+	
 	{% include "social/comic_share_buttons.html" %}
+	
 {% endblock %}

@@ -18,6 +18,7 @@ class Comic(TitleDateSlug, HalfQuarterAssetsMixin):
     chronology = models.IntegerField(blank=True, unique=True)
     preview_image = models.ImageField(upload_to="images/preview", help_text="500x500")
     description = models.TextField(help_text="Will show up in feed, meta description, and OG-driven previews")
+    single_row = models.BooleanField(default=False, help_text="Is this a single-row, 'wide' comic?")
     
     def is_available_to_public(self):
         """
