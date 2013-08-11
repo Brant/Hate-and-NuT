@@ -185,6 +185,8 @@ ul{
 }
 .comic-wide{
 	overflow:scroll;
+	overflow-x:scroll;
+	overflow-y:visible;
 }
 
 .s{

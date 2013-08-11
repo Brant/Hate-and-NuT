@@ -116,6 +116,8 @@
 	}
 	.comic-wide{
 		overflow:visible;
+		overflow-x:visible;
+		overflow-y:visible;
 	}
 
 	

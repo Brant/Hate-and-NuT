@@ -31,7 +31,7 @@
 			</ul>
 		</nav>
 	</div>
-	{% if comic.single_row %}
+	{% if latest_comic.single_row %}
 		<div class="comic-wide">
 			<img src="{{ latest_comic.comic_image.url }}" class="comic" alt="Comic entitled '{{ latest_comic.title }}'" />
 		</div>
