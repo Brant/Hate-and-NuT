@@ -2,6 +2,8 @@
 
 {% block title %}The Adventures of Hate and NuT | Latest Webcomic{% endblock %}
 
+{% block body_class %}{% if latest_comic.single_row %}wide-comic-page {% endif %}{% endblock %}
+
 {% block extra_head %}{% load static from staticfiles %}
 	
 	{% if previous_comic %}
