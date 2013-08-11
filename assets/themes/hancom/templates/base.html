@@ -60,7 +60,7 @@
 					<nav class="pg-head-nav">
 						<ul class="pg-head-nav-list">
 							<li class="pg-head-nav-item">
-								
+								<a class="pg-head-nav-link button donate-button side-donate-button" href="{% url "donate" %}">Donate<br/><span class="button-elaborate">Support Hate and NuT</span></a>
 							</li>
 						</ul>
 					</nav>
@@ -79,19 +79,19 @@
 						</article>
 						<div class="s">
 							
-							
+							<a class="button donate-button side-donate-button" href="{% url "donate" %}">Donate<br/><span class="button-elaborate">Support Hate and NuT</span></a>
 
-								<ul class="social">
-									<li><a title="Subscribe via RSS" class="social-icon social-rss" href="{{ SITE_META.RSS }}"><span class="visuallyhidden">RSS Feed</span></a></li>
-									<li><a title="Follow me on Twitter" class="social-icon social-twitter" href="{{ SITE_META.TWITTER }}"><span class="visuallyhidden">Follow me on Twitter</span></a></li>
-								</ul>
-							</aside>
 <script type="text/javascript"><!--
 	if (myViewport >= 748){
 		document.write('<aside class="side-banner-medium sponsorship-ad-wrapper" data-sponsorship="{% url "sponsorship_ad_by_type" type_slug="wide-skyscraper" %}"><\/aside>');
 	}//-->
 </script>
-								
+							<aside class="clearfix">
+								<ul class="social">
+									<li><a title="Subscribe via RSS" class="social-icon social-rss" href="{{ SITE_META.RSS }}"><span class="visuallyhidden">RSS Feed</span></a></li>
+									<li><a title="Follow me on Twitter" class="social-icon social-twitter" href="{{ SITE_META.TWITTER }}"><span class="visuallyhidden">Follow me on Twitter</span></a></li>
+								</ul>
+							</aside>	
 						</div>
 					{% endblock %}
 				</div>
@@ -103,15 +103,15 @@
 			<div class="clearfix">
 				{% block footer_content %}
 					<div class="smallscreen-clearfix">
-						<nav class="foot-section">
+						<nav class="foot-section clearfix">
 							<h2><span class="underlined-heading">Support the Comic</span></h2>
 							<ul>
 								<li><a href="{% url "become_an_advertiser" %}">Advertise</a></li>
-								
+								<li><a href="{% url "donate" %}">Donate</a></li>
 								<li><a href="{% url "become_a_sponsor" %}">Sponsor</a></li>
 							</ul>
 						</nav>
-						<nav class="foot-section">
+						<nav class="foot-section clearfix">
 							<h2><span class="underlined-heading">Hate and NuT</span></h2>
 							<ul>
 								<li><a href="{% url "archive_index" %}">Archive</a></li>
@@ -120,7 +120,7 @@
 							</ul>
 						</nav>
 					</div>
-					<nav class="foot-section">
+					<nav class="foot-section clearfix">
 						<h2><span class="underlined-heading">Follow Along</span></h2>
 						<ul>
 							<li><a href="{{ SITE_META.RSS }}">Subscribe via RSS</a></li>
