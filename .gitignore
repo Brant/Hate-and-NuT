@@ -30,3 +30,4 @@ mediabrute_usefile
 dist/
 collectstatic/
 assets/uploads/*/
+.codeintel/

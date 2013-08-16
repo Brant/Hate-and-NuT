@@ -26,11 +26,11 @@ class ComicAdmin(admin.ModelAdmin):
         ('Publish Details', {
             'fields': ('date', 'published', 'chronology', ),
         }),
-        
+
         ('Images', {
             'fields': ('comic_image', 'preview_image', 'single_row', ),
         }),
-        
+
     )
 
 
