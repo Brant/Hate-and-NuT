@@ -115,7 +115,7 @@ ul{
 .banner-ad{
 	display:none;
 	width:728px;
-	height:90px;
+	/*height:90px;*/
 }
 .banner-ad-large{
 	display:none;
@@ -184,9 +184,10 @@ ul{
 	max-width:200%;
 }
 .comic-wide{
-	overflow:scroll;
-	overflow-x:scroll;
-	overflow-y:visible;
+	overflow: scroll;
+	overflow-x: scroll;
+	overflow-y: hidden;
+	padding-bottom: 10px;
 }
 
 .s{
