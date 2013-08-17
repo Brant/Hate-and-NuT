@@ -68,6 +68,9 @@
 	.pg-foot-wrap{
 		padding:55px 25px 10px;
 	}
+	.small-header-ad{
+		display:none;
+	}
 	.heading-404{
 		text-shadow:
 			-2px -2px 0 #f2f2f2,  
