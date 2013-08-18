@@ -113,12 +113,17 @@ ul{
 	border-radius:5px;
 	padding:.5% 2% 0;
 	background:#fefefe;
-	
+}
+.small-header-ad{
+	width:234px;
+	height:60px;
+	overflow:hidden;
+	margin:10px 0 5px;
 }
 .banner-ad{
 	display:none;
 	width:728px;
-	height:90px;
+	/*height:90px;*/
 }
 .banner-ad-large{
 	display:none;
@@ -216,9 +221,10 @@ ul{
 	max-width:200%;
 }
 .comic-wide{
-	overflow:scroll;
-	overflow-x:scroll;
-	overflow-y:visible;
+	overflow: scroll;
+	overflow-x: scroll;
+	overflow-y: hidden;
+	padding-bottom: 10px;
 }
 
 .s{

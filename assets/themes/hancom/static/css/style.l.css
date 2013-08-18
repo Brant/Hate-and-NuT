@@ -43,7 +43,7 @@
 		display:block;
 	}
 	.header-ad{
-		margin:5px auto 20px;
+		margin:5px auto 12px;
 	}
 	.mobile-fixed-ad-wrap{
 		display:none;
@@ -67,6 +67,9 @@
 	}
 	.pg-foot-wrap{
 		padding:55px 25px 10px;
+	}
+	.small-header-ad{
+		display:none;
 	}
 	.heading-404{
 		text-shadow:
@@ -204,7 +207,7 @@
 		padding:2%;
 	}
 	.pg-head-wrap{
-		padding:5px 0 60px 0;
+		padding:5px 0 65px 0;
 	}
 	.pg-404 .pg-head-wrap{
 		padding:5px 0;
@@ -222,12 +225,14 @@
 		margin:1em 0;
 	}
 	.logo{
-		max-width:270px;
+		/*max-width:270px;*/
+		height:125px;
+		max-height:none;
 		padding:.5% 1% 0;
 	}
 	.header-ad{
 		float:right;
-		margin:15px 0;
+		margin:7px 0;
 	}
 	.width{
 		max-width:1280px;
