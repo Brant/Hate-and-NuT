@@ -191,13 +191,6 @@ ul{
 	float:right;
 	width:30%;
 }
-.comic-nav kbd{
-	vertical-align: middle;
-	margin-top:-9px;
-	font-size:.6em;
-	display:none;
-}
-
 .comic-nav-list{
 	margin:0;
 	padding:0;
