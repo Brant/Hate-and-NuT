@@ -36,8 +36,7 @@
 				<li class="comic-nav-list-item comic-nav-list-item-left">
 					{% if comic.is_available_to_public %}
 						{% if previous_comic %}
-							<a id="prevComic" class="comic-nav-list-item-link" href="{{ previous_comic.get_absolute_url }}" title="Previous Comic (shortcut: 'a' key)"><span class="visuallyhidden">Previous</span><i class="icon-caret-left"></i></a>
-							<!--<kbd class="light">a</kbd>-->
+							<a id="prevComic" class="comic-nav-list-item-link" href="{{ previous_comic.get_absolute_url }}" title="Previous Comic"><span class="visuallyhidden">Previous</span><i class="icon-caret-left"></i></a>
 						{% else %}
 							<span class="visuallyhidden">Previous</span><i class="icon-caret-left"></i>
 						{% endif %}
@@ -51,14 +50,13 @@
 				<li class="comic-nav-list-item comic-nav-list-item-right">
 					{% if comic.is_available_to_public %}
 						{% if next_comic %}
-							<!--<kbd class="light">s</kbd>-->
-							<a id="nextComic" class="comic-nav-list-item-link" href="{{ next_comic.get_absolute_url }}" title="Next Comic (shortcut: 's' key)"><span class="visuallyhidden">Next</span><i class="icon-caret-right"></i></a>
+							<a id="nextComic" class="comic-nav-list-item-link" href="{{ next_comic.get_absolute_url }}" title="Next Comic"><span class="visuallyhidden">Next</span><i class="icon-caret-right"></i></a></li>
 						{% else %}
 							<span class="visuallyhidden">Next</span><i class="icon-caret-right"></i>
 						{% endif %}
 					{% else %}
 						{% with comic.chronology|add:"1" as NEXT %}
-							<a id="nextComic" class="comic-nav-list-item-link" href="{% url 'comic' comic_id=NEXT %}" title="Next Comic"><span class="visuallyhidden">Next</span><i class="icon-caret-right"></i></a>
+							<a id="nextComic" class="comic-nav-list-item-link" href="{% url 'comic' comic_id=NEXT %}" title="Next Comic"><span class="visuallyhidden">Next</span><i class="icon-caret-right"></i></a></li>
 						{% endwith %}
 					{% endif %}
 				</li>

@@ -190,13 +190,6 @@
 		width:30%;
 		margin-right:3%;
 	}
-	.no-touch .comic-nav:hover kbd{
-		display:inline;
-		display:inline-block;
-	}
-	.no-touch .comic-nav:hover .icon-caret-right{
-		margin-right:-1px;
-	}
 }
 
 @media all and (min-width:1024px){
