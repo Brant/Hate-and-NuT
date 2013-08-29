@@ -179,9 +179,7 @@
 		width:20%;
 		margin:0 3% 2% 0;
 	}
-	.comic-archive-image{
-		width:100%;
-	}
+	
 	.comic-archive-article:nth-of-type(2n){
 		margin:0 3% 2% 0;
 	}

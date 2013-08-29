@@ -18,6 +18,9 @@
 	margin:0;
 	opacity:.8;
 }
+.comic-archive-image{
+	width:100%;
+}
 .no-touch .comic-archive-heading{
 	bottom:-300px;
 	
