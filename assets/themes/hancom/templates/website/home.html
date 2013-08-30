@@ -18,12 +18,12 @@
 {% block content %}
 	<div class="clearfix heading-wrap">
 		{% if latest_comic.story_arc and latest_comic.special_story_arc_title %}
-		<hgroup class="story-arc-comic-heading-group">
-			<h1>Latest</h1>
-			<h2>{{ latest_comic.special_story_arc_title }}</h2>
-		</hgroup>
+			<hgroup class="story-arc-comic-heading-group">
+				<h1>Latest</h1>
+				<h2>{{ latest_comic.special_story_arc_title }}</h2>
+			</hgroup>
 		{% else %}
-		
+			<h1>Latest</h1>
 		{% endif %}
 		<nav class="comic-nav">
 			<ul class="comic-nav-list">
