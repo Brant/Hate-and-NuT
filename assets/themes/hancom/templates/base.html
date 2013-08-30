@@ -35,15 +35,6 @@
 
 <script type="text/javascript">var myViewport = $(window).width();</script>
 
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=495389753807975";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));
-</script>
 
 		<header class="pg-head-wrap clearfix">
 			<div class="width">
@@ -98,7 +89,11 @@
 							</aside>
 <script type="text/javascript"><!--
 	if (myViewport >= 748 && !($("body").hasClass("wide-comic-page"))){
-		document.write('<aside class="side-banner-medium sponsorship-ad-wrapper" data-sponsorship="{% url "sponsorship_ad_by_type" type_slug="wide-skyscraper" %}"><\/aside>');
+		document.write('<aside class="side-banner-medium">');
+		document.write('<div id="pw_adbox_70520_3_0"></div>');
+		document.write('<noscript><map name="admap70520" id="admap70520"><area href="http://www.projectwonderful.com/out_nojs.php?r=0&c=0&id=70520&type=3" shape="rect" coords="0,0,160,600" title="" alt="" target="_blank" /></map><table cellpadding="0" cellspacing="0" style="width:160px;border-style:none;background-color:#ffffff;"><tr><td><img src="http://www.projectwonderful.com/nojs.php?id=70520&type=3" style="width:160px;height:600px;border-style:none;" usemap="#admap70520" alt="" /></td></tr><tr><td style="background-color:#ffffff;" colspan="1"><center><a style="font-size:10px;color:#0000ff;text-decoration:none;line-height:1.2;font-weight:bold;font-family:Tahoma, verdana,arial,helvetica,sans-serif;text-transform: none;letter-spacing:normal;text-shadow:none;white-space:normal;word-spacing:normal;" href="http://www.projectwonderful.com/advertisehere.php?id=70520&type=3" target="_blank">Ads by Project Wonderful!  Your ad here, right now: $0</a></center></td></tr></table></noscript>');
+
+		document.write('<\/aside>');
 	}//-->
 </script>
 								
@@ -148,8 +143,19 @@
 			
 			
 		</footer>
-		
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=495389753807975";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+</script>
+
 		{% add_static "js" %}
+
 <!-- Project Wonderful Ad Box Loader -->	
 <script type="text/javascript">
 	(function(){
@@ -172,5 +178,7 @@
 	})();
 </script>
 <!-- End Project Wonderful Ad Box Loader -->
+
+
     </body>
 </html>
