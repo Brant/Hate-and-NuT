@@ -191,6 +191,18 @@
 		width:30%;
 		margin-right:3%;
 	}
+
+	.archive-with-storyarcs .comic-archive-content{
+		float:left;
+		width:65%;
+	}
+	.archive-with-storyarcs .comic-archive-heading{
+		font-size:1em;
+	}
+	.comic-archive-storyarcs{
+		float:right;
+		width:30%;
+	}
 }
 
 @media all and (min-width:1024px){

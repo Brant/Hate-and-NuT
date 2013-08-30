@@ -2,7 +2,7 @@
 
 {% load url from future %}
 
-{% block meta_description %}Hate and NuT webcomic issue #{{ comic.chronology }} - {{ comic.description }}{% endblock %}
+{% block meta_description %}Hate and NuT webcomic issue #{{ comic.chronology }} - {{ comic.description }}{% if comic.story_arc %} - Part of the '{{ comic.story_arc }}' story arc.{% endif %}{% endblock %}
 
 {% block extra_head %}
 	
@@ -16,17 +16,22 @@
 
 	<meta property="og:title" content="Hate and NuT #{{ comic.chronology }}" />
 	<meta property="og:image" content="{{ SITE_URL }}{{ comic.preview_image_half.url }}" /> 
-	<meta property="og:description" content="Hate and NuT #{{ comic.chronology }} - {{ comic.description }}" /> 
+	<meta property="og:description" content="Hate and NuT #{{ comic.chronology }} - {{ comic.description }}{% if comic.story_arc %} - Part of the '{{ comic.story_arc }}' story arc.{% endif %}" /> 
 {% endblock %}
 
-{% block title %}{{ comic.title }} {{ block.super }} | Webcomic #{{ comic.chronology }}{% endblock %}
+{% block title %}{{ comic.title }} {{ block.super }} | {% if comic.story_arc and comic.special_story_arc_title %}{{ comic.special_story_arc_title }}{% else %}Webcomic #{{ comic.chronology }}{% endif %}{% endblock %}
 
 {% block body_class %}{% if comic.single_row %}wide-comic-page {% endif %}{% endblock %}
 
 {% block content %}
 	<div class="clearfix heading-wrap">
 		{% if comic.is_available_to_public %}
-			<h1 itemprop="name">Hate and Nut #{{ comic.chronology }}</h1>
+			{% if comic.story_arc and comic.special_story_arc_title %}
+				<h1>{{ comic.special_story_arc_title }}</h1>
+			{% else %}
+				<h1 itemprop="name">Hate and Nut #{{ comic.chronology }}</h1>
+			{% endif %}
+			
 		{% else %}
 			<h1 class="error">NOT PUBLIC YET (#{{ comic.chronology }})</h1>
 		{% endif %}

@@ -26,7 +26,7 @@ class CampaignAdmin(admin.ModelAdmin):
     """
     inlines = [AdInlineAdmin, ]
     list_display = ["title", "active", "start_date", "end_date", ]
-    list_editable = ["active", ] 
+    list_editable = ["active", ]
 
 
 class InquiryAdmin(admin.ModelAdmin):

@@ -4,17 +4,14 @@ FEEDS!
 from urllib2 import URLError
 from socket import timeout
 
-from django.contrib.syndication.views import Feed
-from django.core.urlresolvers import reverse
-from django.contrib.markup.templatetags.markup import markdown
 from django.template.loader import render_to_string
 from django.contrib.sites.models import Site
 from django.conf import settings
 
 from noodles.feeds import RSSFeedWithContentEncoded
 
-from hancom.comics.models import Comic
 from hancom.website.queries import published_comics
+
 
 class SiteFeed(RSSFeedWithContentEncoded):
     """
@@ -22,22 +19,22 @@ class SiteFeed(RSSFeedWithContentEncoded):
     title = "The Adventures of Hate and NuT"
     link = "/"
     description = "A webcomic set in the world of Ultima Online"
-    
-    
+
+
     author_name = "Brant Steen"
     author_email = "hateandnut@gmail.com"
     author_link = "http://hateandnut.com"
-    
+
     item_author_name = "Brant Steen"
     item_author_email = "hateandnut@gmail.com"
     item_author_link = "http://hateandnut.com"
-    
+
     def get_feed(self, obj, request):
-        
+
         from pyga.requests import Event, Session, Tracker, Visitor
-        
+
         tracker = Tracker(settings.GOOGLE_ANALYTICS_ID, Site.objects.get_current().domain)
-        
+
         visitor = Visitor()
         visitor.ip_address = request.META.get('HTTP_X_FORWARDED_FOR', '')
         visitor.user_agent = request.META.get('HTTP_USER_AGENT', '')
@@ -47,24 +44,25 @@ class SiteFeed(RSSFeedWithContentEncoded):
             tracker.track_event(event, Session(), visitor)
         except (URLError, timeout):
             print "TRACK EVENT FAILED"
-        
+
         return super(SiteFeed, self).get_feed(obj, request)
-    
+
     def item_guid_is_permalink(self, obj):
         return True
-    
+
     def items(self):
         return published_comics()[:30]
-    
+
     def item_title(self, item):
+        if item.story_arc and item.special_story_arc_title:
+            return item.special_story_arc_title
         return "Hate and NuT #%s" % item.chronology
-    
+
     def item_pubdate(self, item):
         return item.date
-    
+
     def item_content_encoded(self, item):
         """
         Full entry content
         """
         return render_to_string("comics/feed/item_description.html", {"comic": item, "SITE_URL": "http://%s" % Site.objects.get_current().domain})
-    

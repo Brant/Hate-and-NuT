@@ -17,7 +17,7 @@ class SponsorshipInquiry(models.Model):
     type = models.CharField(max_length=1, choices=(("A", "Advertising"), ("S", "Sponsorship")))
     description = models.TextField()
     date = models.DateTimeField(auto_now_add=True)
-    
+
     class Meta:
         """
         Django Metadata

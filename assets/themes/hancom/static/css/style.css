@@ -42,6 +42,9 @@ hgroup,
 .heading-wrap{
 	margin:.5em 0;
 }
+.heading-wrap{
+	position:relative;
+}
 a,
 a:visited,
 a:link,
@@ -153,11 +156,40 @@ ul{
 .heading-wrap h1{
 	margin:0;
 	float:left;
+	width:65%;
 }
 
+.heading-wrap .story-arc-comic-heading-group{
+	display:block;
+	margin:0;
+	padding:0;
+	float:left;
+	width:65%;	
+}
+.home .heading-wrap .story-arc-comic-heading-group{
+	width:auto;
+}
+.heading-wrap .story-arc-comic-heading-group h1{
+	float:none;
+	display:block;
+	margin:0;
+	padding:0;
+	width:auto;
+}
+.heading-wrap .story-arc-comic-heading-group h2{
+	float:none;
+	display:block;
+	padding:0;
+	margin:0;
+}
+.home .heading-wrap .comic-nav{
+	position:absolute;
+	top:0;
+	right:0;
+} 
 .comic-nav{
 	float:right;
-	width:100px;
+	width:30%;
 }
 .comic-nav-list{
 	margin:0;

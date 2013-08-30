@@ -31,7 +31,7 @@ urlpatterns = patterns('',
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
     (r'^sitemap\.xml$', 'django.contrib.sitemaps.views.sitemap', {'sitemaps': sitemaps}),
-    url (r'^feed/$', SiteFeed()),
+    url(r'^feed/$', SiteFeed()),
     (r'^mub/', include('mub.urls')),
     url(r'^contact/$', TemplateView.as_view(template_name="website/contact.html"), name='contact_me'),
     url(r'^forms/contact/submit/$', "hancom.website.views.contact_submit", name='contact_me_submit'),
@@ -39,8 +39,8 @@ urlpatterns = patterns('',
 )
 
 if settings.DEBUG:
-    urlpatterns +=  static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
     urlpatterns += favicon_patterns
-    urlpatterns += patterns('',
-        url(r'404\.html$', TemplateView.as_view(template_name="404.html"), name="404"),
+    urlpatterns += patterns(
+        '', url(r'404\.html$', TemplateView.as_view(template_name="404.html"), name="404"),
     )

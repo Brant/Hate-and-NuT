@@ -154,12 +154,12 @@ INSTALLED_APPS = (
     'noodles',
     'mub',
     'south',
-    
+
     'hancom.comics',
     'hancom.website',
     'hancom.sponsorship',
     'hancom.characters',
-    
+
 )
 
 # A sample logging configuration. The only tangible logging
