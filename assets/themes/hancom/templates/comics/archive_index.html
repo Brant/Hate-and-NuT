@@ -5,14 +5,14 @@
 {% block title %}Webcomic Archive {{ block.super }}{% endblock %}
 
 {% block meta_description %}{% endblock %}
-{% block body_class %}non-comic{% endblock %}
+{% block body_class %}non-comic {% if story_arcs %}archive-with-storyarcs{% endif %}{% endblock %}
 
 {% block content %}
 	<h1>Hate and NuT Archives</h1>
 	
 	{% for archive in archives %}
 		{% if forloop.first %}
-			<section class="clearfix">
+			<section class="clearfix comic-archive-thismonth comic-archive-content">
 				<h2>{{ archive|date:"F Y" }}</h2>		
 				{% for comic in comics %}
 					{% if comic.date.month == archive.month and comic.date.year == comic.date.year %}
@@ -23,19 +23,37 @@
 					{% endif %}
 				{% endfor %}
 			</section>
-		{% else %}
-			<section class="comic-archive-list">
-				<h2>{{ archive|date:"F Y" }}</h2>
-				<ul class="">
-					{% for comic in comics %}
-						{% if comic.date.month == archive.month and comic.date.year == comic.date.year %}
-							<li><a href="{{ comic.get_absolute_url }}">{{ comic.title }}</a></li>
-						{% endif %}
-					{% endfor %}
-				</ul>
-			</section>
 		{% endif %}
-		
 	{% endfor %}
+	
+	{% if story_arcs %}
+		<section class="comic-archive-storyarcs">
+			<h2>Story Arcs</h2>
+			<ul>
+				{% for arc in story_arcs %}
+					<li><a href="{{ arc.get_absolute_url }}">{{ arc.name }}</a></li>
+				{% endfor %}
+			</ul>
+		</section>	
+	{% endif %}
+
+	<section class="comic-archive-content">
+		{% for archive in archives %}
+			{% if not forloop.first %}
+					<div class="comic-archive-list">
+						<h2>{{ archive|date:"F Y" }}</h2>
+						<ul class="">
+							{% for comic in comics %}
+								{% if comic.date.month == archive.month and comic.date.year == comic.date.year %}
+									<li><a href="{{ comic.get_absolute_url }}">{{ comic.title }}</a></li>
+								{% endif %}
+							{% endfor %}
+						</ul>
+					</div>
+				
+			{% endif %}
+		{% endfor %}
+	</section>	
+	
 	
 {% endblock %}

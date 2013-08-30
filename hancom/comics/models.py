@@ -12,6 +12,10 @@ class StoryArc(NameSlug):
     """
     complete = models.BooleanField(default=False)
 
+    @models.permalink
+    def get_absolute_url(self):
+        return ("comic_story_redirect", [str(self.slug)])
+
 
 class Comic(TitleDateSlug, HalfQuarterAssetsMixin):
     """
