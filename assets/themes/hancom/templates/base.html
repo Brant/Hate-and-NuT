@@ -3,51 +3,38 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<title>{% block title %}| {{ SITE_NAME }}{% endblock %}</title>
-		<script type="text/javascript">window.google_analytics_uacct = "UA-19357683-2";</script>		
 		<meta name="description" content="{% block meta_description %}A lighthearted webcomic comedy about the adventures of couple of ruthless killers - Hate and NuT - along with a colorful cast of other characters, set in a dangerous fantasy world.{% endblock %}" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta name="apple-mobile-web-app-title" content="Hate and NuT" />
+		
 		<link rel="apple-touch-icon-precomposed" href="apple-touch-icon.png" />
+
+		<title>{% block title %}| {{ SITE_NAME }}{% endblock %}</title>
 
 		{% add_static "css" %}
 		
 		{% block extra_head %}{% endblock %}
-		
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-		<script>window.jQuery || document.write('<script src="{% static "js/nocache/jquery-1.9.1.min.js" %}"><\/script>')</script>
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UA-19357683-2', 'hateandnut.com');
-  ga('send', 'pageview');
+		<script type="text/javascript">window.google_analytics_uacct = "UA-19357683-2";</script>		
+		<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-</script>
-
+			ga('create', 'UA-19357683-2', 'hateandnut.com');
+			ga('send', 'pageview');
+		</script>
 		
 		<script src="{% static "js/nocache/modernizr.js" %}"></script>
+
 	</head>
 	
 	<body class="{% block body_class %}{% endblock %}">
-
-<script type="text/javascript">var myViewport = $(window).width();</script>
-
-
 		<header class="pg-head-wrap clearfix">
 			<div class="width">
-				<div class="pg-head">
+				<div class="pg-head" id="pgHead">
 
-<script type="text/javascript">
-	if (myViewport >= 748){
-		document.write('<aside class="banner-ad header-ad">');
-		document.write('<div id="pw_adbox_70365_5_0"></div>');
-		document.write('<noscript><map name="admap70365" id="admap70365"><area href="http://www.projectwonderful.com/out_nojs.php?r=0&c=0&id=70365&type=5" shape="rect" coords="0,0,728,90" title=" alt=" target="_blank" /></map><table cellpadding="0" cellspacing="0" style="width:728px;border-style:none;background-color:#ffffff;"><tr><td><img src="http://www.projectwonderful.com/nojs.php?id=70365&type=5" style="width:728px;height:90px;border-style:none;" usemap="#admap70365" alt=" /></td></tr><tr><td style="background-color:#ffffff;" colspan="1"><center><a style="font-size:10px;color:#0000ff;text-decoration:none;line-height:1.2;font-weight:bold;font-family:Tahoma, verdana,arial,helvetica,sans-serif;text-transform: none;letter-spacing:normal;text-shadow:none;white-space:normal;word-spacing:normal;" href="http://www.projectwonderful.com/advertisehere.php?id=70365&type=5" target="_blank">Ads by Project Wonderful!  Your ad here, right now: $0</a></center></td></tr></table></noscript>');
-		document.write("</aside>");
-	}
-</script>
 					<nav class="pg-head-nav">
 						<ul class="pg-head-nav-list">
 							<li class="pg-head-nav-item">
@@ -56,16 +43,7 @@
 						</ul>
 					</nav>
 
-					<a href="{% url "home" %}"><img class="logo" title="A webcomic about a couple of rutheless killers, set in the world of Ultima Online." src="{% static "img/adv_hateandnut.png" %}" alt="Hate and Nut Logo" /></a>
-
-<script type="text/javascript">
-	if (myViewport < 748){
-		document.write('<aside class="small-header-ad">');
-		document.write('<div id="pw_adbox_70377_6_0"></div>');
-		document.write('<noscript><map name="admap70377" id="admap70377"><area href="http://www.projectwonderful.com/out_nojs.php?r=0&c=0&id=70377&type=6" shape="rect" coords="0,0,234,60" title="" alt="" target="_blank" /></map><table cellpadding="0" cellspacing="0" style="width:234px;border-style:none;background-color:#ffffff;"><tr><td><img src="http://www.projectwonderful.com/nojs.php?id=70377&type=6" style="width:234px;height:60px;border-style:none;" usemap="#admap70377" alt="" /></td></tr><tr><td style="background-color:#ffffff;" colspan="1"><center><a style="font-size:10px;color:#0000ff;text-decoration:none;line-height:1.2;font-weight:bold;font-family:Tahoma, verdana,arial,helvetica,sans-serif;text-transform: none;letter-spacing:normal;text-shadow:none;white-space:normal;word-spacing:normal;" href="http://www.projectwonderful.com/advertisehere.php?id=70377&type=6" target="_blank">Ads by Project Wonderful!  Your ad here, right now: $0</a></center></td></tr></table></noscript>');
-		document.write("</aside>");
-	}
-</script>
+					<a href="{% url "home" %}"><img id="siteLogo" class="logo" title="A webcomic about a couple of rutheless killers, set in the world of Ultima Online." src="{% static "img/adv_hateandnut.png" %}" alt="Hate and Nut Logo" /></a>
 
 				</div>
 			</div>
@@ -78,25 +56,11 @@
 						<article class="content clearfix" itemscope itemtype="http://schema.org/CreativeWork">
 							{% block content %}{% endblock %}
 						</article>
-						<div class="s">
-							
-							
-
-								<ul class="social">
-									<li><a title="Subscribe via RSS" class="social-icon social-rss" href="{{ SITE_META.RSS }}"><span class="visuallyhidden">RSS Feed</span></a></li>
-									<li><a title="Follow me on Twitter" class="social-icon social-twitter" href="{{ SITE_META.TWITTER }}"><span class="visuallyhidden">Follow me on Twitter</span></a></li>
-								</ul>
-							</aside>
-<script type="text/javascript"><!--
-	if (myViewport >= 748 && !($("body").hasClass("wide-comic-page"))){
-		document.write('<aside class="side-banner-medium">');
-		document.write('<div id="pw_adbox_70520_3_0"></div>');
-		document.write('<noscript><map name="admap70520" id="admap70520"><area href="http://www.projectwonderful.com/out_nojs.php?r=0&c=0&id=70520&type=3" shape="rect" coords="0,0,160,600" title="" alt="" target="_blank" /></map><table cellpadding="0" cellspacing="0" style="width:160px;border-style:none;background-color:#ffffff;"><tr><td><img src="http://www.projectwonderful.com/nojs.php?id=70520&type=3" style="width:160px;height:600px;border-style:none;" usemap="#admap70520" alt="" /></td></tr><tr><td style="background-color:#ffffff;" colspan="1"><center><a style="font-size:10px;color:#0000ff;text-decoration:none;line-height:1.2;font-weight:bold;font-family:Tahoma, verdana,arial,helvetica,sans-serif;text-transform: none;letter-spacing:normal;text-shadow:none;white-space:normal;word-spacing:normal;" href="http://www.projectwonderful.com/advertisehere.php?id=70520&type=3" target="_blank">Ads by Project Wonderful!  Your ad here, right now: $0</a></center></td></tr></table></noscript>');
-
-		document.write('<\/aside>');
-	}//-->
-</script>
-								
+						<div class="s" id="pageSide">
+							<ul class="social">
+								<li><a title="Subscribe via RSS" class="social-icon social-rss" href="{{ SITE_META.RSS }}"><span class="visuallyhidden">RSS Feed</span></a></li>
+								<li><a title="Follow me on Twitter" class="social-icon social-twitter" href="{{ SITE_META.TWITTER }}"><span class="visuallyhidden">Follow me on Twitter</span></a></li>
+							</ul>						
 						</div>
 					{% endblock %}
 				</div>
@@ -144,41 +108,20 @@
 			
 		</footer>
 
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=495389753807975";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));
-</script>
-
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script>window.jQuery || document.write('<script src="{% static "js/nocache/jquery-1.9.1.min.js" %}"><\/script>')</script>
 		{% add_static "js" %}
 
-<!-- Project Wonderful Ad Box Loader -->	
-<script type="text/javascript">
-	(function(){
-		function pw_load(){
-			if(arguments.callee.z)return;else arguments.callee.z=true;
-				var d=document;var s=d.createElement('script');
-				var x=d.getElementsByTagName('script')[0];
-				s.type='text/javascript';s.async=true;
-				s.src='//www.projectwonderful.com/pwa.js';
-				x.parentNode.insertBefore(s,x);
-			}
-			if (window.attachEvent){
-				window.attachEvent('DOMContentLoaded',pw_load);
-				window.attachEvent('onload',pw_load);
-			}
-			else{
-				window.addEventListener('DOMContentLoaded',pw_load,false);
-				window.addEventListener('load',pw_load,false);
-			}
-	})();
-</script>
-<!-- End Project Wonderful Ad Box Loader -->
-
-
     </body>
+
+	<div id="fb-root"></div>
+	<script>(function(d, s, id) {
+	  var js, fjs = d.getElementsByTagName(s)[0];
+	  if (d.getElementById(id)) return;
+	  js = d.createElement(s); js.id = id;
+	  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=495389753807975";
+	  fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));
+	</script>
+
 </html>
