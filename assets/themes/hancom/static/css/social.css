@@ -64,7 +64,7 @@
 .share-facebook{
 	padding:0;
 	margin:15px 0 0;
-	
+	height:35px;
 }
 @media all and (min-width:748px){
 	.share-facebook{
