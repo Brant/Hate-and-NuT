@@ -21,7 +21,7 @@
 
 {% block title %}{{ comic.title }} {{ block.super }} | {% if comic.story_arc and comic.special_story_arc_title %}{{ comic.special_story_arc_title }}{% else %}Webcomic #{{ comic.chronology }}{% endif %}{% endblock %}
 
-{% block body_class %}{% if comic.single_row %}wide-comic-page {% endif %}{% endblock %}
+{% block body_class %}{% if comic.single_row %}single-row-comic-page {% endif %}{% endblock %}
 
 {% block content %}
 	<div class="clearfix heading-wrap">
