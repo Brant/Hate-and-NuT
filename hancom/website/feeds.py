@@ -16,7 +16,7 @@ from hancom.website.queries import published_comics
 class SiteFeed(RSSFeedWithContentEncoded):
     """
     """
-    title = "The Adventures of Hate and NuT"
+    title = "Adventures of Hate and NuT"
     link = "/"
     description = "A webcomic set in the world of Ultima Online"
 
