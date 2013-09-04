@@ -123,12 +123,6 @@ ul{
 .banner-ad{
 	display:none;
 	width:728px;
-	/*height:90px;*/
-}
-.banner-ad-large{
-	display:none;
-	width:970px;
-	height:90px;
 }
 .mobile-fixed-ad-wrap{
 	position:fixed;
