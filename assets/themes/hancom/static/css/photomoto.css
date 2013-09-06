@@ -1,0 +1,11 @@
+html > body ul.FotomotoBar .FotomotoSeparator,
+html > body span.FotomotoSep1,
+html > body span.FotomotoSep2,
+html > body span.FotomotoSep3,
+html > body span.FotomotoSep4{
+	display:none;
+}
+.FotomotoToolbarClass{
+	float:right;
+	display:none;
+}

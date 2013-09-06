@@ -209,6 +209,9 @@
 	.single-row-comic-page .s{
 		display:none;
 	}
+	.FotomotoToolbarClass{
+		display:block;
+	}
 }
 
 @media all and (min-width:1024px){

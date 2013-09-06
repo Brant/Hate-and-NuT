@@ -78,7 +78,11 @@
 	{% endif %}
 	
 	<p>{{ comic.date|date }}</p>
-	<div id="FotomotoToolbar" class="FotomotoToolbarClass"></div>
+
+	{% if not comic.single_row %}
+		<p><div id="FotomotoToolbar" class="FotomotoToolbarClass"></div></p>
+	{% endif %}
+
 	<p class="hidden" itemprop="datePublished">{{ comic.date|date:"Y-m-d" }}</p>
 	
 	{% include "social/comic_share_buttons.html" %}
@@ -86,5 +90,7 @@
 {% endblock %}
 
 {% block extra_foot %}
-	<script type="text/javascript" src="http://widget.fotomoto.com/stores/script/7b69e417ea272bc00fa0804def6ae2eed851bdcc.js"></script>
+	{% if not comic.single_row %}
+		<script type="text/javascript" src="http://widget.fotomoto.com/stores/script/7b69e417ea272bc00fa0804def6ae2eed851bdcc.js"></script>
+	{% endif %}
 {% endblock %}

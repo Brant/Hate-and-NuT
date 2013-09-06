@@ -45,10 +45,22 @@
 	{% else %}
 		<img src="{{ latest_comic.comic_image.url }}" class="comic" alt="Comic entitled '{{ latest_comic.title }}'" />
 	{% endif %}
+	
 	<p>{{ latest_comic.date|date }}</p>
+
+	{% if not latest_comic.single_row %}
+		<p><div id="FotomotoToolbar" class="FotomotoToolbarClass"></div></p>
+	{% endif %}
 	
 	{% with latest_comic as comic %}
 		{% include "social/comic_share_buttons.html" %}
 	{% endwith %}
 	
+{% endblock %}
+
+
+{% block extra_foot %}
+	{% if not latest_comic.single_row %}
+		<script type="text/javascript" src="http://widget.fotomoto.com/stores/script/7b69e417ea272bc00fa0804def6ae2eed851bdcc.js"></script>
+	{% endif %}
 {% endblock %}
