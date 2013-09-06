@@ -111,7 +111,7 @@
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 		<script>window.jQuery || document.write('<script src="{% static "js/nocache/jquery-1.10.2.min.js" %}"><\/script>')</script>
 		{% add_static "js" %}
-
+		{% block extra_foot %}{% endblock %}
     </body>
 
 	<div id="fb-root"></div>
@@ -123,7 +123,5 @@
 	  fjs.parentNode.insertBefore(js, fjs);
 	}(document, 'script', 'facebook-jssdk'));
 	</script>
-
-	
 
 </html>
