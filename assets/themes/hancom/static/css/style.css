@@ -95,6 +95,9 @@ ul{
 .pg-head-nav-link{
 	
 }
+.head-ad-break{
+		display:none;
+	}
 .pg-head-nav .button-elaborate{
 	display:none;
 }
@@ -115,6 +118,7 @@ ul{
 	background:#fefefe;
 }
 .small-header-ad{
+	float:none;
 	width:234px;
 	height:60px;
 	overflow:hidden;

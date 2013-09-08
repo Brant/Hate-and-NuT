@@ -2,9 +2,11 @@
 	.underlined-heading{
 		border-bottom:solid 1px;
 	}
+	
 	body{
 		padding:0;
 	}
+	
 	.content{
 		background:#fefefe;
 		padding:10px 20px;
@@ -13,7 +15,7 @@
 	}
 	h1{
 		font-size:1.8em;
-		margin:.8em 0;
+		margin:.8em 0;s
 		font-weight:bold;
 	}
 	.professional .content h1{
@@ -68,9 +70,7 @@
 	.pg-foot-wrap{
 		padding:55px 25px 10px;
 	}
-	.small-header-ad{
-		display:none;
-	}
+
 	.heading-404{
 		text-shadow:
 			-2px -2px 0 #f2f2f2,  
@@ -212,9 +212,23 @@
 	.FotomotoToolbarClass{
 		display:block;
 	}
+	.small-header-ad{
+		float:right;
+		height:auto;
+	}
 }
 
 @media all and (min-width:1024px){
+	.head-ad-break{
+		float:left;
+		width:100%;
+		margin:0;
+		height:0;
+		padding:0;
+		color:transparent;
+		border:none;
+		display:block;
+	}
 	.foot-section{
 		text-align:left;
 	}
@@ -263,7 +277,7 @@
 	}
 	.content{
 		margin:-65px 0 0;
-		max-width:72%;
+		max-width:71%;
 		float:left;
 	}
 	.non-comic .content{
@@ -285,6 +299,9 @@
 		margin:2em auto 0;
 		width:160px;
 		height:600px;
+	}
+	.small-header-ad{
+		margin:10px 0 -100%;
 	}
 }
 
