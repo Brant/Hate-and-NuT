@@ -300,8 +300,14 @@
 		width:160px;
 		height:600px;
 	}
+	/* displayed above social icons at top of right-hand side */
 	.small-header-ad{
-		margin:10px 0 -100%;
+		margin:15px 0 -100%;
+	}
+
+	/* displayed at the bottom of single-row strips */
+	.single-row-comic-page .small-header-ad{
+		margin:10px 0 0;
 	}
 }
 
