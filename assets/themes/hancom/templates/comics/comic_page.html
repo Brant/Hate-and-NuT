@@ -14,7 +14,7 @@
 		{% endif %}	
 	{% endif %}
 
-	<meta property="og:title" content="Hate and NuT #{{ comic.chronology }}" />
+	<meta property="og:title" content="Hate and NuT #{{ comic.chronology }} - {{ comic.title }}" />
 	<meta property="og:image" content="{{ SITE_URL }}{{ comic.preview_image_half.url }}" /> 
 	<meta property="og:description" content="Hate and NuT #{{ comic.chronology }} - {{ comic.description }}{% if comic.story_arc %} - Part of the '{{ comic.story_arc }}' story arc.{% endif %}" /> 
 {% endblock %}
