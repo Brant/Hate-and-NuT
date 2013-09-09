@@ -1,4 +1,3 @@
-
 /*
  * Following/subscribing
  */
@@ -8,7 +7,7 @@
 	padding:0;	
 	text-align:center;
 }
-.pg-404 .social{
+.nopg .social{
 	margin:5.5em 0 1em;
 }
 .social li{
@@ -79,7 +78,6 @@
 	margin:0 15px 0 0;
 }
 .share-plus{
-	padding:0px;
+	padding:0;
 	margin:2px 15px 0 0;
-	
 }
