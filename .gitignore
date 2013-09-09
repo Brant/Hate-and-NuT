@@ -31,3 +31,4 @@ dist/
 collectstatic/
 assets/uploads/*/
 .codeintel/
+hancom/website/fixtures/
