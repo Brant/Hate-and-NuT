@@ -31,6 +31,14 @@ class Comic(TitleDateSlug, HalfQuarterAssetsMixin):
     special_story_arc_title = models.CharField(max_length=300, null=True, blank=True, help_text="Will override 'Hate and NuT #X' if part of a story arc")
     story_arc = models.ForeignKey(StoryArc, null=True, blank=True)
 
+    def inside_arc(self):
+        if not self.story_arc:
+            return False
+
+        in_arc = self.story_arc.comic_set.filter(published=True).order_by("chronology")
+
+        return list(in_arc).index(self) > 0
+
     def is_available_to_public(self):
         """
         Calculate whether or not the comic is

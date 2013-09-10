@@ -48,6 +48,10 @@
 	
 	<p>{{ latest_comic.date|date }}</p>
 
+	{% if latest_comic.inside_arc %}
+		<p class="story-arc-from-beginning">You are reading the "{{ latest_comic.story_arc.name }}" story arc. <a href="{{ latest_comic.story_arc.get_absolute_url }}">Read it from the beginning.</a></p>
+	{% endif %}
+
 	{% if not latest_comic.single_row %}
 		<p><div id="FotomotoToolbar" class="FotomotoToolbarClass"></div></p>
 	{% endif %}

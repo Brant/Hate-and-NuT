@@ -77,7 +77,13 @@
 		<img src="{{ comic.comic_image.url }}" class="comic" alt="Comic entitled '{{ comic.title }}'"  itemprop="image" />
 	{% endif %}
 	
+
+	
 	<p>{{ comic.date|date }}</p>
+
+	{% if comic.inside_arc %}
+		<p class="story-arc-from-beginning">You are reading the "{{ comic.story_arc.name }}" story arc. <a href="{{ comic.story_arc.get_absolute_url }}">Read it from the beginning.</a></p>
+	{% endif %}
 
 	{% if not comic.single_row %}
 		<p><div id="FotomotoToolbar" class="FotomotoToolbarClass"></div></p>

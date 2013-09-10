@@ -48,7 +48,7 @@ def comic_page(request, comic_id):
     comic_id = int(comic_id)
 
     try:
-        comic = Comic.objects.get(chronology=comic_id, published=True)
+        comic = Comic.objects.prefetch_related("story_arc").get(chronology=comic_id, published=True)
     except ObjectDoesNotExist:
         raise Http404
 
