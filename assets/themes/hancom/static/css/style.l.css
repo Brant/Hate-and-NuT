@@ -216,9 +216,13 @@
 		float:right;
 		height:auto;
 	}
+	.share{
+		margin:1em 0 0;
+	}
 }
 
 @media all and (min-width:1024px){
+	
 	.head-ad-break{
 		float:left;
 		width:100%;
@@ -289,7 +293,7 @@
 		display:block;
 		width:20%;
 		text-align:center;
-		/*margin:-40px 0 0;*/
+		margin:-40px 0 0;
 	}
 	.pg-head-nav{
 		display:none;
@@ -300,15 +304,16 @@
 		width:160px;
 		height:600px;
 	}
-	/* displayed above social icons at top of right-hand side */
+	.share{
+		margin:-20px 0 0;
+	}
+	.single-row-comic-page .share{
+		margin:0;
+	}
 	.small-header-ad{
-		margin:15px 0 -100%;
+		margin:30px 0 0;
 	}
-
-	/* displayed at the bottom of single-row strips */
-	.single-row-comic-page .small-header-ad{
-		margin:10px 0 0;
-	}
+	
 }
 
 @media all and (min-width:1280px){

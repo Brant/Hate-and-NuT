@@ -4,8 +4,16 @@ html > body span.FotomotoSep2,
 html > body span.FotomotoSep3,
 html > body span.FotomotoSep4{
 	display:none;
+	
+}
+html > body div ul.FotomotoBar, 
+html > body div ul.FotomotoBar a, 
+html > body div ul.FotomotoBar a.FotomotoBarLink{
+	clear:none;
+}
+body .FotomotoToolbarClass{
+	clear:none;
 }
 .FotomotoToolbarClass{
-	float:right;
 	display:none;
 }
