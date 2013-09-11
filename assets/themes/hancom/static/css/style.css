@@ -129,6 +129,8 @@ ul{
 .banner-ad{
 	display:none;
 	width:728px;
+	height:90px;
+	overflow:hidden;
 }
 .mobile-fixed-ad-wrap{
 	position:fixed;
