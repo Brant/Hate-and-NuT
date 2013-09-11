@@ -17,3 +17,6 @@ body .FotomotoToolbarClass{
 .FotomotoToolbarClass{
 	display:none;
 }
+html > body article ul.FotomotoBar li{
+	margin:0 1em 0 0;
+}
