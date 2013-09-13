@@ -10,7 +10,7 @@ class ComicsSitemap(Sitemap):
     """
     Sitemap for comic entries
     """
-    changefreq = "never"
+    changefreq = "monthly"
     priority = "0.8"
 
     def items(self):
