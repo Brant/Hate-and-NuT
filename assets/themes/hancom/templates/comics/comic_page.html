@@ -24,7 +24,7 @@
 {% block body_class %}{% if comic.single_row %}single-row-comic-page {% endif %}{% endblock %}
 
 {% block content %}
-	<div class="clearfix heading-wrap">
+	<header class="clearfix heading-wrap">
 		{% if comic.is_available_to_public %}
 			{% if comic.story_arc and comic.special_story_arc_title %}
 				<h1>{{ comic.special_story_arc_title }}</h1>
@@ -67,7 +67,7 @@
 				</li>
 			</ul>
 		</nav>
-	</div>
+	</header>
 	
 	{% if comic.single_row %}
 		<div class="comic-wide">
@@ -77,22 +77,25 @@
 		<img src="{{ comic.comic_image.url }}" class="comic" alt="Comic entitled '{{ comic.title }}'"  itemprop="image" />
 	{% endif %}
 	
-	<p class="comic-date">{{ comic.date|date }}</p>
+	<footer class="comic-footer clearfix">
+		<p class="comic-date">{{ comic.date|date }}</p>
 
+		{% if comic.inside_arc %}
+			<p class="story-arc-from-beginning">You are reading the "{{ comic.story_arc.name }}" story arc. <a href="{{ comic.story_arc.get_absolute_url }}">Read it from the beginning.</a></p>
+		{% endif %}
 
-
-	{% if comic.inside_arc %}
-		<p class="story-arc-from-beginning">You are reading the "{{ comic.story_arc.name }}" story arc. <a href="{{ comic.story_arc.get_absolute_url }}">Read it from the beginning.</a></p>
-	{% endif %}
-	
-	{% if not comic.single_row %}
-		<div id="FotomotoToolbar" class="FotomotoToolbarClass"></div>
-	{% endif %}
-	
-	{% include "social/comic_share_buttons.html" %}
-	
-	<p class="hidden" itemprop="datePublished">{{ comic.date|date:"Y-m-d" }}</p>
-
+		{% if comic.continuation_of %}
+			<p class="story-arc-from-beginning">This comic is a continuation of <a href="{{ comic.continuation_of.get_absolute_url }}">{{ comic.title }} (#{{ comic.chronology }})</a></p>
+		{% endif %}
+		
+		{% if not comic.single_row %}
+			<div id="FotomotoToolbar" class="FotomotoToolbarClass"></div>
+		{% endif %}
+		
+		{% include "social/comic_share_buttons.html" %}
+		
+		<p class="hidden" itemprop="datePublished">{{ comic.date|date:"Y-m-d" }}</p>
+	</footer>
 {% endblock %}
 
 {% block extra_foot %}

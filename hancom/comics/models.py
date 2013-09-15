@@ -31,6 +31,8 @@ class Comic(TitleDateSlug, HalfQuarterAssetsMixin):
     special_story_arc_title = models.CharField(max_length=300, null=True, blank=True, help_text="Will override 'Hate and NuT #X' if part of a story arc")
     story_arc = models.ForeignKey(StoryArc, null=True, blank=True)
 
+    continuation_of = models.ForeignKey('self', null=True, blank=True)
+
     def inside_arc(self):
         if not self.story_arc:
             return False

@@ -212,9 +212,14 @@
 	.FotomotoToolbarClass{
 		display:block;
 	}
+	.comic-footer{
+		position:relative;
+	}
 	.small-header-ad{
-		float:right;
-		height:auto;
+		position: absolute;
+		height: auto;
+		top:20px;
+		right:5px;
 	}
 	.share{
 		margin:1em 0 0;
@@ -305,13 +310,10 @@
 		height:600px;
 	}
 	.share{
-		margin:-20px 0 0;
+		float:left;
 	}
 	.single-row-comic-page .share{
 		margin:0;
-	}
-	.small-header-ad{
-		margin:30px 0 0;
 	}
 	
 }

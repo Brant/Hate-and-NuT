@@ -16,7 +16,7 @@
 {% endblock %}
 
 {% block content %}
-	<div class="clearfix heading-wrap">
+	<header class="clearfix heading-wrap">
 		{% if latest_comic.story_arc and latest_comic.special_story_arc_title %}
 			<hgroup class="story-arc-comic-heading-group">
 				<h1>Latest</h1>
@@ -37,7 +37,7 @@
 				<li class="comic-nav-list-item comic-nav-list-item-right"><span class="visuallyhidden">Next</span><i class="icon-caret-right"></i></li>
 			</ul>
 		</nav>
-	</div>
+	</header>
 	{% if latest_comic.single_row %}
 		<div class="comic-wide">
 			<img src="{{ latest_comic.comic_image.url }}" class="comic" alt="Comic entitled '{{ latest_comic.title }}'" />
@@ -45,20 +45,26 @@
 	{% else %}
 		<img src="{{ latest_comic.comic_image.url }}" class="comic" alt="Comic entitled '{{ latest_comic.title }}'" />
 	{% endif %}
-	
-	<p class="comic-date">{{ latest_comic.date|date }}</p>
 
-	{% if latest_comic.inside_arc %}
-		<p class="story-arc-from-beginning">You are reading the "{{ latest_comic.story_arc.name }}" story arc. <a href="{{ latest_comic.story_arc.get_absolute_url }}">Read it from the beginning.</a></p>
-	{% endif %}
+	<footer class="comic-footer clearfix">
+		<p class="comic-date">{{ latest_comic.date|date }}</p>
 
-	{% if not latest_comic.single_row %}
-		<div id="FotomotoToolbar" class="FotomotoToolbarClass"></div>
-	{% endif %}
-	
-	{% with latest_comic as comic %}
+		{% if latest_comic.inside_arc %}
+			<p class="story-arc-from-beginning">You are reading the "{{ latest_comic.story_arc.name }}" story arc. <a href="{{ latest_comic.story_arc.get_absolute_url }}">Read it from the beginning.</a></p>
+		{% endif %}
+
+		{% if latest_comic.continuation_of %}
+			<p class="story-arc-from-beginning">This comic is a continuation of <a href="{{ latest_comic.continuation_of.get_absolute_url }}">{{ latest_comic.title }} (#{{ latest_comic.chronology }})</a></p>
+		{% endif %}
+		
+		{% if not latest_comic.single_row %}
+			<div id="FotomotoToolbar" class="FotomotoToolbarClass"></div>
+		{% endif %}
+		
 		{% include "social/comic_share_buttons.html" %}
-	{% endwith %}
+		
+		<p class="hidden" itemprop="datePublished">{{ latest_comic.date|date:"Y-m-d" }}</p>
+	</footer>
 	
 {% endblock %}
 

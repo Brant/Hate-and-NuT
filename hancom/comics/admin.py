@@ -59,7 +59,7 @@ class ComicAdmin(admin.ModelAdmin):
             'classes': ('collapse', )
         }),
         ('Publish Details', {
-            'fields': ('date', 'published', 'chronology', ),
+            'fields': ('date', 'published', 'chronology', 'continuation_of'),
         }),
 
         ('Images', {
