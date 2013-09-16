@@ -54,7 +54,7 @@
 		{% endif %}
 
 		{% if latest_comic.continuation_of %}
-			<p class="story-arc-from-beginning">This comic is a continuation of <a href="{{ latest_comic.continuation_of.get_absolute_url }}">{{ latest_comic.title }} (#{{ latest_comic.chronology }})</a></p>
+			<p class="story-arc-from-beginning">This comic is a continuation of <a href="{{ latest_comic.continuation_of.get_absolute_url }}">{{ latest_comic.continuation_of.title }} (#{{ latest_comic.continuation_of.chronology }})</a></p>
 		{% endif %}
 		
 		{% if not latest_comic.single_row %}
