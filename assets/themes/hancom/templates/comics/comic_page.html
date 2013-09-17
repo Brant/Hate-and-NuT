@@ -2,7 +2,7 @@
 
 {% load url from future %}
 
-{% block meta_description %}Webcomic issue #{{ comic.chronology }} - {{ comic.description }}{% if comic.story_arc %} - Part of the '{{ comic.story_arc }}' story arc.{% endif %}{% endblock %}
+{% block meta_description %}{{ comic.description }}{% if comic.story_arc %} - Part of the '{{ comic.story_arc }}' story arc.{% endif %} Hate and NuT Webcomic issue #{{ comic.chronology }}{% endblock %}
 
 {% block extra_head %}
 	
