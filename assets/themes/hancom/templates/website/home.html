@@ -46,26 +46,27 @@
 		<img src="{{ latest_comic.comic_image.url }}" class="comic" alt="Comic entitled '{{ latest_comic.title }}'" />
 	{% endif %}
 
-	<footer class="comic-footer clearfix">
-		<p class="comic-date">{{ latest_comic.date|date }}</p>
+	{% with latest_comic as comic %}
+		<footer class="comic-footer clearfix">
+			<p class="comic-date">{{ comic.date|date }}</p>
 
-		{% if latest_comic.inside_arc %}
-			<p class="story-arc-from-beginning">You are reading the "{{ latest_comic.story_arc.name }}" story arc. <a href="{{ latest_comic.story_arc.get_absolute_url }}">Read it from the beginning.</a></p>
-		{% endif %}
+			{% if comic.inside_arc %}
+				<p class="story-arc-from-beginning">You are reading the "{{ comic.story_arc.name }}" story arc. <a href="{{ comic.story_arc.get_absolute_url }}">Read it from the beginning.</a></p>
+			{% endif %}
 
-		{% if latest_comic.continuation_of %}
-			<p class="story-arc-from-beginning">This comic is a continuation of <a href="{{ latest_comic.continuation_of.get_absolute_url }}">{{ latest_comic.continuation_of.title }} (#{{ latest_comic.continuation_of.chronology }})</a></p>
-		{% endif %}
-		
-		{% if not latest_comic.single_row %}
-			<div id="FotomotoToolbar" class="FotomotoToolbarClass"></div>
-		{% endif %}
-		
-		{% include "social/comic_share_buttons.html" %}
-		
-		<p class="hidden" itemprop="datePublished">{{ latest_comic.date|date:"Y-m-d" }}</p>
-	</footer>
-	
+			{% if comic.continuation_of %}
+				<p class="story-arc-from-beginning">This comic is a continuation of <a href="{{ comic.continuation_of.get_absolute_url }}">{{ comic.continuation_of.title }} (#{{ comic.continuation_of.chronology }})</a></p>
+			{% endif %}
+			
+			{% if not comic.single_row %}
+				<div id="FotomotoToolbar" class="FotomotoToolbarClass"></div>
+			{% endif %}
+			
+			{% include "social/comic_share_buttons.html" %}
+			
+			<p class="hidden" itemprop="datePublished">{{ comic.date|date:"Y-m-d" }}</p>
+		</footer>
+	{% endwith %}
 {% endblock %}
 
 
