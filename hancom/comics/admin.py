@@ -49,7 +49,7 @@ class ComicAdmin(admin.ModelAdmin):
     list_display_links = ["title", ]
     list_filter = ["published", "story_arc", ]
     list_editable = ["published", ]
-
+    filter_horizontal = ["characters", ]
     fieldsets = (
         (None, {
             'fields': ('title', 'description', ),
@@ -64,6 +64,10 @@ class ComicAdmin(admin.ModelAdmin):
 
         ('Images', {
             'fields': ('comic_image', 'preview_image', 'single_row', ),
+        }),
+
+        ('Metadata', {
+            'fields': ('characters', ),
         }),
 
     )

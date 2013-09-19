@@ -4,6 +4,8 @@ Comic models
 from django.db import models
 from django.utils import timezone
 
+from hancom.characters.models import Character
+
 from noodles.models import TitleDateSlug, HalfQuarterAssetsMixin, NameSlug
 
 
@@ -32,6 +34,8 @@ class Comic(TitleDateSlug, HalfQuarterAssetsMixin):
     story_arc = models.ForeignKey(StoryArc, null=True, blank=True)
 
     continuation_of = models.ForeignKey('self', null=True, blank=True)
+
+    characters = models.ManyToManyField(Character, null=True, blank=True, help_text="Characters that appear in this comic")
 
     def inside_arc(self):
         if not self.story_arc:
