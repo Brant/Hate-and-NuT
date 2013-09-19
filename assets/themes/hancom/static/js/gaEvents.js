@@ -55,4 +55,12 @@ $(function(){
 	$(".s .social .social-icon").click(function(ev){
 		pushAnalyticsEvent("Navigate", "Sidebar", $(ev.target).text());
 	});
+
+	$(".story-arc-from-beginning a").click(function(ev){
+		pushAnalyticsEvent("Navigate", "Beginning of Story Arc", $(this).text());
+	});
+
+	$(".continuation-of a").click(function(ev){
+		pushAnalyticsEvent("Navigate", "Continuation of Strip", $(this).text());
+	});
 });

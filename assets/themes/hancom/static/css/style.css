@@ -310,10 +310,12 @@ ul{
 	width:auto;
 }
 
+.continuation-of,
 .story-arc-from-beginning{
 	font-size:.9em;
 	font-style: italic;
 }
+.continuation-of,
 .story-arc-from-beginning a{
 	font-style:normal;
 }
