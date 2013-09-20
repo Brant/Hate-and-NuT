@@ -18,7 +18,6 @@ class ComicInlineAdmin(admin.TabularInline):
     extra = 0
     can_delete = False
 
-
     def edit_document(self, instance):
         """
         Convinience link to the admin editor for an FUTP document

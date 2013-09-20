@@ -212,18 +212,21 @@
 	.FotomotoToolbarClass{
 		display:block;
 	}
-	.comic-footer{
-		position:relative;
-		padding-right:260px;
-	}
-	.small-header-ad{
-		position: absolute;
-		height: auto;
-		top:20px;
-		right:5px;
-	}
 	.share{
 		margin:1em 0 0;
+	}
+
+	.in-content-ad-wrap{
+		float:right;
+		width:35%;
+		text-align: right;
+	}
+	.in-content-ad{
+		float:right;
+	}
+	.comic-footer-content{
+		float:left;
+		width:60%;
 	}
 }
 

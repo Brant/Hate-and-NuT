@@ -117,15 +117,7 @@ ul{
 	padding:.5% 2% 0;
 	background:#fefefe;
 }
-.small-header-ad{
-	float:none;
-	width:234px;
-	height:60px;
-	overflow:hidden;
-	position:relative;
-	z-index:5;
-	margin:10px 0 5px;
-}
+
 .banner-ad{
 	display:none;
 	width:728px;
@@ -318,6 +310,13 @@ ul{
 .continuation-of,
 .story-arc-from-beginning a{
 	font-style:normal;
+}
+.in-content-ad-wrap{
+	width:234px;
+	margin:0 auto 1em;
+}
+.comic-footer{
+	margin:1.5em 0 1em;
 }
 
 @media all and (max-width:747px){

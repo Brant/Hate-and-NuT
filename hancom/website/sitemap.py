@@ -47,4 +47,3 @@ class WebsiteSitemap(Sitemap):
 
     def changefreq(self, item):
         return item.changefreq
-
