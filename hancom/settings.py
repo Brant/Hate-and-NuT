@@ -104,9 +104,9 @@ TEMPLATE_LOADERS = (
 #     'django.template.loaders.eggs.Loader',
 )
 
-MIDDLEWARE_CLASSES = [
-    'django.middleware.common.CommonMiddleware',
+MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.common.CommonMiddleware',
     # 'django.middleware.gzip.GZipMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -114,13 +114,21 @@ MIDDLEWARE_CLASSES = [
     'django.contrib.redirects.middleware.RedirectFallbackMiddleware',
     # Uncomment the next line for simple clickjacking protection:
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
-]
-
-# for cache on server:
-if DEBUG:
-    MIDDLEWARE_CLASSES.insert(0, 'django.middleware.cache.UpdateCacheMiddleware')
-    MIDDLEWARE_CLASSES.append('django.middleware.cache.FetchFromCacheMiddleware')
-    print MIDDLEWARE_CLASSES
+)
+if not DEBUG:
+    MIDDLEWARE_CLASSES = (
+        'django.contrib.sessions.middleware.SessionMiddleware',
+        'django.middleware.cache.UpdateCacheMiddleware'
+        'django.middleware.common.CommonMiddleware',
+        # 'django.middleware.gzip.GZipMiddleware',
+        'django.middleware.csrf.CsrfViewMiddleware',
+        'django.contrib.auth.middleware.AuthenticationMiddleware',
+        'django.contrib.messages.middleware.MessageMiddleware',
+        'django.contrib.redirects.middleware.RedirectFallbackMiddleware',
+        # Uncomment the next line for simple clickjacking protection:
+        # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
+        'django.middleware.cache.FetchFromCacheMiddleware'
+    )
 
 TEMPLATE_CONTEXT_PROCESSORS = (
     "django.contrib.auth.context_processors.auth",
