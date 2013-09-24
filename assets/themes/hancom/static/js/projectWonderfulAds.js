@@ -44,7 +44,6 @@ $(function(){
 			*/
 		}
 	}
-	
 
 
 	if (myViewport >= 748 && !($("body").hasClass("single-row-comic-page")) && !$("body").hasClass("non-comic")){
@@ -52,6 +51,10 @@ $(function(){
 		var adspaceRight = $('<div id="pw_adbox_70520_3_0"></div>').appendTo(asideRight);
 		var placeholderRight = $('<noscript><map name="admap70520" id="admap70520"><area href="http://www.projectwonderful.com/out_nojs.php?r=0&c=0&id=70520&type=3" shape="rect" coords="0,0,160,600" title="" alt="" target="_blank" /></map><table cellpadding="0" cellspacing="0" style="width:160px;border-style:none;background-color:#ffffff;"><tr><td><img src="http://www.projectwonderful.com/nojs.php?id=70520&type=3" style="width:160px;height:600px;border-style:none;" usemap="#admap70520" alt="" /></td></tr><tr><td style="background-color:#ffffff;" colspan="1"><center><a style="font-size:10px;color:#0000ff;text-decoration:none;line-height:1.2;font-weight:bold;font-family:Tahoma, verdana,arial,helvetica,sans-serif;text-transform: none;letter-spacing:normal;text-shadow:none;white-space:normal;word-spacing:normal;" href="http://www.projectwonderful.com/advertisehere.php?id=70520&type=3" target="_blank">Ads by Project Wonderful!  Your ad here, right now: $0</a></center></td></tr></table></noscript>').appendTo(asideRight);
 	}
+
+	var squareAside = $('<aside class="foot-square-ad" />').insertAfter(".foot-section:last");
+	var adspaceSquare = $('<div id="pw_adbox_70765_7_0"></div>').appendTo(squareAside);
+	var placeholderSquare = $('<noscript><map name="admap70765" id="admap70765"><area href="http://www.projectwonderful.com/out_nojs.php?r=0&c=0&id=70765&type=7" shape="rect" coords="0,0,300,250" title="" alt="" target="_blank" /></map><table cellpadding="0" cellspacing="0" style="width:300px;border-style:none;background-color:#ffffff;"><tr><td style="background-color:#ffffff;" colspan="1"><center><a style="font-size:10px;color:#0000ff;text-decoration:none;line-height:1.2;font-weight:bold;font-family:Tahoma, verdana,arial,helvetica,sans-serif;text-transform: none;letter-spacing:normal;text-shadow:none;white-space:normal;word-spacing:normal;" href="http://www.projectwonderful.com/advertisehere.php?id=70765&type=7" target="_blank">Ads by Project Wonderful!  Your ad here, right now: $0.02</a></center></td></tr><tr><td><img src="http://www.projectwonderful.com/nojs.php?id=70765&type=7" style="width:300px;height:250px;border-style:none;" usemap="#admap70765" alt="" /></td></tr></table></noscript>').appendTo(squareAside);
 
 
 	loadAds();

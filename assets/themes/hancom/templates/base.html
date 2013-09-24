@@ -69,31 +69,23 @@
 		
 		<footer class="pg-foot-wrap clearfix">
 			
-			<div class="clearfix">
+			<div class="clearfix pg-foot">
 				{% block footer_content %}
-					<div class="smallscreen-clearfix">
-						<nav class="foot-section">
-							<h2><span class="underlined-heading">Support the Comic</span></h2>
-							<ul>
-								<li><a href="{% url "become_an_advertiser" %}">Advertise</a></li>
-								
-								<li><a href="{% url "become_a_sponsor" %}">Sponsor</a></li>
-							</ul>
-						</nav>
-						<nav class="foot-section">
-							<h2><span class="underlined-heading">Hate and NuT</span></h2>
-							<ul>
-								<li><a href="{% url "archive_index" %}">Archive</a></li>
-								<li><a href="{% url "characters_index" %}">Characters</a></li>
-								<li><a href="{% url "contact_me" %}">Contact</a></li>
-							</ul>
-						</nav>
-					</div>
-					<nav class="foot-section">
-						<h2><span class="underlined-heading">Follow Along</span></h2>
+					<nav class="foot-section clearfix">
+						<h2><span class="underlined-heading">The Webcomic</span></h2>
+						<ul>
+							<li><a href="{% url "archive_index" %}">Archive</a></li>
+							<li><a href="{% url "characters_index" %}">Characters</a></li>
+							
+							<li><a href="{% url "become_a_sponsor" %}">Become a Sponsor</a></li>
+						</ul>
+					</nav>
+					<nav class="foot-section clearfix">
+						<h2><span class="underlined-heading">Stay in Touch</span></h2>
 						<ul>
 							<li><a href="{{ SITE_META.RSS }}">Subscribe via RSS</a></li>
 							<li><a href="{{ SITE_META.TWITTER }}">Twitter</a></li>
+							<li><a href="{% url "contact_me" %}">Contact</a></li>
 						</ul>
 					</nav>
 				{% endblock %}

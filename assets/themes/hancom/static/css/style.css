@@ -3,7 +3,7 @@ html{
 }
 body{
 	font-size:1.2em;
-	padding:0 0 50px;
+	padding:0 0 10px;
 	color:#1f1f1f;
 	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
 	font-weight: 300;
@@ -268,14 +268,13 @@ ul{
 	margin:0 0 .3em;
 	padding:0;
 	display:inline-block;
+	float:left;
+	width:33%;
 }
 .foot-section ul{
 	margin:0 0 15px;
 	padding:0;
-	-webkit-column-count:3;
-	-moz-column-count:3;
-	-ms-column-count:3;
-	column-count:3;
+	
 }
 .foot-section a,
 .foot-section a:hover,
@@ -317,6 +316,12 @@ ul{
 }
 .comic-footer{
 	margin:1.5em 0 1em;
+}
+
+.foot-square-ad{
+	margin:1em 0 1.5em;
+	height:250px;
+	overflow:hidden;
 }
 
 @media all and (max-width:747px){

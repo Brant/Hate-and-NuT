@@ -87,13 +87,14 @@
 	}
 	.foot-section{
 		float:left;
-		width:33%;
+		width:30%;
 		text-align:center;
 		padding:0;
 	}
 	.foot-section li{
 		display:list-item;
 		float:none;
+		width:auto;
 	}
 	.foot-section ul{
 		-webkit-column-count:1;
@@ -228,6 +229,13 @@
 		float:left;
 		width:60%;
 	}
+	.foot-square-ad{
+		margin:1em 0;
+		float:right;
+	}
+	.pg-foot{
+		margin:0 0 1em;
+	}
 }
 
 @media all and (min-width:1024px){
@@ -318,6 +326,11 @@
 	}
 	.single-row-comic-page .share{
 		margin:0;
+	}
+	.foot-section{
+		
+		width:33%;
+		
 	}
 	
 }
