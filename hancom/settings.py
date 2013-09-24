@@ -104,8 +104,7 @@ TEMPLATE_LOADERS = (
 #     'django.template.loaders.eggs.Loader',
 )
 
-MIDDLEWARE_CLASSES = (
-    'django.middleware.cache.UpdateCacheMiddleware',
+MIDDLEWARE_CLASSES = [
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     # 'django.middleware.gzip.GZipMiddleware',
@@ -115,8 +114,12 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.redirects.middleware.RedirectFallbackMiddleware',
     # Uncomment the next line for simple clickjacking protection:
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'django.middleware.cache.FetchFromCacheMiddleware',
-)
+]
+
+# for cache on server:
+if not DEBUG:
+    MIDDLEWARE_CLASSES.insert(0, 'django.middleware.cache.UpdateCacheMiddleware')
+    MIDDLEWARE_CLASSES.insert(-1, 'django.middleware.cache.FetchFromCacheMiddleware')
 
 TEMPLATE_CONTEXT_PROCESSORS = (
     "django.contrib.auth.context_processors.auth",
