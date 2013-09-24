@@ -22,8 +22,8 @@ sitemaps = {"website": WebsiteSitemap, "comics": ComicsSitemap, }
 
 urlpatterns = patterns('',
     url(r'^$', 'hancom.website.views.homepage', name='home'),
-#     url(r'^donate/$', 'hancom.website.views.donate', name='donate'),
-    url(r'^advertise/$', TemplateView.as_view(template_name="website/advertise.html"), name='become_an_advertiser'),
+    # url(r'^donate/$', 'hancom.website.views.donate', name='donate'),
+    # url(r'^advertise/$', TemplateView.as_view(template_name="website/advertise.html"), name='become_an_advertiser'),
     url(r'^sponsor/$', TemplateView.as_view(template_name="website/sponsor.html"), name='become_a_sponsor'),
     (r'^comic/', include("hancom.comics.urls")),
     (r'^sponsorship/', include("hancom.sponsorship.urls")),
