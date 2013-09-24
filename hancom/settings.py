@@ -117,9 +117,10 @@ MIDDLEWARE_CLASSES = [
 ]
 
 # for cache on server:
-if not DEBUG:
+if DEBUG:
     MIDDLEWARE_CLASSES.insert(0, 'django.middleware.cache.UpdateCacheMiddleware')
-    MIDDLEWARE_CLASSES.insert(-1, 'django.middleware.cache.FetchFromCacheMiddleware')
+    MIDDLEWARE_CLASSES.append('django.middleware.cache.FetchFromCacheMiddleware')
+    print MIDDLEWARE_CLASSES
 
 TEMPLATE_CONTEXT_PROCESSORS = (
     "django.contrib.auth.context_processors.auth",
