@@ -37,14 +37,14 @@
 			<li class="comic-nav-list-item comic-nav-list-item-beginning">
 				{% url 'comic' comic_id="1" as FIRST_URL %}
 				{% if request.path != FIRST_URL %}
-					<a class="comic-nav-list-item-link" href="{{ FIRST_URL }}"><i class="icon-backward"></i><span class="comic-footer-nav-word">Beginning</span></a>
+					<a title="Read from the beginning" class="comic-nav-list-item-link" href="{{ FIRST_URL }}"><i class="icon-backward"></i><span class="comic-footer-nav-word">Beginning</span></a>
 				{% else %}
 					<i class="icon-backward"></i><span class="comic-footer-nav-word">Beginning</span>
 				{% endif %}
 			</li>
 
 			<li class="comic-nav-list-item comic-nav-list-item-random">
-				<a data-currentchronology="{{ comic.chronology }}" class="comic-nav-list-item-link" href="{{ comic|get_random_comic_link }}"><span class="comic-footer-nav-word">Random</span><i class="icon-random"></i></a>
+				<a title="Read a random comic" data-currentchronology="{{ comic.chronology }}" class="comic-nav-list-item-link" href="{{ comic|get_random_comic_link }}"><span class="comic-footer-nav-word">Random</span><i class="icon-random"></i></a>
 			</li>
 			
 			<li class="comic-nav-list-item comic-nav-list-item-right">
