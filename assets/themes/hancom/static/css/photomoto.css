@@ -1,10 +1,5 @@
-html > body ul.FotomotoBar .FotomotoSeparator,
-html > body span.FotomotoSep1,
-html > body span.FotomotoSep2,
-html > body span.FotomotoSep3,
-html > body span.FotomotoSep4{
+html > body ul.FotomotoBar .FotomotoSeparator, html > body span.FotomotoSep1, html > body span.FotomotoSep2, html > body span.FotomotoSep3, html > body span.FotomotoSep4{
 	display:none;
-	
 }
 html > body div ul.FotomotoBar, 
 html > body div ul.FotomotoBar a, 
