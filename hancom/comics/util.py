@@ -3,7 +3,10 @@ Utility functions for comics
 """
 from datetime import datetime
 
+from django.db.models import Q
+
 from hancom.comics.models import Comic
+
 
 
 def get_previous_next_comics(chronology):
@@ -24,3 +27,11 @@ def get_previous_next_comics(chronology):
     return (previous_comic, next_comic)
 
 
+def get_random_comic(comic=None):
+    """
+    return a random comic that is not 'comic'
+    """
+    if comic:
+        return Comic.objects.filter(~Q(id=comic.id), published=True, date__lte=datetime.now()).order_by("?")[0]
+
+    return Comic.objects.filter(published=True, date__lte=datetime.now()).order_by("?")[0]

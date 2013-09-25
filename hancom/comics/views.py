@@ -1,15 +1,42 @@
 """
 Comic views
 """
+import json
+
 from datetime import datetime
 
-from django.http import Http404, HttpResponseRedirect
+from django.http import Http404, HttpResponseRedirect, HttpResponse
 from django.shortcuts import render_to_response
 from django.template import RequestContext
 from django.core.exceptions import ObjectDoesNotExist
+from django.views.decorators.cache import never_cache
 
 from hancom.comics.models import Comic, StoryArc
-from hancom.comics.util import get_previous_next_comics
+from hancom.comics.util import get_previous_next_comics, get_random_comic
+
+
+@never_cache
+def random_comic_url(request):
+    """
+    returns the URL for a random comic
+
+    called via ajax, should not be cached
+    """
+    if not request.is_ajax():
+        raise Http404
+
+    comic_chronology = request.GET.get("current_comic", "1")
+    comic_chronology = int(comic_chronology)
+    try:
+        current_comic = Comic.objects.get(chronology=comic_chronology, published=True)
+    except ObjectDoesNotExist:
+        current_comic = None
+
+    random_comic = get_random_comic(current_comic)
+    response_data = {"url": random_comic.get_absolute_url()}
+    response_data = json.dumps(response_data)
+
+    return HttpResponse(response_data, mimetype='application/json')
 
 
 def storyarc_redirect(request, arc_slug):
