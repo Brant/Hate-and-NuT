@@ -22,3 +22,5 @@ def get_previous_next_comics(chronology):
         next_comic = None
 
     return (previous_comic, next_comic)
+
+

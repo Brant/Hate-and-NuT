@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 
 {% load url from future %}
+{% load comic_tags %}
 
 {% block meta_description %}{{ comic.description }}{% if comic.story_arc %} - Part of the '{{ comic.story_arc }}' story arc.{% endif %} Hate and NuT Webcomic issue #{{ comic.chronology }}{% endblock %}
 
@@ -78,23 +79,7 @@
 	{% endif %}
 	
 	<footer class="comic-footer clearfix">
-		<p class="comic-date">{{ comic.date|date }}</p>
-
-		{% if comic.inside_arc %}
-			<p class="story-arc-from-beginning">You are reading the "{{ comic.story_arc.name }}" story arc. <a href="{{ comic.story_arc.get_absolute_url }}">Read it from the beginning.</a></p>
-		{% endif %}
-
-		{% if comic.continuation_of %}
-			<p class="continuation-of">This comic is a continuation of <a href="{{ comic.continuation_of.get_absolute_url }}">{{ comic.continuation_of.title }} (#{{ comic.continuation_of.chronology }})</a></p>
-		{% endif %}
-		
-		{% if not comic.single_row %}
-			<div id="FotomotoToolbar" class="FotomotoToolbarClass"></div>
-		{% endif %}
-		
-		{% include "social/comic_share_buttons.html" %}
-		
-		<p class="hidden" itemprop="datePublished">{{ comic.date|date:"Y-m-d" }}</p>
+		{% render_comic_footer comic next_comic previous_comic %}
 	</footer>
 {% endblock %}
 

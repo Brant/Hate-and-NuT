@@ -324,6 +324,27 @@ ul{
 	overflow:hidden;
 }
 
+.comic-footer-nav{
+	margin:.5em 0 1em;
+}
+.comic-footer-nav-word{
+	font-size:.8em;
+	margin:0 .5em 1em;
+	vertical-align: baseline;
+	display:none;
+}
+.comic-footer-nav li{
+	float:left;
+	width:25%;
+	text-align:center;
+}
+.comic-footer-nav .comic-nav-list-item-left{
+	text-align:left;
+}
+.comic-footer-nav .comic-nav-list-item-right{
+	text-align:right;
+}
+
 @media all and (max-width:747px){
 	.smallscreen-clearfix:before,
 	.smallscreen-clearfix:after {
@@ -337,4 +358,4 @@ ul{
 	.smallscreen-clearfix {
 	    *zoom: 1;
 	}
-}
+} 1

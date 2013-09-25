@@ -13,14 +13,20 @@ $(function(){
 	
 	if (prevComicHref){
 		$(document).bind('keydown', 'a', function(){
-			window.location = prevComicHref; 
+			window.location = prevComicHref;
+		});
+
+		$(document).bind('keydown', 'j', function(){
+			window.location = prevComicHref;
 		});
 	}
 	
 	if (nextComicHref){
 		$(document).bind('keydown', 's', function(){
-			window.location = nextComicHref; 
-		});	
+			window.location = nextComicHref;
+		});
+		$(document).bind('keydown', 'k', function(){
+			window.location = nextComicHref;
+		});
 	}
-	
 });
