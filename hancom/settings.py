@@ -130,6 +130,7 @@ if not DEBUG:
         # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
         'django.middleware.cache.FetchFromCacheMiddleware'
     )
+    CACHE_MIDDLEWARE_SECONDS = 3600
 
 TEMPLATE_CONTEXT_PROCESSORS = (
     "django.contrib.auth.context_processors.auth",
