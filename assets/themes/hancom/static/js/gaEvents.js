@@ -2,11 +2,11 @@
  * Google Analytics Events
  */
 $(function(){
-	
+
 	var pushAnalyticsEvent = function(cat, ev, label, val){
 		if (typeof _gaq === 'undefined') {
 			if(val){
-				ga('send', 'event', cat, ev, label, val);	
+				ga('send', 'event', cat, ev, label, val);
 			}
 			else{
 				ga('send', 'event', cat, ev, label);
@@ -17,13 +17,13 @@ $(function(){
 				_gaq.push(['_trackEvent', cat, ev, label, val]);
 			}
 			else{
-				_gaq.push(['_trackEvent', cat, ev, label]);	
+				_gaq.push(['_trackEvent', cat, ev, label]);
 			}
 		}
 	};
-	
+
 	var thisPath = (window.location.pathname + window.location.search);
-	
+
 	$(".sponsorship-ad-wrapper").each(function(){
 		var adWrapper = $(this);
 		adWrapper.delegate(".sponsorship-ad", "click", function(event){
@@ -31,27 +31,35 @@ $(function(){
 			pushAnalyticsEvent("Ad Click", clicked.data("sponsorship-ad-code"), thisPath);
 		});
 	});
-	
-	$(".comic-nav-list-item-left").click(function(){
+
+	$(".comic-nav-list-item-left a").click(function(){
 		pushAnalyticsEvent("Navigate", "Last Comic", thisPath);
 	});
-	
-	$(".comic-nav-list-item-right").click(function(){
+
+	$(".comic-nav-list-item-right a").click(function(){
 		pushAnalyticsEvent("Navigate", "Next Comic", thisPath);
 	});
-	
+
+	$(".comic-nav-list-item-random a").click(function(){
+		pushAnalyticsEvent("Navigate", "Random Comic", thisPath);
+	});
+
+	$(".comic-nav-list-item-beginning a").click(function(){
+		pushAnalyticsEvent("Navigate", "From the Beginning", thisPath);
+	});
+
 	$(".pg-foot-wrap a").click(function(ev){
 		pushAnalyticsEvent("Navigate", "Footer", $(ev.target).text());
 	});
-	
+
 	$(".pg-head .donate-button").click(function(ev){
 		pushAnalyticsEvent("Navigate", "Header", "Donate");
 	});
-	
+
 	$(".s .donate-button").click(function(ev){
 		pushAnalyticsEvent("Navigate", "Sidebar", "Donate");
 	});
-	
+
 	$(".s .social .social-icon").click(function(ev){
 		pushAnalyticsEvent("Navigate", "Sidebar", $(ev.target).text());
 	});

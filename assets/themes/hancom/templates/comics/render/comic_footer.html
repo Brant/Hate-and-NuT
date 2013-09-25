@@ -1,70 +1,71 @@
 {% load comic_tags %}
 {% load url from future %}
+
 <div class="comic-footer-row clearfix">
-			<p class="comic-date">{{ comic.date|date }}</p>
+	<p class="comic-date">{{ comic.date|date }}</p>
 
-			{% if comic.inside_arc %}
-				<p class="story-arc-from-beginning">You are reading the "{{ comic.story_arc.name }}" story arc. <a href="{{ comic.story_arc.get_absolute_url }}">Read it from the beginning.</a></p>
-			{% endif %}
+	{% if comic.inside_arc %}
+		<p class="story-arc-from-beginning">You are reading the "{{ comic.story_arc.name }}" story arc. <a href="{{ comic.story_arc.get_absolute_url }}">Read it from the beginning.</a></p>
+	{% endif %}
 
-			{% if comic.continuation_of %}
-				<p class="continuation-of">This comic is a continuation of <a href="{{ comic.continuation_of.get_absolute_url }}">{{ comic.continuation_of.title }} (#{{ comic.continuation_of.chronology }})</a></p>
-			{% endif %}
+	{% if comic.continuation_of %}
+		<p class="continuation-of">This comic is a continuation of <a href="{{ comic.continuation_of.get_absolute_url }}">{{ comic.continuation_of.title }} (#{{ comic.continuation_of.chronology }})</a></p>
+	{% endif %}
+	
+	{% if not comic.single_row %}
+		<div id="FotomotoToolbar" class="FotomotoToolbarClass"></div>
+	{% endif %}
+</div>
+
+<div class="comic-footer-row clearfix">
+	<nav class="comic-footer-nav clearfix">
+		<ul class="comic-nav-list">
+			<li class="comic-nav-list-item comic-nav-list-item-left">
+				{% if comic.is_available_to_public %}
+					{% if previous_comic %}
+						<a id="prevComic" class="comic-nav-list-item-link" href="{{ previous_comic.get_absolute_url }}" title="Previous Comic"><i class="icon-caret-left"></i><span class="comic-footer-nav-word">Previous</span></a>
+					{% else %}
+						<i class="icon-caret-left"></i><span class="comic-footer-nav-word">Previous</span>
+					{% endif %}
+				{% else %}
+					{% with comic.chronology|add:"-1" as PREVIOUS %}
+						<a id="prevComic" class="comic-nav-list-item-link" href="{% url 'comic' comic_id=PREVIOUS %}" title="Previous Comic"><i class="icon-caret-left"></i><span class="comic-footer-nav-word">Previous</span></a>
+					{% endwith %}
+				{% endif %}
+			</li>
+
+			<li class="comic-nav-list-item comic-nav-list-item-beginning">
+				{% url 'comic' comic_id="1" as FIRST_URL %}
+				{% if request.path != FIRST_URL %}
+					<a class="comic-nav-list-item-link" href="{{ FIRST_URL }}"><i class="icon-backward"></i><span class="comic-footer-nav-word">Beginning</span></a>
+				{% else %}
+					<i class="icon-backward"></i><span class="comic-footer-nav-word">Beginning</span>
+				{% endif %}
+			</li>
+
+			<li class="comic-nav-list-item comic-nav-list-item-random">
+				<a class="comic-nav-list-item-link" href="{{ comic|get_random_comic_link }}"><span class="comic-footer-nav-word">Random</span><i class="icon-random"></i></a>
+			</li>
 			
-			{% if not comic.single_row %}
-				<div id="FotomotoToolbar" class="FotomotoToolbarClass"></div>
-			{% endif %}
-		</div>
+			<li class="comic-nav-list-item comic-nav-list-item-right">
+				{% if comic.is_available_to_public %}
+					{% if next_comic %}
+						<a id="nextComic" class="comic-nav-list-item-link" href="{{ next_comic.get_absolute_url }}" title="Next Comic"><span class="comic-footer-nav-word">Next</span><i class="icon-caret-right"></i></a>
+					{% else %}
+						<span class="comic-footer-nav-word">Next</span><i class="icon-caret-right"></i>
+					{% endif %}
+				{% else %}
+					{% with comic.chronology|add:"1" as NEXT %}
+						<a id="nextComic" class="comic-nav-list-item-link" href="{% url 'comic' comic_id=NEXT %}" title="Next Comic"><span class="comic-footer-nav-word">Next</span><i class="icon-caret-right"></i></a>
+					{% endwith %}
+				{% endif %}
+			</li>
+		</ul>
+	</nav>
+</div>
 
-		<div class="comic-footer-row clearfix">
-			<nav class="comic-footer-nav clearfix">
-				<ul class="comic-nav-list">
-					<li class="comic-nav-list-item comic-nav-list-item-left">
-						{% if comic.is_available_to_public %}
-							{% if previous_comic %}
-								<a id="prevComic" class="comic-nav-list-item-link" href="{{ previous_comic.get_absolute_url }}" title="Previous Comic"><i class="icon-caret-left"></i><span class="comic-footer-nav-word">Previous</span></a>
-							{% else %}
-								<i class="icon-caret-left"></i><span class="comic-footer-nav-word">Previous</span>
-							{% endif %}
-						{% else %}
-							{% with comic.chronology|add:"-1" as PREVIOUS %}
-								<a id="prevComic" class="comic-nav-list-item-link" href="{% url 'comic' comic_id=PREVIOUS %}" title="Previous Comic"><i class="icon-caret-left"></i><span class="comic-footer-nav-word">Previous</span></a>
-							{% endwith %}
-						{% endif %}
-					</li>
+<div class="comic-footer-row clearfix">
+	{% include "social/comic_share_buttons.html" %}
+</div>
 
-					<li class="comic-nav-list-item">
-						{% url 'comic' comic_id="1" as FIRST_URL %}
-						{% if request.path != FIRST_URL %}
-							<a class="comic-nav-list-item-link" href="{{ FIRST_URL }}"><i class="icon-backward"></i><span class="comic-footer-nav-word">Beginning</span></a>
-						{% else %}
-							<i class="icon-backward"></i><span class="comic-footer-nav-word">Beginning</span>
-						{% endif %}
-					</li>
-
-					<li class="comic-nav-list-item">
-						<a class="comic-nav-list-item-link" href="{{ comic|get_random_comic_link }}"><span class="comic-footer-nav-word">Random</span><i class="icon-random"></i></a>
-					</li>
-					
-					<li class="comic-nav-list-item comic-nav-list-item-right">
-						{% if comic.is_available_to_public %}
-							{% if next_comic %}
-								<a id="nextComic" class="comic-nav-list-item-link" href="{{ next_comic.get_absolute_url }}" title="Next Comic"><span class="comic-footer-nav-word">Next</span><i class="icon-caret-right"></i></a>
-							{% else %}
-								<span class="comic-footer-nav-word">Next</span><i class="icon-caret-right"></i>
-							{% endif %}
-						{% else %}
-							{% with comic.chronology|add:"1" as NEXT %}
-								<a id="nextComic" class="comic-nav-list-item-link" href="{% url 'comic' comic_id=NEXT %}" title="Next Comic"><span class="comic-footer-nav-word">Next</span><i class="icon-caret-right"></i></a>
-							{% endwith %}
-						{% endif %}
-					</li>
-				</ul>
-			</nav>
-		</div>
-
-		<div class="comic-footer-row clearfix">
-			{% include "social/comic_share_buttons.html" %}
-		</div>
-		
-		<p class="hidden" itemprop="datePublished">{{ comic.date|date:"Y-m-d" }}</p>
+<p class="hidden" itemprop="datePublished">{{ comic.date|date:"Y-m-d" }}</p>
