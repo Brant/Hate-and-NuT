@@ -329,7 +329,8 @@ ul{
 }
 .comic-footer-nav-word{
 	font-size:.8em;
-	margin:0 .5em 1em;
+	margin:0 0 1em;
+	padding: 0 .5em;
 	vertical-align: baseline;
 	display:none;
 }
