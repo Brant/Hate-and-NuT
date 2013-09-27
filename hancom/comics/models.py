@@ -23,11 +23,16 @@ class Comic(TitleDateSlug, HalfQuarterAssetsMixin):
     """
     Represents a comic
     """
+    description = models.TextField(help_text="Will show up in feed, meta description, and OG-driven previews")
+
     comic_image = models.ImageField(upload_to="images/comics")
+    preview_image = models.ImageField(upload_to="images/preview", help_text="500x500")
+
+    original_comic = models.ImageField(upload_to="images/comics/originals", null=True, blank=True)
+
     published = models.BooleanField(default=True)
     chronology = models.IntegerField(blank=True, unique=True)
-    preview_image = models.ImageField(upload_to="images/preview", help_text="500x500")
-    description = models.TextField(help_text="Will show up in feed, meta description, and OG-driven previews")
+
     single_row = models.BooleanField(default=False, help_text="Is this a single-row, 'wide' comic?")
 
     special_story_arc_title = models.CharField(max_length=300, null=True, blank=True, help_text="Will override 'Hate and NuT #X' if part of a story arc")

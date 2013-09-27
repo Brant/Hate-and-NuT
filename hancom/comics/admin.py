@@ -67,7 +67,7 @@ class ComicAdmin(admin.ModelAdmin):
         }),
 
         ('Metadata', {
-            'fields': ('characters', ),
+            'fields': ('characters', "original_comic", ),
         }),
 
     )
