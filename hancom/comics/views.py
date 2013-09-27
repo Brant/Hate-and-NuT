@@ -15,6 +15,27 @@ from hancom.comics.models import Comic, StoryArc
 from hancom.comics.util import get_previous_next_comics, get_random_comic
 
 
+def original_comic(request, comic_id):
+    """
+    Display an original comic image
+    """
+    comic_id = int(comic_id)
+
+    try:
+        comic = Comic.objects.prefetch_related("story_arc").get(chronology=comic_id, published=True, original_comic__isnull=False)
+    except ObjectDoesNotExist:
+        raise Http404
+
+    if not comic.is_available_to_public():
+        if not request.user.is_authenticated():
+            raise Http404
+
+    response_data = {"comic": comic}
+
+    return render_to_response("comics/original_page.html", response_data, context_instance=RequestContext(request))
+
+
+
 @never_cache
 def random_comic_url(request):
     """

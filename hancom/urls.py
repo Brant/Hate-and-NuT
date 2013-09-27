@@ -7,7 +7,7 @@ from django.views.generic import TemplateView
 from django.conf.urls.static import static
 from django.conf import settings
 
-from hancom.comics.sitemap import ComicsSitemap
+from hancom.comics.sitemap import ComicsSitemap, OriginalComicsSitemap
 from noodles.urls import favicon_patterns
 
 from hancom.website.feeds import SiteFeed
@@ -17,7 +17,7 @@ from hancom.website.sitemap import WebsiteSitemap
 admin.autodiscover()
 
 
-sitemaps = {"website": WebsiteSitemap, "comics": ComicsSitemap, }
+sitemaps = {"website": WebsiteSitemap, "comics": ComicsSitemap, "originals": OriginalComicsSitemap}
 
 
 urlpatterns = patterns('',

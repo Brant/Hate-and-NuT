@@ -285,12 +285,14 @@ ul{
 	width:auto;
 }
 
+.original-comic,
 .continuation-of,
 .story-arc-from-beginning{
 	font-size:.9em;
 	font-style: italic;
 }
-.continuation-of,
+.original-comic a,
+.continuation-of a,
 .story-arc-from-beginning a{
 	font-style:normal;
 }

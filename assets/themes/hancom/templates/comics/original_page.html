@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% load url from future %}
+
+{% block meta_description %}This is the orignal version of Hate and NuT Webcomic issue #{{ comic.chronology }}. The original Hate and NuT run was from 2008.{% endblock %}
+
+{% block extra_head %}
+	<meta property="og:title" content="Original version of Hate and NuT #{{ comic.chronology }} - {{ comic.title }}, circa 2008" />
+	<meta property="og:image" content="{{ SITE_URL }}{{ comic.original_comic.url }}" /> 
+	<meta property="og:description" content="This is the orignal version of Hate and NuT Webcomic issue #{{ comic.chronology }}. The original Hate and NuT run was from 2008." /> 
+{% endblock %}
+
+{% block title %}Originals | {{ comic.title }} {{ block.super }}{% endblock %}
+
+{% block content %}
+	<header class="clearfix heading-wrap">
+		<hgroup class="story-arc-comic-heading-group">
+			<h1>"{{ comic.title }}"</h1>
+			<h2>Original Version, circa 2008</h2>
+		</hgroup>
+	</header>
+	
+	
+	<img src="{{ comic.original_comic.url }}" class="comic" alt="Original Version of the Comic entitled '{{ comic.title }}'" />
+	
+	<footer class="comic-footer clearfix">
+		<p><a href="{{ comic.get_absolute_url }}">Back to the new version of this this comic</a></p>
+	</footer>
+
+{% endblock %}

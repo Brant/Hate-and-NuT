@@ -11,6 +11,10 @@
 	{% if comic.continuation_of %}
 		<p class="continuation-of">This comic is a continuation of <a href="{{ comic.continuation_of.get_absolute_url }}">{{ comic.continuation_of.title }} (#{{ comic.continuation_of.chronology }})</a></p>
 	{% endif %}
+
+	{% if comic.original_comic %}
+		<p class="original-comic">This comic was part of the original Hate and NuT<br/><a href="{{ comic.get_original_absolute_url }}">View the original</a></p>
+	{% endif %}
 	
 	{% if not comic.single_row %}
 		<div id="FotomotoToolbar" class="FotomotoToolbarClass"></div>
