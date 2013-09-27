@@ -1,3 +1,6 @@
+"""
+Custom forms
+"""
 from noodles.forms import ContactForm
 
 

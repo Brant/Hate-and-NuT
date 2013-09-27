@@ -2,6 +2,7 @@
 Queries for convinience and consistency
 """
 from datetime import datetime
+
 from hancom.comics.models import Comic
 
 

@@ -2,6 +2,7 @@
 Website sitemap
 """
 from datetime import date
+
 from django.contrib.sitemaps import Sitemap
 from django.core.urlresolvers import reverse
 

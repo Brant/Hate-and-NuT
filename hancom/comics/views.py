@@ -27,6 +27,7 @@ def random_comic_url(request):
 
     comic_chronology = request.GET.get("current_comic", "1")
     comic_chronology = int(comic_chronology)
+
     try:
         current_comic = Comic.objects.get(chronology=comic_chronology, published=True)
     except ObjectDoesNotExist:

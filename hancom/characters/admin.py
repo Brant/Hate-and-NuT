@@ -1,3 +1,6 @@
+"""
+Admin configurations
+"""
 from django.contrib import admin
 
 from hancom.characters.models import Character

@@ -8,7 +8,6 @@ from django.db.models import Q
 from hancom.comics.models import Comic
 
 
-
 def get_previous_next_comics(chronology):
     """
     Based on a comic ID, return

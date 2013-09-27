@@ -1,0 +1,3 @@
+"""
+Sponsorships app
+"""

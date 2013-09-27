@@ -2,6 +2,7 @@
 Character Views
 """
 from datetime import datetime
+
 from django.db.models import Q
 from django.shortcuts import render_to_response
 from django.template import RequestContext

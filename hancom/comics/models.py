@@ -38,6 +38,11 @@ class Comic(TitleDateSlug, HalfQuarterAssetsMixin):
     characters = models.ManyToManyField(Character, null=True, blank=True, help_text="Characters that appear in this comic")
 
     def inside_arc(self):
+        """
+        Is the instance inside a story arc
+
+        Returns True/False
+        """
         if not self.story_arc:
             return False
 
@@ -64,6 +69,9 @@ class Comic(TitleDateSlug, HalfQuarterAssetsMixin):
 
     @models.permalink
     def get_absolute_url(self):
+        """
+        Permalink, based on chronology
+        """
         return ("comic", [str(self.chronology)])
 
     def save(self, *args, **kwargs):

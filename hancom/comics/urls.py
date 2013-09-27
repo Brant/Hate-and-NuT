@@ -9,5 +9,4 @@ urlpatterns = patterns('hancom.comics.views',
     url(r'^(?P<comic_id>\d+)/$', 'comic_page', name='comic'),
     url(r'^archive/$', 'archive_index', name='archive_index'),
     url(r'^story/(?P<arc_slug>[\w\-]+)/$', 'storyarc_redirect', name='comic_story_redirect'),
-
 )
