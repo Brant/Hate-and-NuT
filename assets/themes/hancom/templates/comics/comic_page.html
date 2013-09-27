@@ -72,10 +72,10 @@
 	
 	{% if comic.single_row %}
 		<div class="comic-wide">
-			<img src="{{ comic.comic_image.url }}" class="comic" alt="Comic entitled '{{ comic.title }}'"  itemprop="image" />
+			<img src="{{ comic.comic_image.url }}" class="comic" alt="Hate and NuT webcomic #{{ comic.chronology }} entitled '{{ comic.title }}'"  itemprop="image" />
 		</div>
 	{% else %}
-		<img src="{{ comic.comic_image.url }}" class="comic" alt="Comic entitled '{{ comic.title }}'"  itemprop="image" />
+		<img src="{{ comic.comic_image.url }}" class="comic" alt="Hate and NuT webcomic #{{ comic.chronology }} entitled '{{ comic.title }}'"  itemprop="image" />
 	{% endif %}
 	
 	<footer class="comic-footer clearfix">
