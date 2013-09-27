@@ -42,10 +42,10 @@
 	</header>
 	{% if latest_comic.single_row %}
 		<div class="comic-wide">
-			<img src="{{ latest_comic.comic_image.url }}" class="comic" alt="Comic entitled '{{ latest_comic.title }}'" />
+			<img src="{{ latest_comic.comic_image.url }}" class="comic" alt="Webcomic #{{ comic.chronology }} entitled '{{ comic.title }}'" />
 		</div>
 	{% else %}
-		<img src="{{ latest_comic.comic_image.url }}" class="comic" alt="Comic entitled '{{ latest_comic.title }}'" />
+		<img src="{{ latest_comic.comic_image.url }}" class="comic" alt="Webcomic #{{ comic.chronology }} entitled '{{ comic.title }}'" />
 	{% endif %}
 
 	
