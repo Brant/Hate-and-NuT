@@ -72,7 +72,7 @@ ul{
 	float:left;
 }
 .pg-head-wrap{
-	background:#881c1e url('img/feathers_and_color.jpg');
+	background:#070707;
 	padding:0 0 5px 0;
 }
 .pg-head{
@@ -87,12 +87,12 @@ ul{
 }
 
 .pg-wrap{
-	background:#fefefe;
+	background:#531112;
 }
 .pg{
 	z-index:1;
 	position:relative;
-	padding:10px 5px 10px;	
+	padding:5px;	
 }
 .logo{
 	max-width:37%;
@@ -125,6 +125,8 @@ ul{
 
 .content{
 	text-align:left;
+	background:#fefefe;
+	padding:10px 5px;
 	margin:0 auto;
 }
 .side-banner-skinny,
