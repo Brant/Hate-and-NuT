@@ -150,7 +150,7 @@
 		border-radius:8px;
 	}
 	.character-description{
-		margin:4em 0 0;
+		margin:4.5em 0 0;
 	}
 	#foot-1:target,
 	#foot-1:target a,
@@ -234,9 +234,12 @@
 	.pg-foot{
 		margin:0 0 1em;
 	}
-	
-	comic-footer{
-		margin:1.5em 0 1em;
+	.nopg .content{
+		background:none;
+		padding:0;
+		border-radius:0;
+		border:none;
+		margin:0;
 	}
 }
 
@@ -272,7 +275,6 @@
 	.nopg .pg-head-wrap{
 		padding:5px 0;
 	}
-	
 	.image-404{
 		float:left;
 	}

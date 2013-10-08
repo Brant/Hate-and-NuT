@@ -10,18 +10,12 @@
 }
 .character-name{
 	font-size:1.7em;
-	position:absolute;
-	top:0;
-	left:31%;
-	margin:0;
 }
 .character-image{
-	width:25%;
-	float:left;
-	margin:0 4% 1em 0;
-	border:solid 5px #111;
-	border-radius:5px;
+	margin:0 -10px;
+	max-width:none;
+	width:110%;
 }
 .character-description{
-	margin:2.5em 0 0;
+	margin:.5em 0 0;
 }
