@@ -138,6 +138,14 @@ ul{
 	float:left;
 	width:65%;
 }
+.heading-404{
+	text-shadow:
+		-2px -2px 0 #f2f2f2,  
+	   	2px -2px 0 #f2f2f2,
+	    -2px 2px 0 #f2f2f2,
+	     2px 2px 0 #f2f2f2;
+	
+}
 
 .heading-wrap .story-arc-comic-heading-group{
 	display:block;

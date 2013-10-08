@@ -1,9 +1,13 @@
 .nopg .pg{
 	overflow:hidden;
+
 }
 .nopg .s{
 	margin:-40px 0 0;
 }
 .nopg .pg{
 	margin:0;
+}
+.nopg .content{
+	background:none;
 }
