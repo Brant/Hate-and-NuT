@@ -8,14 +8,16 @@
 	padding:5px;
 	position:relative;
 	background:#fefefe;
+	border:solid 6px #531112;
 }
 .character-name{
 	font-size:1.7em;
+	text-align: center;
 }
 .character-image{
-	margin:0 -5%;
+	margin:0 -8%;
 	max-width:none;
-	width:110%;
+	width:116%;
 	box-shadow:0px 2px 5px rgba(0,0,0,.2);
 }
 .character-description{

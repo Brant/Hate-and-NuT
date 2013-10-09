@@ -11,3 +11,6 @@
 .nopg .content{
 	background:none;
 }
+.nopg .pg-wrap{
+	background:#881c1e url('img/feathers_and_color.jpg');
+}
