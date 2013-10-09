@@ -4,8 +4,8 @@
 	list-style:none;
 }
 .character-list-item{
-	margin:0 0 1.3em;
-	padding:5px;
+	margin:0 -5px 1.3em;
+	padding:0 10px;
 	position:relative;
 	background:#fefefe;
 	border:solid 6px #531112;
