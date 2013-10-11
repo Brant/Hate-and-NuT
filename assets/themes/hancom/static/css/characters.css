@@ -9,6 +9,7 @@
 	position:relative;
 	background:#fefefe;
 	border:solid 6px #531112;
+	border-radius:10px;
 }
 .character-name{
 	font-size:1.7em;

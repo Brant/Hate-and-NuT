@@ -125,6 +125,7 @@
 		font-weight:bold;
 		background:none;
 		border:none;
+		border-radius:0;
 	}
 	.character-name{
 		font-size:2.5em;
