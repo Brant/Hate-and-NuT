@@ -253,17 +253,15 @@ ul{
 	color:#9a1c20;
 	font-size:1.6em;
 	border-bottom:solid 1px #d7d7d7;
-	
+	text-align: center;
 }
 .foot-section h2 span{
 	border-color:#eee;
 }
 .foot-section li{
-	margin:0 0 .3em;
-	padding:0;
-	display:inline-block;
-	float:left;
-	width:33%;
+	margin:0 0 .4em;
+	text-align: center;
+	font-size:1.2em;
 }
 .foot-section ul{
 	margin:0 0 15px;
@@ -315,8 +313,9 @@ ul{
 }
 
 .foot-square-ad{
-	margin:1em 0 1.5em;
+	margin:1em auto 1.5em;
 	height:250px;
+	width:300px;
 	overflow:hidden;
 }
 

@@ -88,6 +88,8 @@
 		display:list-item;
 		float:none;
 		width:auto;
+		font-size:1em;
+		
 	}
 	.foot-section ul{
 		-webkit-column-count:1;
@@ -225,6 +227,8 @@
 	.foot-square-ad{
 		margin:1em 0;
 		float:right;
+		width:auto;
+
 	}
 	.pg-foot{
 		margin:0 0 1em;
@@ -239,7 +243,10 @@
 }
 
 @media all and (min-width:1024px){
-	
+	.foot-section h2,
+	.foot-section li{
+		text-align: left;
+	}
 	.head-ad-break{
 		float:left;
 		width:100%;

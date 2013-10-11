@@ -68,14 +68,16 @@
 							<li><a href="{% url "characters_index" %}">Characters</a></li>
 							
 							<li><a href="{% url "become_a_sponsor" %}">Become a Sponsor</a></li>
+							<li><a href="{% url "contact_me" %}">Contact me</a></li>
 						</ul>
 					</nav>
 					<nav class="foot-section clearfix">
 						<h2><span class="underlined-heading">Stay in Touch</span></h2>
 						<ul>
+							<li><a href="{{ SITE_META.TUMBLR }}">Extra content on Tumblr</a></li>
 							<li><a href="{{ SITE_META.RSS }}">Subscribe via RSS</a></li>
 							<li><a href="{{ SITE_META.TWITTER }}">Twitter</a></li>
-							<li><a href="{% url "contact_me" %}">Contact</a></li>
+							
 						</ul>
 					</nav>
 				{% endblock %}
