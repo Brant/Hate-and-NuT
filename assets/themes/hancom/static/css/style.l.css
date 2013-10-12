@@ -150,30 +150,7 @@
 	.character-description{
 		margin:4.5em 0 0 39%;
 	}
-	#foot-1:target,
-	#foot-1:target a,
-	#foot-2:target,
-	#foot-2:target a,
-	#foot-3:target,
-	#foot-3:target a,
-	#foot-4:target,
-	#foot-4:target a,
-	#foot-5:target,
-	#foot-5:target a{
-		color:#fff;	
-	}
-	sup a,
-	sup a:hover,
-	sup a:visited,
-	sup a:link,
-	sup a:active,
-	.footnotes a,
-	.footnotes a:hover,
-	.footnotes a:link,
-	.footnotes a:active,
-	.footnotes a:visited{
-		color:#272727;
-	}
+	
 	.comic-archive-article{
 		width:20%;
 		margin:0 3% 2% 0;
