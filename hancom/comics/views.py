@@ -88,6 +88,31 @@ def archive_index(request):
     return render_to_response("comics/archive_index.html", response_data, context_instance=RequestContext(request))
 
 
+@never_cache
+def preview_comic(request, comic_id):
+    """
+    An un-cached preview page
+    """
+    if not request.user.is_authenticated():
+        raise Http404
+
+    comic_id = int(comic_id)
+
+    try:
+        comic = Comic.objects.prefetch_related("story_arc").get(chronology=comic_id, published=True)
+    except ObjectDoesNotExist:
+        raise Http404
+
+    if comic.is_available_to_public():
+        raise Http404
+
+    previous_comic, next_comic = get_previous_next_comics(comic_id)
+
+    response_data = {"comic": comic, "previous_comic": previous_comic, "next_comic": next_comic}
+
+    return render_to_response("comics/comic_page.html", response_data, context_instance=RequestContext(request))
+
+
 def comic_page(request, comic_id):
     """
     A publishd comic
@@ -102,8 +127,9 @@ def comic_page(request, comic_id):
         raise Http404
 
     if not comic.is_available_to_public():
-        if not request.user.is_authenticated():
-            raise Http404
+        if request.user.is_authenticated():
+            return HttpResponseRedirect(comic.get_preview_absolute_url())
+        raise Http404
 
     previous_comic, next_comic = get_previous_next_comics(comic_id)
 

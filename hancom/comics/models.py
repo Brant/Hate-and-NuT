@@ -73,6 +73,13 @@ class Comic(TitleDateSlug, HalfQuarterAssetsMixin):
         get_latest_by = "chronology"
 
     @models.permalink
+    def get_preview_absolute_url(self):
+        """
+        Permalink to logged-in preview
+        """
+        return ("comic_preview", [str(self.chronology)])
+
+    @models.permalink
     def get_original_absolute_url(self):
         """
         Permalink to original comic
