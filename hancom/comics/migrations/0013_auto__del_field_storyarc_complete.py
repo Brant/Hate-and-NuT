@@ -8,15 +8,15 @@ from django.db import models
 class Migration(SchemaMigration):
 
     def forwards(self, orm):
-        # Adding field 'StoryArc.complete'
-        db.add_column(u'comics_storyarc', 'complete',
-                      self.gf('django.db.models.fields.DateTimeField')(null=True, blank=True),
-                      keep_default=False)
+        # Deleting field 'StoryArc.complete'
+        db.delete_column(u'comics_storyarc', 'complete')
 
 
     def backwards(self, orm):
-        # Deleting field 'StoryArc.complete'
-        db.delete_column(u'comics_storyarc', 'complete')
+        # Adding field 'StoryArc.complete'
+        db.add_column(u'comics_storyarc', 'complete',
+                      self.gf('django.db.models.fields.BooleanField')(default=False),
+                      keep_default=False)
 
 
     models = {
@@ -53,7 +53,6 @@ class Migration(SchemaMigration):
         },
         u'comics.storyarc': {
             'Meta': {'object_name': 'StoryArc'},
-            'complete': ('django.db.models.fields.DateTimeField', [], {'null': 'True', 'blank': 'True'}),
             u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'name': ('django.db.models.fields.CharField', [], {'max_length': '300'}),
             'slug': ('django.db.models.fields.CharField', [], {'max_length': '300', 'blank': 'True'})
