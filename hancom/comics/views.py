@@ -83,7 +83,7 @@ def archive_index(request):
     """
     comics = Comic.objects.filter(published=True, date__lte=datetime.now())
     archives = comics.reverse().dates("date", "month")
-    story_arcs = StoryArc.objects.prefetch_related("comic_set").filter(complete=True)
+    story_arcs = StoryArc.objects.prefetch_related("comic_set").filter(complete__lte=datetime.now())
     response_data = {"comics": comics, "archives": archives, "story_arcs": story_arcs}
     return render_to_response("comics/archive_index.html", response_data, context_instance=RequestContext(request))
 

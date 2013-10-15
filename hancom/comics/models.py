@@ -12,7 +12,7 @@ from noodles.models import TitleDateSlug, HalfQuarterAssetsMixin, NameSlug
 class StoryArc(NameSlug):
     """
     """
-    complete = models.BooleanField(default=False)
+    complete = models.DateTimeField(null=True, blank=True)
 
     @models.permalink
     def get_absolute_url(self):

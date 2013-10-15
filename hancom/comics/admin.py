@@ -36,7 +36,6 @@ class StoryArcAdmin(admin.ModelAdmin):
     Custom admin for story arcs
     """
     list_display = ["name", "complete", ]
-    list_editable = ["complete", ]
     inlines = [ComicInlineAdmin, ]
 
 
