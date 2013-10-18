@@ -5,4 +5,3 @@ git+git://github.com/Brant/django-noodles.git
 git+git://github.com/Brant/django-mub.git
 South
 markdown
-pyga

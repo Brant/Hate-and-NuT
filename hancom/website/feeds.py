@@ -29,24 +29,6 @@ class SiteFeed(RSSFeedWithContentEncoded):
     item_author_email = "hateandnut@gmail.com"
     item_author_link = "http://hateandnut.com"
 
-    def get_feed(self, obj, request):
-
-        from pyga.requests import Event, Session, Tracker, Visitor
-
-        tracker = Tracker(settings.GOOGLE_ANALYTICS_ID, Site.objects.get_current().domain)
-
-        visitor = Visitor()
-        visitor.ip_address = request.META.get('HTTP_X_FORWARDED_FOR', '')
-        visitor.user_agent = request.META.get('HTTP_USER_AGENT', '')
-        event = Event(category='RSS', action='Check Feed', label=request.META.get('HTTP_USER_AGENT', 'Unknown'), value=None, noninteraction=False)
-
-        try:
-            tracker.track_event(event, Session(), visitor)
-        except (URLError, timeout):
-            print "TRACK EVENT FAILED"
-
-        return super(SiteFeed, self).get_feed(obj, request)
-
     def item_guid_is_permalink(self, obj):
         return True
 
