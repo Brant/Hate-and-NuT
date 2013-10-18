@@ -23,5 +23,9 @@ trim_trailing_whitespace = true
 indent_style = tab
 trim_trailing_whitespace = true
 
+[*.css]
+indent_style = tab
+trim_trailing_whitespace = true
+
 [*.php]
 indent_style = tab

@@ -1,0 +1,25 @@
+.foot-shortcuts{
+	color:#fefefe;
+}
+.foot-shortcuts dl{
+	text-align: center;;
+}
+.foot-shortcuts dd{
+	margin:.3em 0 1.2em;	
+}
+.foot-shortcuts dt{
+	
+}
+.foot-shortcuts dd{
+	
+}
+.foot-shortcuts kbd{
+	background:#fefefe;
+	color:#020202;
+	border-radius:2px;
+	padding:4px 10px 6px;	
+	font-size:1.1em;	
+}
+.touch .foot-shortcuts{
+	display:none;
+}

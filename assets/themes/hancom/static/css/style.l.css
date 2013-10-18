@@ -77,7 +77,7 @@
 		padding:55px 25px 10px;
 	}
 
-	
+
 	.foot-section{
 		float:left;
 		width:29%;
@@ -100,6 +100,26 @@
 	.foot-section h2{
 		border:none;
 	}
+	.foot-shortcuts{
+		width:58%;
+	}
+	.foot-shortcuts dt,
+	.foot-shortcuts dd{
+		float:left;
+		line-height:1.1em;
+		margin:0 0 1.5em;
+		text-align: left;
+	}
+	.foot-shortcuts dt{
+		width:10%;
+	}
+	.foot-shortcuts dd{
+		width:40%;
+	}
+	.foot-shortcuts h2{
+		text-align: left;
+	}
+
 	.donate-button{
 		font-size:1.3em;
 	}
@@ -309,6 +329,23 @@
 	.foot-section{
 		width:34%;
 	}
+	.foot-shortcuts{
+		width:68%;
+	}
+	.foot-shortcuts dt,
+	.foot-shortcuts dd{
+		float:left;
+		line-height:1.1em;
+	}
+	.foot-shortcuts dt{
+		margin:0 .5em 0 0;
+		width:auto;
+	}
+	.foot-shortcuts dd{
+		width:auto;
+		margin:0 2em 0 0;
+	}
+
 	.comic-footer-nav-word{
 		display:inline-block;
 	}
