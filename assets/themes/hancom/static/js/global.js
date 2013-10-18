@@ -38,4 +38,11 @@ $(function(){
 		});
 	}
 
+
+	var nextLink = $("#nextComic");
+	if (nextLink.length > 0){
+		var nextHref = nextLink.attr("href");
+		$("img.comic").wrap("<a href='" + nextHref + "' />");
+	}
+
 });
