@@ -18,7 +18,7 @@ class SiteFeed(RSSFeedWithContentEncoded):
     """
     title = "Adventures of Hate and NuT"
     link = "/"
-    description = "A webcomic set in the world of Ultima Online"
+    description = "A lighthearted webcomic comedy about the adventures of couple of ruthless killers - Hate and NuT - along with a colorful cast of other characters, set in a dangerous fantasy world."
 
 
     author_name = "Brant Steen"
