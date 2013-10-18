@@ -132,6 +132,7 @@
 		position:absolute;
 		top:0;
 		left:39%;
+		margin:0;
 		text-shadow:
 		-2px -2px 0 #f2f2f2,  
 	   	2px -2px 0 #f2f2f2,
@@ -148,7 +149,7 @@
 		border-radius:8px;
 	}
 	.character-description{
-		margin:4.5em 0 0 39%;
+		margin:3.5em 0 0 39%;
 	}
 	
 	.comic-archive-article{
