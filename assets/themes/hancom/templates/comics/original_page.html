@@ -21,7 +21,7 @@
 	</header>
 	
 	
-	<img src="{{ comic.original_comic.url }}" class="comic" alt="Original Version of the Comic entitled '{{ comic.title }}'" />
+	<a href="{{ comic.get_absolute_url }}"><img src="{{ comic.original_comic.url }}" class="comic" alt="Original Version of the Comic entitled '{{ comic.title }}'" /></a>
 	
 	<footer class="comic-footer clearfix">
 		<p><a href="{{ comic.get_absolute_url }}">Back to the new version of this this comic</a></p>
