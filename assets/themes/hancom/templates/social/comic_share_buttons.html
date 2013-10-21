@@ -3,7 +3,7 @@
 		<a href="https://twitter.com/share"
 		class="twitter-share-button"
 		data-text="Hate and NuT #{{ comic.chronology }} - {{ comic.title }}"
-		data-url="{{ SITE_URL }}{{ comic.get_absolute_url }}?utm_source=website-social-buttons&utm_medium=social-share&utm_content=comic-footer-buttons&utm_campaign=twitter"
+		data-url="{{ SITE_URL }}{{ comic.get_absolute_url }}?utm_source=twitter&utm_medium=sharing&utm_content=comic-footer-button&utm_campaign=social"
 		data-size="large"
 		data-related="brantsteen"
 		data-count="none" >Tweet</a>
@@ -12,16 +12,16 @@
 	<li class="share-plus">
 		<!-- Place this tag where you want the +1 button to render. -->
 		<div class="g-plusone"
-		data-annotation="none"
-		data-href="{{ SITE_URL }}{{ comic.get_absolute_url }}?utm_source=website-social-buttons&utm_medium=social-share&utm_content=comic-footer-buttons&utm_campaign=g-plus"></div>
+			data-annotation="none"
+			data-href="{{ SITE_URL }}{{ comic.get_absolute_url }}?utm_source=g-plus&utm_medium=sharing&utm_content=comic-footer-button&utm_campaign=social"></div>
 	</li>
 
 	<li class="share-facebook">
 		<div class="fb-like"
-		data-href="{{ SITE_URL }}{{ comic.get_absolute_url}}?utm_source=website-social-buttons&utm_medium=social-share&utm_content=comic-footer-buttons&utm_campaign=facebook"
-		data-ref="fblk_{{ comic.chronology }}"
-		data-send="false"
-		data-width="300"
-		data-show-faces="true"></div>
+			data-href="{{ SITE_URL }}{{ comic.get_absolute_url}}?utm_source=facebook&utm_medium=sharing&utm_content=comic-footer-button&utm_campaign=social"
+			data-ref="fblk_{{ comic.chronology }}"
+			data-send="false"
+			data-width="300"
+			data-show-faces="true"></div>
 	</li>
 </ul>
