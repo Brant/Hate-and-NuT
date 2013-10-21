@@ -30,7 +30,10 @@ class SiteFeed(RSSFeedWithContentEncoded):
     item_author_link = "http://hateandnut.com"
 
     def item_guid_is_permalink(self, obj):
-        return True
+        return False
+
+    def item_guid(self, item):
+        return "http://%s%s" % (Site.objects.get_current(), item.get_absolute_url())
 
     def items(self):
         return published_comics()[:30]
@@ -42,6 +45,9 @@ class SiteFeed(RSSFeedWithContentEncoded):
 
     def item_pubdate(self, item):
         return item.date
+
+    def item_link(self, item):
+        return "%s?utm_source=website-feed&utm_medium=rss&utm_content=item-permalink&utm_campaign=subscriptions" % item.get_absolute_url()
 
     def item_content_encoded(self, item):
         """

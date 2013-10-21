@@ -1,3 +1,3 @@
-<p><a href="{{ SITE_URL }}{{ comic.get_absolute_url }}"><img src="{{ SITE_URL }}{{ comic.preview_image_quarter.url }}" /></a></p>
+<p><a href="{{ SITE_URL }}{{ comic.get_absolute_url }}"><img src="{{ SITE_URL }}{{ comic.preview_image_quarter.url }}?utm_source=website-feed&utm_medium=rss&utm_content=item-preview-image&utm_campaign=subscriptions" /></a></p>
 {% load markup %}
 {{ comic.description|markdown }}
