@@ -7,26 +7,27 @@
 {% block body_class %}home {% if latest_comic.single_row %}single-row-comic-page {% endif %}{% endblock %}
 
 {% block extra_head %}{% load static from staticfiles %}
-	
+
 	{% if previous_comic %}
 		<link rel="prefetch" href="{{ previous_comic.get_absolute_url }}" />
 	{% endif %}
-	
+
 	<meta property="og:title" content="Adventures of Hate and NuT" />
-	<meta property="og:image" content="{{ SITE_URL }}{% static "img/OG_image_home.jpg" %}" /> 
-	<meta property="og:description" content="A lighthearted webcomic comedy about the adventures of couple of ruthless killers - Hate and NuT - along with a colorful cast of other characters, set in a dangerous fantasy world." /> 
+	<meta property="og:image" content="{{ SITE_URL }}{% static "img/OG_image_home.jpg" %}" />
+	<meta property="og:description" content="A lighthearted webcomic comedy about the adventures of couple of ruthless killers - Hate and NuT - along with a colorful cast of other characters, set in a dangerous fantasy world." />
 {% endblock %}
 
 {% block content %}
 	<header class="clearfix heading-wrap">
-		{% if latest_comic.story_arc and latest_comic.special_story_arc_title %}
-			<hgroup class="story-arc-comic-heading-group">
-				<h1>Latest</h1>
-				<h2>{{ latest_comic.special_story_arc_title }}</h2>
-			</hgroup>
-		{% else %}
+		<hgroup class="story-arc-comic-heading-group">
 			<h1>Latest</h1>
-		{% endif %}
+			{% if latest_comic.story_arc and latest_comic.special_story_arc_title %}
+				<h2>{{ latest_comic.special_story_arc_title }}</h2>
+			{% else %}
+				<h2>Hate and Nut #{{ comic.chronology }}</h2>
+			{% endif %}
+		</hgroup>
+
 		<nav class="comic-nav">
 			<ul class="comic-nav-list">
 				<li class="comic-nav-list-item comic-nav-list-item-left">
@@ -34,7 +35,7 @@
 						<a id="prevComic" class="comic-nav-list-item-link" href="{{ previous_comic.get_absolute_url }}" title="Previous Comic"><span class="visuallyhidden">Previous</span><i class="icon-caret-left"></i></a>
 					{% else %}
 						<span class="visuallyhidden">Previous</span><i class="icon-caret-left"></i>
-					{% endif %}		
+					{% endif %}
 				</li>
 				<li class="comic-nav-list-item comic-nav-list-item-right"><span class="visuallyhidden">Next</span><i class="icon-caret-right"></i></li>
 			</ul>
@@ -48,11 +49,11 @@
 		<img src="{{ latest_comic.comic_image.url }}" class="comic" alt="Webcomic #{{ comic.chronology }} entitled '{{ comic.title }}'" />
 	{% endif %}
 
-	
+
 	<footer class="comic-footer clearfix">
 		{% render_comic_footer latest_comic next_comic previous_comic %}
 	</footer>
-	
+
 {% endblock %}
 
 
