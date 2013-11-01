@@ -10,7 +10,7 @@ from django.shortcuts import render_to_response
 from django.template import RequestContext
 from django.core.exceptions import ObjectDoesNotExist
 from django.views.decorators.cache import never_cache
-from django.models.db import Q
+from django.db.models import Q
 
 from hancom.comics.models import Comic, StoryArc
 from hancom.comics.util import get_previous_next_comics, get_random_comic
