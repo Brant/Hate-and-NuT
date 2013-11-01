@@ -24,7 +24,7 @@ $(function(){
 
 	if (nextComic.length > 0){
 		nextComicHref = nextComic.attr("href");
-		$("img.comic").wrap("<a title='Goto next comic' href='" + nextComicHref + "' />");
+		$("img.comic").wrap("<a href='" + nextComicHref + "' />");
 	}
 	if (prevComic.length > 0){
 		prevComicHref = prevComic.attr("href");
