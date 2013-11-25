@@ -23,7 +23,7 @@ def original_comic(request, comic_id):
     comic_id = int(comic_id)
 
     try:
-        comic = Comic.objects.prefetch_related("story_arc").get(~Q(original_comic=None), chronology=comic_id, published=True)
+        comic = Comic.objects.prefetch_related("story_arc").get(~Q(original_comic=None), ~Q(original_comic=''), chronology=comic_id, published=True)
     except ObjectDoesNotExist:
         raise Http404
 
